@@ -1,0 +1,24 @@
+62d5dcc docs: point README at agent architecture research and TS probes
+7375ae7 evidence: capture agent-loop and dual-language demo logs
+30e9c22 chore: add dual-language probe and agent-loop runner scripts
+f2044b9 feat: add TypeScript probe across brand, scrape, NAICS, sitemap
+3e45ce8 feat: add runnable research scout and MCP-style agent loops
+a584782 docs: Monid deep research with 7 discover queries and 3 live runs
+c2ecc80 docs: catalog 20 novel agent-powered build opportunities
+c801999 docs: add agent architecture reasoning with 12 archetypes
+c06a03f docs: deepen Monid research with 3 live runs and OpenRouter synthesis
+d03d999 docs: enumerate all 57 llms.txt pages with endpoints and use-cases
+200287a feat: expand live demos to 11 API surfaces with fixtures
+4ba13f2 test: add mocked tests for all core client functions and fixtures
+1a908fb fix: harden client with defensive parsing and 7 new API wrappers
+d87c841 docs: add GitHub repository URL to README
+30f7df5 test: add fixture structural checks and update README verification steps
+67b3542 chore: add verification script for double demo run
+14a4dec docs: capture live API demo results and credit costs
+9749a34 docs: catalog no-code and agent integration surfaces
+cd84923 chore: add Makefile with test and demo targets
+f33609c docs: monid research with live LinkedIn run and pairing notes
+25c9ca0 test: add pytest config and pythonpath for unit tests
+8ff37fe feat: add Context.dev API client with retry logic and unit tests
+834770a docs: index all pages from docs.context.dev llms.txt
+a3870c3 chore: scaffold repo with README, gitignore, and env template
