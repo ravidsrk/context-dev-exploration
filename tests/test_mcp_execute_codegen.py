@@ -23,3 +23,18 @@ def test_build_execute_typescript_includes_web_namespace():
     assert "client.brand.styleguide" not in code
     assert "brand.styleguide" not in code
     assert "client.brand.webScrapeSitemap" not in code
+
+
+def test_golden_codegen_from_agent_loop_execute_plan():
+    """Golden plan from evidence/agent-loop.log MCP section — must not TS2339 in sandbox."""
+    plan = [
+        {"op": "brand.retrieve", "args": {"domain": "stripe.com"}},
+        {"op": "web.extract_styleguide", "args": {"domain": "stripe.com"}},
+        {"op": "web.scrape_sitemap", "args": {"domain": "stripe.com"}},
+    ]
+    code = build_execute_typescript("stripe.com", plan)
+    assert "client.web.extractStyleguide" in code
+    assert "client.web.webScrapeSitemap" in code
+    assert "client.brand.styleguide" not in code
+    assert "client.brand.webScrapeSitemap" not in code
+    assert "as {" not in code  # no Colors cast that broke sandbox

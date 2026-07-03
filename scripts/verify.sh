@@ -15,8 +15,9 @@ make -C "$ROOT" test 2>&1 | tee "$SCRATCH/pytest-verify.log"
 echo "=== Dual-language probes (2 runs) ==="
 bash "$ROOT/scripts/run_dual_lang_probes.sh"
 
-echo "=== Agent loops (scout + MCP code mode) ==="
+echo "=== Agent loops (scout + MCP code mode + evidence validator) ==="
 bash "$ROOT/scripts/run_agent_loops.sh" stripe.com
+python "$ROOT/scripts/validate_agent_loop_evidence.py"
 
 if [[ -n "${MONID_API_KEY:-}" ]]; then
   echo "=== Monid evidence capture ==="

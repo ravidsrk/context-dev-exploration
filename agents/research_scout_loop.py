@@ -21,7 +21,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from agents.llm_policy import plan_scout_perception  # noqa: E402
+from agents.plan_cli import cmd_scout  # noqa: E402
 from src.context_client import (  # noqa: E402
     classify_naics,
     create_client,
@@ -138,10 +138,14 @@ def run_loop(domain: str, goal: str | None = None) -> dict:
     # Perceive (bootstrap)
     perceive_brand(memory, client)
 
-    # Plan (LLM policy)
-    memory.plan_steps, memory.policy_source = plan_scout_perception(
-        memory.domain, memory.brand or {}, memory.goal
-    )
+    # Plan (shared plan_cli — same JSON TS loops consume)
+    brand_for_plan = {
+        "title": (memory.brand or {}).get("title"),
+        "logo_url": (memory.brand or {}).get("logo_url"),
+    }
+    plan = cmd_scout(memory.domain, json.dumps(brand_for_plan), memory.goal)
+    memory.plan_steps = plan["plan_steps"]
+    memory.policy_source = plan["policy_source"]
 
     # Act (execute planned perception)
     execute_plan(memory, client, memory.plan_steps)

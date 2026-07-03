@@ -22,14 +22,14 @@ from typing import Any
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
-from agents.llm_policy import plan_mcp_execute  # noqa: E402
+from agents.plan_cli import cmd_mcp  # noqa: E402
 from agents.mcp_client import (  # noqa: E402
     extract_domain_from_goal,
     hosted_execute,
     hosted_search_docs,
 )
 from agents.mcp_execute_codegen import build_execute_typescript  # noqa: E402
-from agents.mcp_op_map import OP_CREDITS, normalize_execute_plan  # noqa: E402
+from agents.mcp_op_map import OP_CREDITS  # noqa: E402
 
 DOC_INDEX = Path(__file__).resolve().parent / "sdk_doc_index.json"
 
@@ -130,8 +130,9 @@ def execute_plan_hosted(
 def run_code_mode_loop(goal: str) -> dict[str, Any]:
     domain = extract_domain_from_goal(goal)
     doc_hits, docs_source = search_docs(goal)
-    raw_plan, policy_source = plan_mcp_execute(goal, doc_hits)
-    plan_steps = normalize_execute_plan(goal, raw_plan, doc_hits, domain)
+    plan = cmd_mcp(goal, json.dumps(doc_hits))
+    plan_steps = plan["execute_plan"]
+    policy_source = plan["policy_source"]
 
     execute_source = "hosted_mcp_execute"
     typescript_code = ""

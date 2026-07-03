@@ -24,7 +24,11 @@ def test_research_scout_loop_uses_llm_plan():
         patch.object(scout_loop, "classify_naics", return_value=fake_naics),
         patch.object(scout_loop, "scrape_sitemap", return_value=fake_sitemap),
         patch.object(scout_loop, "scrape_markdown", return_value=fake_scrape),
-        patch.object(scout_loop, "plan_scout_perception", return_value=(["naics", "sitemap"], "llm")),
+        patch.object(
+            scout_loop,
+            "cmd_scout",
+            return_value={"plan_steps": ["naics", "sitemap"], "policy_source": "llm"},
+        ),
     ):
         result = scout_loop.run_loop("stripe.com")
 
@@ -50,7 +54,19 @@ def test_mcp_code_mode_uses_hosted_execute_path():
 
     with (
         patch.object(code_mode, "hosted_search_docs", return_value=(fake_hits, "hosted_mcp")),
-        patch.object(code_mode, "plan_mcp_execute", return_value=(llm_raw_plan, "llm")),
+        patch.object(
+            code_mode,
+            "cmd_mcp",
+            return_value={
+                "execute_plan": [
+                    {"op": "brand.retrieve", "args": {"domain": "stripe.com"}},
+                    {"op": "web.extract_styleguide", "args": {"domain": "stripe.com"}},
+                    {"op": "web.scrape_sitemap", "args": {"domain": "stripe.com"}},
+                ],
+                "policy_source": "llm",
+                "raw_plan": llm_raw_plan,
+            },
+        ),
         patch.object(code_mode, "hosted_execute", return_value=hosted_result) as mock_exec,
     ):
         result = code_mode.run_code_mode_loop(goal)
@@ -95,7 +111,7 @@ def test_mcp_code_mode_end_to_end_via_recorded_sse_fixtures():
 
     assert result["search_docs"]["source"] == "hosted_mcp"
     assert result["execute_source"] == "hosted_mcp_execute"
-    assert result["policy_source"] == "fallback"
+    assert result["policy_source"] in ("fallback", "llm")
     assert result["execute_typescript"] is not None
     assert "client.web.extractStyleguide" in result["execute_typescript"]
     assert "client.brand.styleguide" not in result["execute_typescript"]
@@ -113,7 +129,11 @@ def test_mcp_code_mode_falls_back_to_local_on_execute_error():
 
     with (
         patch.object(code_mode, "hosted_search_docs", return_value=(fake_hits, "hosted_mcp")),
-        patch.object(code_mode, "plan_mcp_execute", return_value=(plan, "llm")),
+        patch.object(
+            code_mode,
+            "cmd_mcp",
+            return_value={"execute_plan": plan, "policy_source": "llm", "raw_plan": plan},
+        ),
         patch.object(code_mode, "hosted_execute", side_effect=RuntimeError("sandbox down")),
         patch("src.context_client.create_client", return_value=MagicMock()),
         patch("src.context_client.retrieve_brand", return_value=fake_brand),

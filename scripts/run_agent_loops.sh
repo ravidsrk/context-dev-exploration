@@ -36,5 +36,6 @@ GOAL="Get ${DOMAIN} brand identity, design tokens, and site scale for a sales do
   echo "ts_code_mode_exit: $?"
 } | tee "$LOG"
 
+python "$ROOT/scripts/validate_agent_loop_evidence.py"
 cp "$LOG" "$SCRATCH/agent-loop.log"
-echo "Wrote $LOG and $SCRATCH/agent-loop.log"
+echo "Wrote $LOG and $SCRATCH/agent-loop.log (validated)"

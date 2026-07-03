@@ -3,7 +3,15 @@
  * Mirrors agents/mcp_op_map.py.
  */
 
-import type { DocHit, ExecuteStep } from "./llm_policy.js";
+export type DocHit = {
+  id: string;
+  signature: string;
+  returns: string;
+  credits: string;
+  description: string;
+};
+
+export type ExecuteStep = { op: string; args: Record<string, string> };
 
 export const CANONICAL_OPS = new Set([
   "brand.retrieve",

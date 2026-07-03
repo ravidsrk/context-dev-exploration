@@ -1,17 +1,17 @@
 /**
- * TypeScript MCP Code Mode loop: hosted search_docs → LLM plan → hosted execute.
- * Mirrors agents/mcp_code_mode_loop.py with local SDK fallback.
+ * TypeScript MCP Code Mode loop: hosted search_docs → plan_cli.py → hosted execute.
  */
 import ContextDev from "context.dev";
-import { planMcpExecute } from "./llm_policy.js";
+import { runMcpPlan } from "./plan_cli.js";
 import { buildExecuteTypescript } from "./mcp_execute_codegen.js";
-import { OP_CREDITS, normalizeExecutePlan } from "./mcp_op_map.js";
+import { OP_CREDITS } from "./mcp_op_map.js";
 import {
   extractDomain,
   hostedExecute,
   hostedSearchDocs,
 } from "./mcp_client.js";
-import type { ExecuteStep } from "./llm_policy.js";
+
+type ExecuteStep = { op: string; args: Record<string, string> };
 
 function getClient(): ContextDev {
   const key = process.env.CONTEXT_DEV_API_KEY ?? process.env.CONTEXT_API_KEY;
@@ -91,8 +91,7 @@ async function executePlanLocal(
 export async function runCodeModeLoop(goal: string): Promise<Record<string, unknown>> {
   const domain = extractDomain(goal);
   const hits = await hostedSearchDocs(goal);
-  const { plan: rawPlan, policySource } = await planMcpExecute(goal, hits);
-  const planSteps = normalizeExecutePlan(goal, rawPlan, hits, domain);
+  const { execute_plan: planSteps, policy_source: policySource } = runMcpPlan(goal, hits);
   const code = buildExecuteTypescript(domain, planSteps);
 
   let executeSource = "hosted_mcp_execute";

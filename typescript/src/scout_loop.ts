@@ -1,13 +1,10 @@
 /**
- * TypeScript Research Scout loop: perceive → plan (LLM) → act → observe.
- * Mirrors agents/research_scout_loop.py.
+ * TypeScript Research Scout loop: perceive → plan (plan_cli.py) → act → observe.
  */
 import ContextDev from "context.dev";
-import { planScoutPerception } from "./llm_policy.js";
+import { runScoutPlan } from "./plan_cli.js";
 
 const DOMAIN = process.argv[2] ?? "stripe.com";
-const GOAL =
-  "Build a sales intelligence dossier with industry, site scale, and pricing signals.";
 
 function getClient(): ContextDev {
   const key = process.env.CONTEXT_DEV_API_KEY ?? process.env.CONTEXT_API_KEY;
@@ -45,7 +42,10 @@ async function main(): Promise<void> {
     title: brand?.title ?? null,
     logo_url: brand?.logos?.[0]?.url ?? null,
   };
-  const { steps, policySource } = await planScoutPerception(DOMAIN, brandForPlan, GOAL);
+  const { plan_steps: steps, policy_source: policySource, goal } = runScoutPlan(
+    DOMAIN,
+    brandForPlan
+  );
 
   let naicsRes: Awaited<ReturnType<ContextDev["brand"]["retrieveNaics"]>> | null = null;
   let smRes: Awaited<ReturnType<ContextDev["brand"]["webScrapeSitemap"]>> | null = null;
@@ -73,7 +73,7 @@ async function main(): Promise<void> {
   const topCode = naicsRes?.codes?.[0];
   const brief = {
     domain: DOMAIN,
-    goal: GOAL,
+    goal: goal ?? null,
     company: brand?.title ?? null,
     logo_url: brand?.logos?.[0]?.url ?? null,
     industry: topCode

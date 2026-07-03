@@ -3,7 +3,7 @@
  * Hosted sandbox SDK uses client.web.* — NOT client.brand.styleguide (TS2339 on Brand).
  */
 
-import type { ExecuteStep } from "./llm_policy.js";
+import type { ExecuteStep } from "./mcp_op_map.js";
 
 export function buildExecuteTypescript(domain: string, plan?: ExecuteStep[]): string {
   const ops = new Set((plan ?? []).map((s) => s.op));
