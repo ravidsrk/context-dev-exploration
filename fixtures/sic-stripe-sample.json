@@ -1,0 +1,7 @@
+{
+  "domain": "stripe.com",
+  "codes": [
+    {"code": "6199", "name": "FINANCE SERVICES", "confidence": "high"},
+    {"code": "6282", "name": "INVESTMENT ADVICE", "confidence": "low"}
+  ]
+}
