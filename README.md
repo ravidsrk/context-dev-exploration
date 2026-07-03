@@ -2,6 +2,8 @@
 
 Deep evaluation of [Context.dev](https://context.dev) APIs, use-cases, and build opportunities.
 
+Repository: https://github.com/ravidsrk/context-dev-exploration
+
 ## What this repo contains
 
 - **Live API demos** — Brand lookup, web scrape, and classification/transaction enrichment
