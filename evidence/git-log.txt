@@ -1,3 +1,9 @@
+a35614f evidence: refresh dual-lang, agent-loop, and raw Monid CLI logs
+b3b55dc test: cover LLM policy, MCP code-mode, and scout plan execution
+04a5592 fix: verification scripts with full dual-lang output and Monid capture
+1b27165 feat: add LLM policy scout loop and MCP code-mode agent
+aa23c9f test: add mocked unit tests for agent loop modules
+2487659 chore: refresh git-log evidence (24 commits)
 62d5dcc docs: point README at agent architecture research and TS probes
 7375ae7 evidence: capture agent-loop and dual-language demo logs
 30e9c22 chore: add dual-language probe and agent-loop runner scripts
