@@ -1,0 +1,2 @@
+event: message
+data: {"result":{"content":[{"type":"text","text":"[{\"method\":\"client.brand.retrieve\",\"params\":[\"{ domain: string };\"],\"summary\":\"Retrieve brand data by domain\",\"description\":\"by domain\"},{\"method\":\"client.web.extractStyleguide\",\"params\":[\"{ domain: string };\"],\"summary\":\"Scrape Styleguide\",\"description\":\"design tokens\"}]"}]},"jsonrpc":"2.0","id":42}

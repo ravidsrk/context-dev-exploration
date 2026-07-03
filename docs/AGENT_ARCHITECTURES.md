@@ -217,10 +217,14 @@ Context.dev dominates **Perceive** and parts of **Observe** (sitemap diff, crawl
 **Loop:**
 1. **Perceive:** User asks "get stripe.com colors and pricing URL"
 2. **Plan:** `search_docs` for retrieve + links shape
-3. **Act:** `execute` TypeScript composing calls
+3. **Act:** `execute` runs TypeScript in Stainless sandbox — one `async function run(client)` chains `client.brand.retrieve`, `client.web.extractStyleguide`, `client.web.webScrapeSitemap`
 4. **Observe:** Return filtered JSON (not full brand blob)
 
-**Why this matters:** Tool surface area stays O(1) while capability stays O(all endpoints). This is the **reference architecture** for Context.dev in Cursor/Claude Code — see runnable example in `agents/mcp_code_mode_loop.py`, which calls the **hosted** `search_docs` tool at `context-dev.stlmcp.com` via `agents/mcp_client.py`.
+**Why this matters:** Tool surface area stays O(1) while capability stays O(all endpoints). Runnable in **both languages**:
+- Python: `agents/mcp_code_mode_loop.py` → `hosted_search_docs` + `hosted_execute` via `agents/mcp_client.py`
+- TypeScript: `typescript/src/mcp_code_mode_loop.ts` → same hosted MCP tools
+
+Live evidence: `evidence/agent-loop.log` shows `execute_source: hosted_mcp_execute` and populated `result.identity` / `design_tokens` / `site_scale`.
 
 ---
 

@@ -25,10 +25,12 @@ make test          # unit tests (mocked)
 make demos         # live API probes (Python)
 ./scripts/verify.sh  # full verification (2 demo runs)
 
-# TypeScript probes
+# TypeScript probes + agent loops
 cd typescript && npm install && npm run probe
+npm run scout-loop -- stripe.com
+npm run mcp-code-mode -- "Get stripe.com brand identity, design tokens, and site scale"
 
-# Agent loops + dual-language evidence
+# Full dual-language agent loops (Python + TS, hosted MCP execute)
 ./scripts/run_agent_loops.sh stripe.com
 ./scripts/run_dual_lang_probes.sh
 ```

@@ -1,12 +1,13 @@
-.PHONY: test demos integration install agent-loops dual-lang ts-probe
+.PHONY: test demos integration install agent-loops dual-lang ts-probe ts-agent-loops monid-evidence
 
 install:
 	pip install -r requirements.txt
+	cd typescript && npm install
 
-test:
+test: install
 	pytest tests/ -v -m "not integration"
 
-integration:
+integration: install
 	pytest tests/ -v -m integration
 
 demos:
@@ -23,3 +24,7 @@ dual-lang:
 
 ts-probe:
 	cd typescript && npm run probe
+
+ts-agent-loops:
+	cd typescript && npm run scout-loop -- stripe.com
+	cd typescript && npm run mcp-code-mode -- "Get stripe.com brand identity, design tokens, and site scale"

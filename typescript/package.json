@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "probe": "tsx src/probe.ts",
+    "scout-loop": "tsx src/scout_loop.ts",
+    "mcp-code-mode": "tsx src/mcp_code_mode_loop.ts",
     "build": "tsc --noEmit"
   },
   "dependencies": {

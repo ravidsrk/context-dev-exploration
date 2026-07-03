@@ -15,12 +15,22 @@ GOAL="Get ${DOMAIN} brand identity, design tokens, and site scale for a sales do
 
 {
   echo "========== Agent loops @ $(date -u +%Y-%m-%dT%H:%M:%SZ) domain=$DOMAIN =========="
-  echo "--- research_scout_loop (LLM plan) ---"
+
+  echo "--- Python research_scout_loop (LLM plan) ---"
   python "$ROOT/agents/research_scout_loop.py" "$DOMAIN"
-  echo "scout_exit: $?"
-  echo "--- mcp_code_mode_loop (search_docs + execute) ---"
+  echo "python_scout_exit: $?"
+
+  echo "--- Python mcp_code_mode_loop (hosted search_docs + hosted execute) ---"
   python "$ROOT/agents/mcp_code_mode_loop.py" "$GOAL"
-  echo "code_mode_exit: $?"
+  echo "python_code_mode_exit: $?"
+
+  echo "--- TypeScript scout_loop ---"
+  (cd "$ROOT/typescript" && npm run scout-loop -- "$DOMAIN")
+  echo "ts_scout_exit: $?"
+
+  echo "--- TypeScript mcp_code_mode_loop (hosted search_docs + hosted execute) ---"
+  (cd "$ROOT/typescript" && npm run mcp-code-mode -- "$GOAL")
+  echo "ts_code_mode_exit: $?"
 } | tee "$LOG"
 
 cp "$LOG" "$SCRATCH/agent-loop.log"

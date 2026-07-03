@@ -1,0 +1,2 @@
+event: message
+data: {"result":{"content":[{"type":"text","text":"{\"result\":{\"identity\":{\"title\":\"Stripe\",\"logo_url\":\"https://logo.test/x.jpg\"},\"design_tokens\":{\"color_count\":3,\"has_typography\":true},\"site_scale\":{\"url_count\":6165,\"sample_paths\":[\"https://stripe.com/legal\"]}}}"}]},"jsonrpc":"2.0","id":43}

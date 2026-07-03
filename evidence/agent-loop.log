@@ -1,5 +1,5 @@
-========== Agent loops @ 2026-07-03T15:15:20Z domain=stripe.com ==========
---- research_scout_loop (LLM plan) ---
+========== Agent loops @ 2026-07-03T15:27:02Z domain=stripe.com ==========
+--- Python research_scout_loop (LLM plan) ---
 {
   "domain": "stripe.com",
   "goal": "Build a sales intelligence dossier with industry, site scale, and pricing signals.",
@@ -32,8 +32,8 @@
     "policy_source": "llm"
   }
 }
-scout_exit: 0
---- mcp_code_mode_loop (search_docs + execute) ---
+python_scout_exit: 0
+--- Python mcp_code_mode_loop (hosted search_docs + hosted execute) ---
 {
   "goal": "Get stripe.com brand identity, design tokens, and site scale for a sales dossier",
   "search_docs": {
@@ -98,6 +98,8 @@ scout_exit: 0
     }
   ],
   "policy_source": "llm",
+  "execute_source": "hosted_mcp_execute",
+  "execute_typescript": "async function run(client) {\n  const domain = \"stripe.com\";\n  const brand = await client.brand.retrieve({ domain });\n  const style = await client.web.extractStyleguide({ domain });\n  const sm = await client.web.webScrapeSitemap({ domain });\n  return {\n    identity: {\n      title: brand.brand?.title,\n      logo_url: brand.brand?.logos?.[0]?.url,\n    },\n    design_tokens: {\n      color_count: [style.styleguide?.colors?.accent, style.styleguide?.colors?.background, style.styleguide?.colors?.text].filter(Boolean).length,\n      has_typography: !!style.styleguide?.typography,\n    },\n    site_scale: {\n      url_count: (sm.urls || []).length,\n      sample_paths: (sm.urls || []).slice(0, 3),\n    },\n  };\n}",
   "result": {
     "identity": {
       "title": "Stripe",
@@ -118,10 +120,122 @@ scout_exit: 0
     "credits_estimated": 21
   },
   "ops_run": [
-    "brand.retrieve(stripe.com)",
-    "web.extract_styleguide(stripe.com)",
-    "web.scrape_sitemap(stripe.com)"
+    "hosted:execute(brand.retrieve)",
+    "hosted:execute(web.extract_styleguide)",
+    "hosted:execute(web.scrape_sitemap)"
   ],
   "credits_estimated": 21
 }
-code_mode_exit: 0
+python_code_mode_exit: 0
+--- TypeScript scout_loop ---
+
+> context-dev-exploration-ts@0.1.0 scout-loop
+> tsx src/scout_loop.ts stripe.com
+
+{
+  "domain": "stripe.com",
+  "company": "Stripe",
+  "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg",
+  "industry": {
+    "code": "522320",
+    "name": "Financial Transactions Processing",
+    "confidence": "high"
+  },
+  "sitemap_urls": 6165,
+  "has_pricing_content": true,
+  "credits_estimated": 22,
+  "policy_source": "typescript_heuristic",
+  "plan_steps": [
+    "naics",
+    "sitemap",
+    "pricing_scrape"
+  ],
+  "perceive_log": [
+    "brand.retrieve",
+    "retrieveNaics",
+    "webScrapeSitemap",
+    "webScrapeMd:pricing"
+  ],
+  "observation": {
+    "confidence": 0.95,
+    "recommend_revisit_days": 7
+  }
+}
+ts_scout_exit: 0
+--- TypeScript mcp_code_mode_loop (hosted search_docs + hosted execute) ---
+
+> context-dev-exploration-ts@0.1.0 mcp-code-mode
+> tsx src/mcp_code_mode_loop.ts Get stripe.com brand identity, design tokens, and site scale for a sales dossier
+
+{
+  "goal": "Get stripe.com brand identity, design tokens, and site scale for a sales dossier",
+  "search_docs": {
+    "query": "Get stripe.com brand identity, design tokens, and site scale for a sales dossier",
+    "source": "hosted_mcp",
+    "hits": [
+      {
+        "id": "client.brand.identifyFromTransaction",
+        "signature": "{ transaction_info: string; city?: string; country_gl?: string; force_language?: string; high_confidence_only?: boolean; maxSpeed?: boolean; mcc?: string; phone?: number; timeoutMS?: number; };",
+        "returns": "Identify brand from transaction data",
+        "credits": "",
+        "description": "Endpoint specially designed for platforms that want to identify transaction data by the transaction title."
+      },
+      {
+        "id": "client.brand.retrieveSimplified",
+        "signature": "{ domain: string; maxAgeMs?: number; timeoutMS?: number; };",
+        "returns": "Retrieve simplified brand data by domain",
+        "credits": "",
+        "description": "Returns a simplified version of brand data containing only essential information: domain, title, colors, logos, and backdrops. Optimized for faster responses and reduced data transfer."
+      },
+      {
+        "id": "client.ai.extractProducts",
+        "signature": "domain: string;",
+        "returns": "Extract products from a brand's website",
+        "credits": "",
+        "description": "Extract product information from a brand's website. We will analyze the website and return a list of products with details such as name, description, image, pricing, features, and more."
+      },
+      {
+        "id": "client.web.extractStyleguide",
+        "signature": "{ colorScheme?: \"light\" | \"dark\"; directUrl?: string; domain?: string; maxAgeMs?: number; timeoutMS?: number; };",
+        "returns": "Scrape Styleguide",
+        "credits": "",
+        "description": "Extract a comprehensive design system from a website including colors, typography, spacing, shadows, and UI components."
+      },
+      {
+        "id": "client.brand.retrieveByTicker",
+        "signature": "{ ticker: string; force_language?: string; maxAgeMs?: number; maxSpeed?: boolean; ticker_exchange?: string; timeoutMS?: number; };",
+        "returns": "Retrieve brand data by stock ticker",
+        "credits": "",
+        "description": "Retrieve brand information using a stock ticker symbol."
+      }
+    ]
+  },
+  "execute_source": "hosted_mcp_execute",
+  "execute_typescript": "async function run(client) {\n  const domain = \"stripe.com\";\n  const brand = await client.brand.retrieve({ domain });\n  const style = await client.web.extractStyleguide({ domain });\n  const sm = await client.web.webScrapeSitemap({ domain });\n  const sg = style.styleguide;\n  const c = sg?.colors as { accent?: string; background?: string; text?: string } | undefined;\n  const colorCount = [c?.accent, c?.background, c?.text].filter(Boolean).length;\n  return {\n    identity: { title: brand.brand?.title, logo_url: brand.brand?.logos?.[0]?.url },\n    design_tokens: { color_count: colorCount, has_typography: !!sg?.typography },\n    site_scale: { url_count: (sm.urls || []).length, sample_paths: (sm.urls || []).slice(0, 3) },\n  };\n}",
+  "policy_source": "typescript_direct",
+  "result": {
+    "identity": {
+      "title": "Stripe",
+      "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg"
+    },
+    "design_tokens": {
+      "color_count": 3,
+      "has_typography": true
+    },
+    "site_scale": {
+      "url_count": 6165,
+      "sample_paths": [
+        "https://stripe.com/legal",
+        "https://stripe.com/legal/ssa",
+        "https://stripe.com/ssa"
+      ]
+    }
+  },
+  "ops_run": [
+    "hosted:execute(brand.retrieve)",
+    "hosted:execute(web.extractStyleguide)",
+    "hosted:execute(web.scrape_sitemap)"
+  ],
+  "credits_estimated": 21
+}
+ts_code_mode_exit: 0
