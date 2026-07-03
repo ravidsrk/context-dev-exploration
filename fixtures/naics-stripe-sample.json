@@ -1,0 +1,8 @@
+{
+  "domain": "stripe.com",
+  "codes": [
+    {"code": "522320", "name": "Financial Transactions Processing", "confidence": "high"},
+    {"code": "522210", "name": "Credit Card Issuing", "confidence": "medium"}
+  ],
+  "note": "Sanitized sample from live /web/naics demo"
+}
