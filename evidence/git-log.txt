@@ -1,3 +1,7 @@
+6173d6d fix: capture 7 Monid discover queries with JSON evidence files
+1a4cd90 feat: call hosted Context.dev MCP search_docs from mcp_client
+9c71a93 chore: add typescript package-lock.json for reproducible probes
+ed5f09d chore: update git-log evidence
 a35614f evidence: refresh dual-lang, agent-loop, and raw Monid CLI logs
 b3b55dc test: cover LLM policy, MCP code-mode, and scout plan execution
 04a5592 fix: verification scripts with full dual-lang output and Monid capture
