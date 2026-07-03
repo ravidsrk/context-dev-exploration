@@ -6,10 +6,12 @@ Repository: https://github.com/ravidsrk/context-dev-exploration
 
 ## What this repo contains
 
-- **Live API demos** — Brand lookup, web scrape, and classification/transaction enrichment
-- **Use-case catalog** — Every product surface from docs.context.dev plus derived build ideas
-- **Evaluation matrix** — Feasibility, credit cost, and production readiness scores
-- **Monid research** — How external intelligence tools complement Context.dev
+- **Agent architectures** — 12 archetypes with perceive→plan→act→observe loops and reasoning (not a docs dump)
+- **Agent opportunities** — 20 novel agent-powered builds beyond official use-case guides
+- **Dual-language probes** — Python (`scripts/run_demos.py`) + TypeScript (`typescript/src/probe.ts`)
+- **Runnable agent loops** — `agents/research_scout_loop.py`, `agents/mcp_style_loop.py`
+- **Live API demos** — Brand, web, classification, design extraction, transaction enrichment
+- **Monid deep research** — Temporal/social signals that extend Context.dev agents
 
 ## Quick start
 
@@ -20,8 +22,15 @@ pip install -r requirements.txt
 
 export CONTEXT_DEV_API_KEY="ctxt_secret_..."
 make test          # unit tests (mocked)
-make demos         # live API probes
+make demos         # live API probes (Python)
 ./scripts/verify.sh  # full verification (2 demo runs)
+
+# TypeScript probes
+cd typescript && npm install && npm run probe
+
+# Agent loops + dual-language evidence
+./scripts/run_agent_loops.sh stripe.com
+./scripts/run_dual_lang_probes.sh
 ```
 
 ## API categories
@@ -35,11 +44,14 @@ make demos         # live API probes
 
 ## Documentation
 
+- [Agent Architectures](docs/AGENT_ARCHITECTURES.md) — **Start here** for what agents you can build and why
+- [Agent Opportunities](docs/AGENT_OPPORTUNITIES.md) — 20 reasoned build ideas with cost notes
+- [Monid Deep Research](docs/MONID_DEEP_RESEARCH.md) — Agent combo architectures + live runs
 - [Doc Index](docs/DOC_INDEX.md) — All pages from docs.context.dev
-- [Use Cases](docs/USE_CASES.md) — Official + derived build ideas
+- [Use Cases](docs/USE_CASES.md) — API surface catalog
 - [Evaluation](docs/EVALUATION.md) — Feasibility matrix
 - [Recommendations](docs/RECOMMENDATIONS.md) — Top build candidates
-- [Monid Research](docs/MONID_RESEARCH.md) — External intelligence pairing
+- [Monid Research](docs/MONID_RESEARCH.md) — Phase 1 pairing notes
 
 ## License
 
