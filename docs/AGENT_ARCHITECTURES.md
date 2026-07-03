@@ -317,8 +317,8 @@ Agents should **plan credit spend** before perceive-heavy loops — this is a no
 
 | Artifact | Path |
 |----------|------|
-| Python agent loop (research scout) | `agents/research_scout_loop.py` |
-| MCP-style composed perception | `agents/mcp_style_loop.py` |
+| Python agent loop (research scout + LLM plan) | `agents/research_scout_loop.py` |
+| MCP Code Mode (search_docs + execute) | `agents/mcp_code_mode_loop.py` |
 | Python probes | `scripts/run_demos.py` |
 | TypeScript probes | `typescript/src/probe.ts` |
 | Monid deep runs | `docs/MONID_DEEP_RESEARCH.md` |

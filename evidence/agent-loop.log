@@ -1,7 +1,8 @@
-========== Agent loops @ 2026-07-03T14:49:08Z domain=stripe.com ==========
---- research_scout_loop ---
+========== Agent loops @ 2026-07-03T15:02:50Z domain=stripe.com ==========
+--- research_scout_loop (LLM plan) ---
 {
   "domain": "stripe.com",
+  "goal": "Build a sales intelligence dossier with industry, site scale, and pricing signals.",
   "company": "Stripe",
   "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg",
   "industry": {
@@ -13,7 +14,13 @@
   "has_pricing_content": true,
   "pricing_preview": "# \n\n- Products\n- Solutions\n- Developers\n- Resources\n- [Pricing](https://stripe.com/pricing)\n\n[Sign in](https://dashboard.stripe.com/login)\u00a0\n\n[Contact sales](https://stripe.com/contact/sales)\u00a0\n\nBack\n\n-",
   "credits_estimated": 22,
-  "tools_called": [
+  "policy_source": "llm",
+  "plan_steps": [
+    "naics",
+    "sitemap",
+    "pricing_scrape"
+  ],
+  "perceive_log": [
     "retrieve_brand",
     "classify_naics",
     "scrape_sitemap",
@@ -21,32 +28,82 @@
   ],
   "observation": {
     "confidence": 1.0,
-    "recommend_revisit_days": 7
+    "recommend_revisit_days": 7,
+    "policy_source": "llm"
   }
 }
---- mcp_style_loop ---
+scout_exit: 0
+--- mcp_code_mode_loop (search_docs + execute) ---
 {
-  "domain": "stripe.com",
-  "identity": {
-    "title": "Stripe",
-    "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg"
-  },
-  "design_tokens": {
-    "color_count": 3,
-    "has_typography": true
-  },
-  "site_scale": {
-    "url_count": 6165,
-    "sample_paths": [
-      "https://stripe.com/legal",
-      "https://stripe.com/legal/ssa",
-      "https://stripe.com/ssa"
+  "goal": "Get stripe.com brand identity, design tokens, and site scale for a sales dossier",
+  "search_docs": {
+    "query": "Get stripe.com brand identity, design tokens, and site scale for a sales dossier",
+    "hits": [
+      {
+        "id": "web.extract_styleguide",
+        "signature": "client.web.extract_styleguide({ domain: string })",
+        "returns": "styleguide.colors, styleguide.typography",
+        "credits": "10"
+      },
+      {
+        "id": "brand.retrieve",
+        "signature": "client.brand.retrieve({ domain: string })",
+        "returns": "title, domain, logos[], colors[], links",
+        "credits": "10"
+      },
+      {
+        "id": "web.scrape_sitemap",
+        "signature": "client.web.web_scrape_sitemap({ domain: string })",
+        "returns": "urls[]",
+        "credits": "1"
+      }
     ]
   },
-  "credits_estimated": 21,
-  "composition": [
-    "brand.retrieve",
-    "web.extract_styleguide",
-    "web.sitemap"
-  ]
+  "execute_plan": [
+    {
+      "op": "brand.retrieve",
+      "args": {
+        "domain": "stripe.com"
+      }
+    },
+    {
+      "op": "web.extract_styleguide",
+      "args": {
+        "domain": "stripe.com"
+      }
+    },
+    {
+      "op": "web.scrape_sitemap",
+      "args": {
+        "domain": "stripe.com"
+      }
+    }
+  ],
+  "policy_source": "llm",
+  "result": {
+    "identity": {
+      "title": "Stripe",
+      "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg"
+    },
+    "design_tokens": {
+      "color_count": 3,
+      "has_typography": true
+    },
+    "site_scale": {
+      "url_count": 6165,
+      "sample_paths": [
+        "https://stripe.com/legal",
+        "https://stripe.com/legal/ssa",
+        "https://stripe.com/ssa"
+      ]
+    },
+    "credits_estimated": 21
+  },
+  "ops_run": [
+    "brand.retrieve(stripe.com)",
+    "web.extract_styleguide(stripe.com)",
+    "web.scrape_sitemap(stripe.com)"
+  ],
+  "credits_estimated": 21
 }
+code_mode_exit: 0

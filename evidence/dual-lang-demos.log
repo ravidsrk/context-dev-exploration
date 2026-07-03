@@ -1,4 +1,4 @@
-========== RUN 1 @ 2026-07-03T14:49:43Z ==========
+========== RUN 1 @ 2026-07-03T15:01:33Z ==========
 --- Python demos ---
 === Prefetch Domain (0 credits) ===
   status: ok
@@ -40,6 +40,13 @@
 === Extract Styleguide Demo ===
   color_count: 3
   has_typography: True
+
+=== Screenshot Demo ===
+  has_screenshot: True
+  screenshot_url: https://media.brand.dev/screenshots/cache/63a2638dd94c15976be8da8dcc0a298a.png
+
+=== All demos passed ===
+python_exit: 0
 --- TypeScript probe ---
 
 > context-dev-exploration-ts@0.1.0 probe
@@ -62,9 +69,10 @@
   url_count: 6165
   sample: https://stripe.com/legal, https://stripe.com/legal/ssa
 
-=== Done in 12544ms ===
+=== Done in 15145ms ===
+typescript_exit: 0
 
-========== RUN 2 @ 2026-07-03T14:50:15Z ==========
+========== RUN 2 @ 2026-07-03T15:02:09Z ==========
 --- Python demos ---
 === Prefetch Domain (0 credits) ===
   status: ok
@@ -106,6 +114,13 @@
 === Extract Styleguide Demo ===
   color_count: 3
   has_typography: True
+
+=== Screenshot Demo ===
+  has_screenshot: True
+  screenshot_url: https://media.brand.dev/screenshots/cache/63a2638dd94c15976be8da8dcc0a298a.png
+
+=== All demos passed ===
+python_exit: 0
 --- TypeScript probe ---
 
 > context-dev-exploration-ts@0.1.0 probe
@@ -128,5 +143,6 @@
   url_count: 6165
   sample: https://stripe.com/legal, https://stripe.com/legal/ssa
 
-=== Done in 12530ms ===
+=== Done in 13145ms ===
+typescript_exit: 0
 

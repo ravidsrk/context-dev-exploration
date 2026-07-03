@@ -9,7 +9,7 @@ Repository: https://github.com/ravidsrk/context-dev-exploration
 - **Agent architectures** — 12 archetypes with perceive→plan→act→observe loops and reasoning (not a docs dump)
 - **Agent opportunities** — 20 novel agent-powered builds beyond official use-case guides
 - **Dual-language probes** — Python (`scripts/run_demos.py`) + TypeScript (`typescript/src/probe.ts`)
-- **Runnable agent loops** — `agents/research_scout_loop.py`, `agents/mcp_style_loop.py`
+- **Runnable agent loops** — `agents/research_scout_loop.py` (LLM plan), `agents/mcp_code_mode_loop.py` (search_docs + execute)
 - **Live API demos** — Brand, web, classification, design extraction, transaction enrichment
 - **Monid deep research** — Temporal/social signals that extend Context.dev agents
 

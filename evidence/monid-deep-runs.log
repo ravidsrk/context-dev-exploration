@@ -1,23 +1,351 @@
-Monid deep research live runs — 2026-07-03
+========== MONID DISCOVER: job postings ==========
+- Searching for "job postings hiring signals company"...
+✔ Found 3 result(s)
+Provider      Endpoint                            Price          Description                                        Verified
+tikhub        /api/v1/linkedin/web_v2/search_jobs $0.0015/call   Search jobs                                           ✓    
+akta          /v1/company/employee-reviews        $0.0015/result Fetch a company's employee review signals and r...    ✓    
+api.strale.io /x402/job-posting-analyze           $0.011/call    Analyze a job posting. Extracts title, skills, ...         
 
-Run A: tikhub /api/v1/linkedin/web_v2/search_jobs
-  query: keywords=Stripe, count=5, time_range=past_month
-  cost: $0.0015
-  result: 5 PM roles at Stripe (Global Payouts, Startup Products, ...)
-  evidence: evidence/monid-jobs-stripe.json
+Update available: 0.1.0 → 0.1.1.
+  Run `npm update -g @monid-ai/cli` to update monid-cli.
+  Download the latest version of skill at https://monid.ai/SKILL.md.
+discover_exit: 0
 
-Run B: api.strale.io /x402/company-tech-stack
-  query: domain=stripe.com
-  cost: $0.011
-  result: Next.js, React, Nginx, Google Workspace, ElevenLabs chat
-  evidence: evidence/monid-techstack-stripe.json
+========== MONID DISCOVER: tech stack ==========
+- Searching for "tech stack detection website technologies"...
+✔ Found 3 result(s)
+Provider      Endpoint                 Price         Description                                        Verified
+api.strale.io /x402/tech-stack-detect  $0.03564/call Detect technologies used by a website. Identifi...         
+api.strale.io /x402/company-tech-stack $0.011/call   Deep tech stack analysis of any domain. Analyze...         
+blockrun.ai   /api/v1/surf/search/web  $0.00825/call Web search across crypto sources.                     ✓    
 
-Run C: api.strale.io /x402/tech-stack-detect
-  query: domain=stripe.com
-  cost: $0.03564
-  result: analytics, payment_processor categories confirmed
-  evidence: evidence/monid-techstack-detect-stripe.json
+Update available: 0.1.0 → 0.1.1.
+  Run `npm update -g @monid-ai/cli` to update monid-cli.
+  Download the latest version of skill at https://monid.ai/SKILL.md.
+discover_exit: 0
 
-Failed: akta /v1/news (HTTP 500 x2) — agents need fallback perception path
+========== MONID DISCOVER: news ==========
+- Searching for "news articles company press releases"...
+✔ Found 3 result(s)
+Provider Endpoint                                  Price          Description                                        Verified
+tikhub   /api/v1/linkedin/web_v2/get_company_posts $0.0015/call   Get company's recent posts                            ✓    
+tikhub   /api/v1/linkedin/web/get_company_posts    $0.006/call    Get company posts                                     ✓    
+akta     /v1/news                                  $0.0005/result Fetch enriched news articles for a company or i...    ✓    
 
-Discover queries (7): funding, jobs, change-monitoring, tech-stack, news, app-reviews, social-posts
+Update available: 0.1.0 → 0.1.1.
+  Run `npm update -g @monid-ai/cli` to update monid-cli.
+  Download the latest version of skill at https://monid.ai/SKILL.md.
+discover_exit: 0
+
+========== MONID LIVE RUN: LinkedIn jobs (Stripe) ==========
+- Starting run: tikhub//api/v1/linkedin/web_v2/search_jobs...
+✔ Run completed: 01KWM8337C5X00MRHD65P8YA3M
+
+Run Details
+────────────────────────────────────────
+  Run ID:   01KWM8337C5X00MRHD65P8YA3M
+  Provider: TikHub
+  Endpoint: /api/v1/linkedin/web_v2/search_jobs
+  Status:   COMPLETED
+  Provider Response: 200
+  Cost:     $0.0015 USD
+  Created:  Jul 3, 2026
+  Completed: Jul 3, 2026
+
+Input
+  Query Params
+{
+  "keywords": "Stripe",
+  "count": 3,
+  "time_range": "past_month"
+}
+
+Output
+{
+  "query": {
+    "keywords": "Stripe",
+    "f_TPR": "r2592000",
+    "start": 0,
+    "count": 3
+  },
+  "count": 3,
+  "jobs": [
+    {
+      "job_id": "4430118378",
+      "title": "Company Strategy & Operations",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "United States",
+      "posted_at": "2026-06-17",
+      "url": "https://www.linkedin.com/jobs/view/company-strategy-operations-at-stripe-4430118378"
+    },
+    {
+      "job_id": "4436466538",
+      "title": "GTM Recruiter, AMER (Fixed Term)",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "United States",
+      "posted_at": "2026-07-03",
+      "url": "https://www.linkedin.com/jobs/view/gtm-recruiter-amer-fixed-term-at-stripe-4436466538"
+    },
+    {
+      "job_id": "4435315281",
+      "title": "Data Analyst - Economic Insights & Communications",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "United States",
+      "posted_at": "2026-06-30",
+      "url": "https://www.linkedin.com/jobs/view/data-analyst-economic-insights-communications-at-stripe-4435315281"
+    }
+  ]
+}
+
+Hints
+  retrieve the response later: monid runs get -r 01KWM8337C5X00MRHD65P8YA3M
+
+
+Update available: 0.1.0 → 0.1.1.
+  Run `npm update -g @monid-ai/cli` to update monid-cli.
+  Download the latest version of skill at https://monid.ai/SKILL.md.
+run_exit: 0
+
+========== MONID LIVE RUN: company-tech-stack ==========
+- Starting run: api.strale.io//x402/company-tech-stack...
+✔ Run completed: 01KWM836495KFY05HG9S3E8960
+
+Run Details
+────────────────────────────────────────
+  Run ID:   01KWM836495KFY05HG9S3E8960
+  Provider: api.strale.io
+  Endpoint: /x402/company-tech-stack
+  Status:   COMPLETED
+  Provider Response: 200
+  Created:  Jul 3, 2026
+  Completed: Jul 3, 2026
+
+Output
+{
+  "domain": "stripe.com",
+  "frontend_framework": "React",
+  "meta_framework": "Next.js",
+  "css_framework": null,
+  "analytics": [
+    "Google Analytics",
+    "Stripe Analytics"
+  ],
+  "cdn": "Stripe CDN (b.stripecdn.com)",
+  "hosting_provider": "Nginx",
+  "cms": null,
+  "payment_processor": "Stripe",
+  "email_provider": "Google Workspace (Gmail)",
+  "chat_widget": "Stripe Chat",
+  "detected_technologies": [
+    {
+      "name": "Next.js",
+      "category": "meta_framework",
+      "confidence": "high"
+    },
+    {
+      "name": "React",
+      "category": "frontend_framework",
+      "confidence": "high"
+    },
+    {
+      "name": "Nginx",
+      "category": "web_server",
+      "confidence": "high"
+    },
+    {
+      "name": "Stripe CDN",
+      "category": "cdn",
+      "confidence": "high"
+    },
+    {
+      "name": "Google Workspace",
+      "category": "email_provider",
+      "confidence": "high"
+    },
+    {
+      "name": "JavaScript",
+      "category": "language",
+      "confidence": "high"
+    },
+    {
+      "name": "Webpack",
+      "category": "bundler",
+      "confidence": "high"
+    },
+    {
+      "name": "Server-Side Rendering (SSR)",
+      "category": "rendering_strategy",
+      "confidence": "high"
+    }
+  ],
+  "dns_records": {
+    "a": [
+      "198.202.176.231",
+      "198.137.150.231"
+    ],
+    "mx": [
+      {
+        "exchange": "aspmx3.googlemail.com",
+        "priority": 30
+      },
+      {
+        "exchange": "alt1.aspmx.l.google.com",
+        "priority": 20
+      },
+      {
+        "exchange": "aspmx2.googlemail.com",
+        "priority": 30
+      },
+      {
+        "exchange": "aspmx.l.google.com",
+        "priority": 10
+      },
+      {
+        "exchange": "alt2.aspmx.l.google.com",
+        "priority": 20
+      }
+    ],
+    "txt": [
+      "docusign=4c9f5602-1c19-4e4c-bde7-77dc4b9ea8a0",
+      "z4mthhzk10l6qc0rg4211mnnppkh2y5b",
+      "neat-pulse-domain-verification-8GMn8nv=36eba03d-345e-421a-a823-d6d1f28938a4",
+      "postman-domain-verification=c3b168067b16085c452b04b643ae1000079b095e383b53d1074e409b0e600b6265e1c7963beca1ca87cc63c381dcea332544c92c919651e4cda69f9a6303079c",
+      "MS=ms80697640",
+      "google-site-verification=qjP3OAiraClha_40cX9Z9FrG5q3O_0InXSamXOswY-s",
+      "00D50000000JV6w=1TBTQ0000000CIv;00DDn000000HWol=1TBVY00000002Hx;00D4x000003vxGL=1TBPQ00000008Tp;00Dfn00000BUlWD=1TBan0000000LPR",
+      "whimsical=253112f9add9790f3a27b9d9893626451fc4cda1",
+      "facebook-domain-verification=m7id9rt8ehlgcg9tt2yggbsi6gro7i",
+      "liveramp-site-verification=7gyFkTwGYsvgd7IUQwyAOfImETwR06wgKjKiXq90KEY",
+      "_mphpl78cv3thhugki4dkknlukgj1du6",
+      "elevenlabs=NpcIkVJW_8Vyd2gLKzPviuaU1g5rz83KiWQQ3sWKGtI",
+      "atlassian-domain-verification=upLp21qQgja1aHG2gnAb1AmXRqb/zG0UK1a0n3zTSXZg5DgOSttR3i5uzA3T9Cdk",
+      "google-site-verification=hPfjsDwiisKJ4RP1ExOst9gAOD_0P8Q7-kxdcKUvEcc",
+      "v=MCPv1; k=ed25519; p=WMeka0C1fIH9HQLMtsSM9DD9cM6Bz6Wz34mHnK86UcM=",
+      "google-site-verification=PrlpJHdk11CIkPsiXoHEAJevWHAk39JRFAqVSe9l7n0",
+      "edcbf4c7-b604-457b-870e-1b05f655e769",
+      "h1-domain-verification=KhpNX9YNAc7bX95agGvFsPPKbYTVe1KC6xj7P1zKZrRzxcuS",
+      "docker-verification=ccde1a0d-8d2c-44b5-9d20-6c4e19113fc9",
+      "anthropic-domain-verification-zk7x9c=QfN52ECybLPUWh51R9pKF0QO3",
+      "docusign=4a93db58-af07-4632-a881-b569d41a6c57",
+      "apple-domain-verification=8kIS0gmJTvILWQuI",
+      "cursor-domain-verification-vncvvm=D0NzeIDbQa8PPgIf1ukp9UPiu",
+      "asv=8de0c1a866b958297e22a36216e594a6",
+      "v=spf1 ip4:198.2.180.60/32 ip4:13.111.2.227/32 include:spf1.stripe.com include:greenhouse-outbound-mail.stripe.com include:_spf.qualtrics.com ~all",
+      "google-site-verification=pmz8ueKvWMPxNlwUDcVroF91-tq6I9VM6wSO_0i7-wc",
+      "stripe-verification=82ce82470fb8324e19fa65abdb6fd370da5a8f90bba09712f259760f625d0790",
+      "canva-site-verification=xLypn0D9XANRy-lbwcMfHA",
+      "google-site-verification=ZgGi2-xDdfnaWxdfjn5AqtUS11jKWqSXAV_EHODFzdE",
+      "fastly-domain-delegation-3c9tdnjzdwy7wfffvyyy-786084-2024-07-08",
+      "google-site-verification=NLkFgZLHeVMVYlR3t1UZC9_1LzmqCAefJyNDs6ZQqBA"
+    ],
+    "cname": []
+  },
+  "http_headers_analyzed": [
+    "server: nginx"
+  ],
+  "_meta": {
+    "capability": "company-tech-stack",
+    "latency_ms": 2882,
+    "provenance": {
+      "source": "html-analysis",
+      "fetched_at": "2026-07-03T15:03:30.795Z"
+    },
+    "payment": {
+      "method": "x402",
+      "settlement_id": "0xd872ad8d612103b32c594f4ff052286513b39b13fb7fba03dcdd5a2e9054dda8",
+      "price_usd": 0.324
+    }
+  }
+}
+
+Hints
+  retrieve the response later: monid runs get -r 01KWM836495KFY05HG9S3E8960
+
+
+Update available: 0.1.0 → 0.1.1.
+  Run `npm update -g @monid-ai/cli` to update monid-cli.
+  Download the latest version of skill at https://monid.ai/SKILL.md.
+run_exit: 0
+
+========== MONID LIVE RUN: tech-stack-detect ==========
+- Starting run: api.strale.io//x402/tech-stack-detect...
+✔ Run completed: 01KWM83CBQ089SDBJKE3XR84KR
+
+Run Details
+────────────────────────────────────────
+  Run ID:   01KWM83CBQ089SDBJKE3XR84KR
+  Provider: api.strale.io
+  Endpoint: /x402/tech-stack-detect
+  Status:   COMPLETED
+  Provider Response: 200
+  Created:  Jul 3, 2026
+  Completed: Jul 3, 2026
+
+Output
+{
+  "url": "https://stripe.com/",
+  "technologies_detected": 3,
+  "technologies": [
+    {
+      "name": "Nginx",
+      "category": "hosting",
+      "confidence": "high",
+      "evidence": "HTTP header server"
+    },
+    {
+      "name": "HSTS",
+      "category": "security",
+      "confidence": "high",
+      "evidence": "HTTP header strict-transport-security"
+    },
+    {
+      "name": "Next.js",
+      "category": "framework",
+      "confidence": "high",
+      "evidence": "HTML content pattern"
+    }
+  ],
+  "by_category": {
+    "hosting": [
+      "Nginx"
+    ],
+    "security": [
+      "HSTS"
+    ],
+    "framework": [
+      "Next.js"
+    ]
+  },
+  "signals": {
+    "has_analytics": false,
+    "has_chat_widget": false,
+    "has_payment_processing": false,
+    "has_marketing_automation": false,
+    "has_error_monitoring": false
+  },
+  "_meta": {
+    "capability": "tech-stack-detect",
+    "latency_ms": 36,
+    "provenance": {
+      "source": "tech-stack-detect:algorithmic",
+      "fetched_at": "2026-07-03T15:03:34.168Z"
+    },
+    "payment": {
+      "method": "x402",
+      "settlement_id": "0x9525bb9af904ac9fac05b5df897e8672212e735bcf457aed4b7003fcbb76c9fd",
+      "price_usd": 0.0324
+    }
+  }
+}
+
+Hints
+  retrieve the response later: monid runs get -r 01KWM83CBQ089SDBJKE3XR84KR
+
+
+Update available: 0.1.0 → 0.1.1.
+  Run `npm update -g @monid-ai/cli` to update monid-cli.
+  Download the latest version of skill at https://monid.ai/SKILL.md.
+run_exit: 0

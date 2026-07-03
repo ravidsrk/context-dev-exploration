@@ -15,6 +15,9 @@ demos:
 agent-loops:
 	./scripts/run_agent_loops.sh stripe.com
 
+monid-evidence:
+	./scripts/capture_monid_evidence.sh
+
 dual-lang:
 	./scripts/run_dual_lang_probes.sh
 
