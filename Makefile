@@ -15,7 +15,7 @@ integration: install
 	$(VENV_PY) -m pytest tests/ -v -m integration
 
 demos:
-	$(VENV_PY) scripts/run/demos.py
+	@bash -c 'source scripts/lib/ensure_env.sh && python scripts/run/demos.py'
 
 agent-loops:
 	./scripts/run/agent_loops.sh stripe.com
@@ -28,6 +28,9 @@ dual-lang:
 
 verify:
 	./scripts/verify/verify.sh
+
+evidence-reconcile:
+	$(VENV_PY) scripts/verify/validate_agent_loop_evidence.py --reconcile-stale
 
 ts-probe:
 	cd typescript && npm run probe

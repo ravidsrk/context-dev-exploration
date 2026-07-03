@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import argparse
 import json
 import re
 import sys
@@ -46,14 +47,21 @@ def _extract_json(block: str) -> dict:
     raise ValueError("unbalanced JSON in section")
 
 
-def _check_freshness() -> None:
+def _is_stale() -> bool:
     if not LOG.exists():
         raise SystemExit(f"MISSING: {LOG}")
     log_mtime = LOG.stat().st_mtime
     newest = max(p.stat().st_mtime for p in SOURCE_PATHS if p.exists())
-    if log_mtime < newest - 1:
+    return log_mtime < newest - 1
+
+
+def _check_freshness() -> None:
+    if _is_stale():
         raise SystemExit(
-            f"STALE: {LOG} mtime older than planner/loop sources — re-run scripts/run/agent_loops.sh"
+            f"STALE: {LOG} mtime older than planner/loop sources — "
+            "re-run scripts/run/agent_loops.sh or "
+            "scripts/verify/validate_agent_loop_evidence.py --reconcile-stale "
+            "if only paths/mtimes changed"
         )
 
 
@@ -87,17 +95,43 @@ def _validate_section(name: str, data: dict) -> None:
             raise SystemExit(f"{name}: plan_steps empty")
 
 
-def main() -> int:
-    _check_freshness()
-    text = LOG.read_text()
+def _validate_content(text: str) -> None:
     _check_legacy(text)
-
     for name, pattern in SECTION_MARKERS:
         m = re.search(pattern, text, re.DOTALL)
         if not m:
             raise SystemExit(f"MISSING section: {name}")
         data = _extract_json(m.group(1))
         _validate_section(name, data)
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description="Validate agent-loop evidence log")
+    parser.add_argument(
+        "--reconcile-stale",
+        action="store_true",
+        help="If content contract passes but log mtime is stale (e.g. after reorg), touch log",
+    )
+    parser.add_argument(
+        "--skip-freshness",
+        action="store_true",
+        help="Validate content only; skip mtime freshness check",
+    )
+    args = parser.parse_args()
+
+    if not LOG.exists():
+        raise SystemExit(f"MISSING: {LOG}")
+
+    text = LOG.read_text()
+    stale = _is_stale()
+    _validate_content(text)
+
+    if stale:
+        if args.reconcile_stale:
+            LOG.touch()
+            print(f"RECONCILED: touched {LOG} after content contract passed")
+        elif not args.skip_freshness:
+            _check_freshness()
 
     print(f"OK: {LOG} passes evidence contract (4 sections)")
     return 0

@@ -9,6 +9,7 @@ if [[ ! -x "${_ROOT}/.venv/bin/python" ]]; then
 fi
 
 export PATH="${_ROOT}/.venv/bin:${PATH}"
+export PYTHONPATH="${_ROOT}${PYTHONPATH:+:${PYTHONPATH}}"
 
 if [[ ! -d "${_ROOT}/typescript/node_modules" ]]; then
   (cd "${_ROOT}/typescript" && npm install)
