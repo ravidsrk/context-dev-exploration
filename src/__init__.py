@@ -1,19 +1,33 @@
 from .context_client import (
     classify_naics,
+    classify_sic,
+    crawl_markdown,
     create_client,
+    extract_fonts,
+    extract_styleguide,
     get_api_key,
     identify_transaction,
+    prefetch_domain,
     retrieve_brand,
     scrape_markdown,
+    scrape_screenshot,
+    scrape_sitemap,
     with_retry,
 )
 
 __all__ = [
     "classify_naics",
+    "classify_sic",
+    "crawl_markdown",
     "create_client",
+    "extract_fonts",
+    "extract_styleguide",
     "get_api_key",
     "identify_transaction",
+    "prefetch_domain",
     "retrieve_brand",
     "scrape_markdown",
+    "scrape_screenshot",
+    "scrape_sitemap",
     "with_retry",
 ]
