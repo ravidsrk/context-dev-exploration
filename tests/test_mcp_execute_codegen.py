@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from agents.mcp_execute_codegen import build_execute_typescript
+from context_dev.mcp.codegen import build_execute_typescript
 
 
 def test_build_execute_typescript_includes_web_namespace():
@@ -26,7 +26,7 @@ def test_build_execute_typescript_includes_web_namespace():
 
 
 def test_golden_codegen_from_agent_loop_execute_plan():
-    """Golden plan from evidence/agent-loop.log MCP section — must not TS2339 in sandbox."""
+    """Golden plan from evidence/runs/agent-loop.log MCP section — must not TS2339 in sandbox."""
     plan = [
         {"op": "brand.retrieve", "args": {"domain": "stripe.com"}},
         {"op": "web.extract_styleguide", "args": {"domain": "stripe.com"}},

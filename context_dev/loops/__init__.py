@@ -1,0 +1,1 @@
+"""Runnable agent loops (scout, MCP code-mode)."""

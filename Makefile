@@ -1,4 +1,4 @@
-.PHONY: test demos integration install agent-loops dual-lang ts-probe ts-agent-loops monid-evidence
+.PHONY: test demos integration install agent-loops dual-lang ts-probe ts-agent-loops monid-evidence verify
 
 VENV_PY ?= .venv/bin/python
 VENV_PIP ?= .venv/bin/pip
@@ -15,16 +15,19 @@ integration: install
 	$(VENV_PY) -m pytest tests/ -v -m integration
 
 demos:
-	python scripts/run_demos.py
+	$(VENV_PY) scripts/run/demos.py
 
 agent-loops:
-	./scripts/run_agent_loops.sh stripe.com
+	./scripts/run/agent_loops.sh stripe.com
 
 monid-evidence:
-	./scripts/capture_monid_evidence.sh
+	./scripts/capture/monid_evidence.sh
 
 dual-lang:
-	./scripts/run_dual_lang_probes.sh
+	./scripts/run/dual_lang_probes.sh
+
+verify:
+	./scripts/verify/verify.sh
 
 ts-probe:
 	cd typescript && npm run probe

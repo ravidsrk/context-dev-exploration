@@ -5,7 +5,7 @@ from __future__ import annotations
 from pathlib import Path
 from unittest.mock import patch
 
-from agents import mcp_client
+from context_dev.mcp import client as mcp_client
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
 

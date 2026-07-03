@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 
-from agents.mcp_op_map import canonicalize_op, normalize_execute_plan
+from context_dev.mcp.op_map import canonicalize_op, normalize_execute_plan
 
-# From evidence/agent-loop.log execute_plan (hosted MCP + LLM output)
+# From evidence/runs/agent-loop.log execute_plan (hosted MCP + LLM output)
 LOG_EXECUTE_OPS = [
     "client.brand.retrieveSimplified",
     "client.web.extractStyleguide",

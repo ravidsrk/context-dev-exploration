@@ -8,7 +8,7 @@ from unittest.mock import MagicMock, patch
 import pytest
 from context.dev import APIStatusError
 
-from src.context_client import (
+from context_dev.client import (
     RETRYABLE_STATUS,
     classify_naics,
     classify_sic,
@@ -72,7 +72,7 @@ class TestWithRetry:
                 )
             return "ok"
 
-        with patch("src.context_client.time.sleep"):
+        with patch("context_dev.client.time.sleep"):
             assert with_retry(flaky) == "ok"
         assert calls["n"] == 2
 
@@ -89,7 +89,7 @@ class TestWithRetry:
                 )
             return "ok"
 
-        with patch("src.context_client.time.sleep"):
+        with patch("context_dev.client.time.sleep"):
             assert with_retry(flaky, max_retries=3) == "ok"
         assert calls["n"] == 3
 
@@ -264,7 +264,7 @@ class TestLiveIntegration:
     """Run with: CONTEXT_DEV_API_KEY=... pytest -m integration -v"""
 
     def test_brand_retrieve_live(self):
-        from src.context_client import create_client
+        from context_dev.client import create_client
 
         client = create_client()
         result = retrieve_brand(client, "stripe.com")
@@ -272,7 +272,7 @@ class TestLiveIntegration:
         assert result["logo_url"]
 
     def test_scrape_markdown_live(self):
-        from src.context_client import create_client
+        from context_dev.client import create_client
 
         client = create_client()
         result = scrape_markdown(client, "https://stripe.com")

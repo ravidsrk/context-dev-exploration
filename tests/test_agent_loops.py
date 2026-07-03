@@ -5,8 +5,8 @@ from __future__ import annotations
 from pathlib import Path
 from unittest.mock import MagicMock, patch
 
-import agents.mcp_code_mode_loop as code_mode
-import agents.research_scout_loop as scout_loop
+import context_dev.loops.mcp_code_mode as code_mode
+import context_dev.loops.scout as scout_loop
 from tests.test_mcp_op_map import LOG_SEARCH_HITS
 
 FIXTURES = Path(__file__).resolve().parent / "fixtures"
@@ -103,8 +103,8 @@ def test_mcp_code_mode_end_to_end_via_recorded_sse_fixtures():
         return Resp()
 
     with (
-        patch("agents.mcp_client.urllib.request.urlopen", side_effect=fake_urlopen),
-        patch("agents.mcp_client._api_key", return_value="test-key"),
+        patch("context_dev.mcp.client.urllib.request.urlopen", side_effect=fake_urlopen),
+        patch("context_dev.mcp.client._api_key", return_value="test-key"),
         patch.dict("os.environ", {"OPEN_ROUTER_KEY": ""}, clear=False),
     ):
         result = code_mode.run_code_mode_loop(goal)
@@ -135,8 +135,8 @@ def test_mcp_code_mode_falls_back_to_local_on_execute_error():
             return_value={"execute_plan": plan, "policy_source": "llm", "raw_plan": plan},
         ),
         patch.object(code_mode, "hosted_execute", side_effect=RuntimeError("sandbox down")),
-        patch("src.context_client.create_client", return_value=MagicMock()),
-        patch("src.context_client.retrieve_brand", return_value=fake_brand),
+        patch("context_dev.client.create_client", return_value=MagicMock()),
+        patch("context_dev.client.retrieve_brand", return_value=fake_brand),
     ):
         result = code_mode.run_code_mode_loop(goal)
 

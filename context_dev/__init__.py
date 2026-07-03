@@ -1,0 +1,1 @@
+"""Context.dev exploration — Python client, agent loops, and MCP tooling."""

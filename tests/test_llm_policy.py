@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from unittest.mock import patch
 
-from agents.llm_policy import plan_mcp_execute, plan_scout_perception
+from context_dev.planning.policy import plan_mcp_execute, plan_scout_perception
 
 
 def test_scout_policy_fallback_without_api_key():
@@ -24,7 +24,7 @@ def test_mcp_execute_fallback():
 def test_scout_policy_llm_path():
     brand = {"title": "Stripe", "logo_url": "https://x.test"}
     with patch(
-        "agents.llm_policy._openrouter_chat",
+        "context_dev.planning.policy._openrouter_chat",
         return_value='["naics","pricing_scrape"]',
     ):
         steps, source = plan_scout_perception("stripe.com", brand)

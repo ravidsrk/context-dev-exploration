@@ -1,0 +1,1 @@
+"""Hosted MCP client, codegen, and op canonicalization."""

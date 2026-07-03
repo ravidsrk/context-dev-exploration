@@ -5,7 +5,7 @@ from __future__ import annotations
 import json
 from unittest.mock import patch
 
-from agents import mcp_client
+from context_dev.mcp import client as mcp_client
 
 
 def test_hosted_search_docs_parses_sse():
@@ -26,7 +26,7 @@ def test_hosted_search_docs_parses_sse():
 
 
 def test_search_docs_prefers_hosted_in_code_mode():
-    import agents.mcp_code_mode_loop as loop
+    import context_dev.loops.mcp_code_mode as loop
 
     fake_hits = [{"id": "client.brand.retrieve", "signature": "x", "returns": "y", "credits": "", "description": ""}]
     with patch.object(loop, "hosted_search_docs", return_value=(fake_hits, "hosted_mcp")):

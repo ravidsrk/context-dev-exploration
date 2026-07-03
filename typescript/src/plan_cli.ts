@@ -13,8 +13,7 @@ function pythonBin(): string {
 }
 
 function runPlanCli(args: string[]): Record<string, unknown> {
-  const script = path.join(ROOT, "agents", "plan_cli.py");
-  const out = execFileSync(pythonBin(), [script, ...args], {
+  const out = execFileSync(pythonBin(), ["-m", "context_dev.planning.cli", ...args], {
     encoding: "utf8",
     env: process.env,
   });

@@ -1,6 +1,6 @@
 /**
  * Canonical op mapping for MCP search_docs / LLM execute plan IDs.
- * Mirrors agents/mcp_op_map.py.
+ * Mirrors context_dev.mcp.op_map.py.
  */
 
 export type DocHit = {
