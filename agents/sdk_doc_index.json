@@ -1,0 +1,30 @@
+[
+  {
+    "id": "brand.retrieve",
+    "keywords": ["brand", "retrieve", "domain", "logo", "company profile"],
+    "signature": "client.brand.retrieve({ domain: string })",
+    "returns": "title, domain, logos[], colors[], links",
+    "credits": 10
+  },
+  {
+    "id": "web.extract_styleguide",
+    "keywords": ["styleguide", "design", "colors", "typography", "tokens"],
+    "signature": "client.web.extract_styleguide({ domain: string })",
+    "returns": "styleguide.colors, styleguide.typography",
+    "credits": 10
+  },
+  {
+    "id": "web.scrape_sitemap",
+    "keywords": ["sitemap", "urls", "crawl", "site scale"],
+    "signature": "client.web.web_scrape_sitemap({ domain: string })",
+    "returns": "urls[]",
+    "credits": 1
+  },
+  {
+    "id": "web.web_scrape_md",
+    "keywords": ["scrape", "markdown", "page", "content"],
+    "signature": "client.web.web_scrape_md({ url: string })",
+    "returns": "markdown, url",
+    "credits": 1
+  }
+]
