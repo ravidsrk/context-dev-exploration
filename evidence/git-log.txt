@@ -1,3 +1,5 @@
+a8e526d fix: canonicalize MCP hosted/LLM op ids before execute
+ade21f2 chore: refresh git-log after verifier fixes
 6173d6d fix: capture 7 Monid discover queries with JSON evidence files
 1a4cd90 feat: call hosted Context.dev MCP search_docs from mcp_client
 9c71a93 chore: add typescript package-lock.json for reproducible probes
