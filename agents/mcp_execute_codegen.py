@@ -20,6 +20,7 @@ def build_execute_typescript(domain: str, plan: list[dict[str, Any]] | None = No
 
     if "brand.retrieve" in ops:
         lines.append("  const brand = await client.brand.retrieve({ domain });")
+    # Hosted sandbox SDK: web.* only — client.brand.styleguide triggers TS2339 on Brand.
     if "web.extract_styleguide" in ops:
         lines.append("  const style = await client.web.extractStyleguide({ domain });")
     if "web.scrape_sitemap" in ops:

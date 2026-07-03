@@ -65,16 +65,11 @@ def test_mcp_code_mode_uses_hosted_execute_path():
 
 
 def test_mcp_code_mode_end_to_end_via_recorded_sse_fixtures():
-    """Drive search_docs + execute through real _mcp_request (urllib mocked to fixture SSE)."""
+    """Drive search_docs + execute + fallback planner through real _mcp_request (fixture SSE)."""
     goal = "Get stripe.com brand identity, design tokens, and site scale"
     search_sse = (FIXTURES / "mcp_search_docs_sse.txt").read_text().encode()
     execute_sse = (FIXTURES / "mcp_execute_sse.txt").read_text().encode()
     responses = [search_sse, execute_sse]
-    llm_raw_plan = [
-        {"op": "client.brand.retrieve", "args": {"domain": "stripe.com"}},
-        {"op": "client.web.extractStyleguide", "args": {"domain": "stripe.com"}},
-        {"op": "client.web.webScrapeSitemap", "args": {"domain": "stripe.com"}},
-    ]
 
     def fake_urlopen(req, timeout=60):
         body = responses.pop(0)
@@ -94,13 +89,16 @@ def test_mcp_code_mode_end_to_end_via_recorded_sse_fixtures():
     with (
         patch("agents.mcp_client.urllib.request.urlopen", side_effect=fake_urlopen),
         patch("agents.mcp_client._api_key", return_value="test-key"),
-        patch.object(code_mode, "plan_mcp_execute", return_value=(llm_raw_plan, "llm")),
+        patch.dict("os.environ", {"OPEN_ROUTER_KEY": ""}, clear=False),
     ):
         result = code_mode.run_code_mode_loop(goal)
 
     assert result["search_docs"]["source"] == "hosted_mcp"
     assert result["execute_source"] == "hosted_mcp_execute"
+    assert result["policy_source"] == "fallback"
     assert result["execute_typescript"] is not None
+    assert "client.web.extractStyleguide" in result["execute_typescript"]
+    assert "client.brand.styleguide" not in result["execute_typescript"]
     assert "async function run(client)" in result["execute_typescript"]
     assert result["result"]["identity"]["title"] == "Stripe"
     assert result["result"]["site_scale"]["url_count"] == 6165
@@ -117,8 +115,8 @@ def test_mcp_code_mode_falls_back_to_local_on_execute_error():
         patch.object(code_mode, "hosted_search_docs", return_value=(fake_hits, "hosted_mcp")),
         patch.object(code_mode, "plan_mcp_execute", return_value=(plan, "llm")),
         patch.object(code_mode, "hosted_execute", side_effect=RuntimeError("sandbox down")),
-        patch.object(code_mode, "create_client", return_value=MagicMock()),
-        patch.object(code_mode, "retrieve_brand", return_value=fake_brand),
+        patch("src.context_client.create_client", return_value=MagicMock()),
+        patch("src.context_client.retrieve_brand", return_value=fake_brand),
     ):
         result = code_mode.run_code_mode_loop(goal)
 

@@ -19,3 +19,7 @@ def test_build_execute_typescript_includes_web_namespace():
     assert "client.web.webScrapeSitemap" in code
     assert "filter(Boolean).length" in code
     assert "async function run(client)" in code
+    # Hosted sandbox rejects client.brand.styleguide / brand.styleguide property access.
+    assert "client.brand.styleguide" not in code
+    assert "brand.styleguide" not in code
+    assert "client.brand.webScrapeSitemap" not in code

@@ -12,6 +12,9 @@ if [[ -z "${CONTEXT_DEV_API_KEY:-}" ]]; then
   exit 1
 fi
 
+# shellcheck source=_ensure_env.sh
+source "$ROOT/scripts/_ensure_env.sh"
+
 run_once() {
   local n=$1
   {

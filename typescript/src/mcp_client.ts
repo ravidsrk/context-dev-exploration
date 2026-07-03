@@ -95,22 +95,3 @@ export function extractDomain(goal: string): string {
   const m = goal.toLowerCase().match(/[\w-]+\.[\w]{2,}/);
   return m?.[0] ?? "stripe.com";
 }
-
-export function buildExecuteTypescript(domain: string): string {
-  return `
-async function run(client) {
-  const domain = "${domain}";
-  const brand = await client.brand.retrieve({ domain });
-  const style = await client.web.extractStyleguide({ domain });
-  const sm = await client.web.webScrapeSitemap({ domain });
-  const sg = style.styleguide;
-  const c = sg?.colors as { accent?: string; background?: string; text?: string } | undefined;
-  const colorCount = [c?.accent, c?.background, c?.text].filter(Boolean).length;
-  return {
-    identity: { title: brand.brand?.title, logo_url: brand.brand?.logos?.[0]?.url },
-    design_tokens: { color_count: colorCount, has_typography: !!sg?.typography },
-    site_scale: { url_count: (sm.urls || []).length, sample_paths: (sm.urls || []).slice(0, 3) },
-  };
-}
-`.trim();
-}

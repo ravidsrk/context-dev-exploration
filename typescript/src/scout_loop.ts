@@ -1,10 +1,13 @@
 /**
- * TypeScript Research Scout loop: perceive → plan → act → observe.
- * Uses Context.dev npm SDK directly (mirrors Python scout_loop).
+ * TypeScript Research Scout loop: perceive → plan (LLM) → act → observe.
+ * Mirrors agents/research_scout_loop.py.
  */
 import ContextDev from "context.dev";
+import { planScoutPerception } from "./llm_policy.js";
 
 const DOMAIN = process.argv[2] ?? "stripe.com";
+const GOAL =
+  "Build a sales intelligence dossier with industry, site scale, and pricing signals.";
 
 function getClient(): ContextDev {
   const key = process.env.CONTEXT_DEV_API_KEY ?? process.env.CONTEXT_API_KEY;
@@ -38,41 +41,55 @@ async function main(): Promise<void> {
   credits += 10;
   const brand = brandRes.brand;
 
-  const naicsRes = await withRetry(() =>
-    client.brand.retrieveNaics({ input: DOMAIN })
-  );
-  perceiveLog.push("retrieveNaics");
-  credits += 10;
+  const brandForPlan = {
+    title: brand?.title ?? null,
+    logo_url: brand?.logos?.[0]?.url ?? null,
+  };
+  const { steps, policySource } = await planScoutPerception(DOMAIN, brandForPlan, GOAL);
 
-  const smRes = await withRetry(() =>
-    client.brand.webScrapeSitemap({ domain: DOMAIN })
-  );
-  perceiveLog.push("webScrapeSitemap");
-  credits += 1;
+  let naicsRes: Awaited<ReturnType<ContextDev["brand"]["retrieveNaics"]>> | null = null;
+  let smRes: Awaited<ReturnType<ContextDev["brand"]["webScrapeSitemap"]>> | null = null;
+  let pricingMarkdown = "";
 
-  const pricingRes = await withRetry(() =>
-    client.brand.webScrapeMd({ url: `https://${DOMAIN}/pricing` })
-  );
-  perceiveLog.push("webScrapeMd:pricing");
-  credits += 1;
+  for (const step of steps) {
+    if (step === "naics") {
+      naicsRes = await withRetry(() => client.brand.retrieveNaics({ input: DOMAIN }));
+      perceiveLog.push("retrieveNaics");
+      credits += 10;
+    } else if (step === "sitemap") {
+      smRes = await withRetry(() => client.brand.webScrapeSitemap({ domain: DOMAIN }));
+      perceiveLog.push("webScrapeSitemap");
+      credits += 1;
+    } else if (step === "pricing_scrape") {
+      const pricingRes = await withRetry(() =>
+        client.brand.webScrapeMd({ url: `https://${DOMAIN}/pricing` })
+      );
+      perceiveLog.push("webScrapeMd:pricing");
+      credits += 1;
+      pricingMarkdown = pricingRes.markdown ?? "";
+    }
+  }
 
-  const topCode = naicsRes.codes?.[0];
+  const topCode = naicsRes?.codes?.[0];
   const brief = {
     domain: DOMAIN,
+    goal: GOAL,
     company: brand?.title ?? null,
     logo_url: brand?.logos?.[0]?.url ?? null,
     industry: topCode
       ? { code: topCode.code, name: topCode.name, confidence: topCode.confidence }
       : null,
-    sitemap_urls: (smRes.urls ?? []).length,
-    has_pricing_content: (pricingRes.markdown ?? "").length > 100,
+    sitemap_urls: (smRes?.urls ?? []).length,
+    has_pricing_content: pricingMarkdown.length > 100,
+    pricing_preview: pricingMarkdown.slice(0, 200) || null,
     credits_estimated: credits,
-    policy_source: "typescript_heuristic",
-    plan_steps: ["naics", "sitemap", "pricing_scrape"],
+    policy_source: policySource,
+    plan_steps: steps,
     perceive_log: perceiveLog,
     observation: {
       confidence: brand?.title ? 0.95 : 0.5,
-      recommend_revisit_days: (smRes.urls ?? []).length > 1000 ? 7 : 30,
+      recommend_revisit_days: (smRes?.urls ?? []).length > 1000 ? 7 : 30,
+      policy_source: policySource,
     },
   };
 

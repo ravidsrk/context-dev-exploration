@@ -10,7 +10,7 @@ if [[ -z "${CONTEXT_DEV_API_KEY:-}" ]]; then
 fi
 
 echo "=== Unit tests ==="
-pytest tests/ -v -m "not integration" | tee "$SCRATCH/pytest-verify.log"
+make -C "$ROOT" test 2>&1 | tee "$SCRATCH/pytest-verify.log"
 
 echo "=== Dual-language probes (2 runs) ==="
 bash "$ROOT/scripts/run_dual_lang_probes.sh"

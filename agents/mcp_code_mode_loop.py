@@ -17,7 +17,7 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any, Callable
+from typing import Any
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
@@ -30,12 +30,6 @@ from agents.mcp_client import (  # noqa: E402
 )
 from agents.mcp_execute_codegen import build_execute_typescript  # noqa: E402
 from agents.mcp_op_map import OP_CREDITS, normalize_execute_plan  # noqa: E402
-from src.context_client import (  # noqa: E402
-    create_client,
-    extract_styleguide,
-    retrieve_brand,
-    scrape_sitemap,
-)
 
 DOC_INDEX = Path(__file__).resolve().parent / "sdk_doc_index.json"
 
@@ -70,33 +64,15 @@ def search_docs(query: str, limit: int = 5) -> tuple[list[dict[str, str]], str]:
         return search_docs_local_fallback(query, limit), f"local_fallback:{type(exc).__name__}"
 
 
-def _apply_brand(client, domain: str, out: dict[str, Any]) -> None:
-    brand = retrieve_brand(client, domain)
-    out["identity"] = {"title": brand.get("title"), "logo_url": brand.get("logo_url")}
-
-
-def _apply_styleguide(client, domain: str, out: dict[str, Any]) -> None:
-    style = extract_styleguide(client, domain)
-    out["design_tokens"] = {
-        "color_count": style.get("color_count"),
-        "has_typography": style.get("has_typography"),
-    }
-
-
-def _apply_sitemap(client, domain: str, out: dict[str, Any]) -> None:
-    sm = scrape_sitemap(client, domain)
-    out["site_scale"] = {"url_count": sm.get("url_count"), "sample_paths": sm.get("sample_urls")}
-
-
-_CANONICAL_HANDLERS: dict[str, Callable[[Any, str, dict[str, Any]], None]] = {
-    "brand.retrieve": _apply_brand,
-    "web.extract_styleguide": _apply_styleguide,
-    "web.scrape_sitemap": _apply_sitemap,
-}
-
-
 def execute_plan_local(plan: list[dict[str, Any]]) -> tuple[dict[str, Any], list[str], int]:
     """Fallback: Python SDK when hosted execute fails."""
+    from src.context_client import (  # lazy: hosted path needs no SDK install
+        create_client,
+        extract_styleguide,
+        retrieve_brand,
+        scrape_sitemap,
+    )
+
     client = create_client()
     ops_run: list[str] = []
     credits = 0
@@ -104,15 +80,27 @@ def execute_plan_local(plan: list[dict[str, Any]]) -> tuple[dict[str, Any], list
 
     for step in plan:
         op = step.get("op", "")
-        handler = _CANONICAL_HANDLERS.get(op)
-        if not handler:
-            continue
         domain = (step.get("args") or {}).get("domain", "")
         if not domain:
             continue
-        handler(client, domain, out)
-        credits += OP_CREDITS.get(op, 0)
-        ops_run.append(f"local:{op}({domain})")
+        if op == "brand.retrieve":
+            brand = retrieve_brand(client, domain)
+            out["identity"] = {"title": brand.get("title"), "logo_url": brand.get("logo_url")}
+            credits += OP_CREDITS.get(op, 0)
+            ops_run.append(f"local:{op}({domain})")
+        elif op == "web.extract_styleguide":
+            style = extract_styleguide(client, domain)
+            out["design_tokens"] = {
+                "color_count": style.get("color_count"),
+                "has_typography": style.get("has_typography"),
+            }
+            credits += OP_CREDITS.get(op, 0)
+            ops_run.append(f"local:{op}({domain})")
+        elif op == "web.scrape_sitemap":
+            sm = scrape_sitemap(client, domain)
+            out["site_scale"] = {"url_count": sm.get("url_count"), "sample_paths": sm.get("sample_urls")}
+            credits += OP_CREDITS.get(op, 0)
+            ops_run.append(f"local:{op}({domain})")
 
     out["credits_estimated"] = credits
     return out, ops_run, credits
