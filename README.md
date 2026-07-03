@@ -17,8 +17,9 @@ source .venv/bin/activate
 pip install -r requirements.txt
 
 export CONTEXT_DEV_API_KEY="ctxt_secret_..."
-python scripts/run_demos.py
-pytest tests/ -v
+make test          # unit tests (mocked)
+make demos         # live API probes
+./scripts/verify.sh  # full verification (2 demo runs)
 ```
 
 ## API categories
