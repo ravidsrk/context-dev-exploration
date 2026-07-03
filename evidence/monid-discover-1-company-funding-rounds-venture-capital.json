@@ -1,0 +1,30 @@
+{
+  "results": [
+    {
+      "provider": "blockrun.ai",
+      "providerName": "BlockRun",
+      "endpoint": "/api/v1/surf/fund/ranking",
+      "description": "Top VC funds ranking.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.00825,
+        "currency": "USD"
+      },
+      "score": 0.7486180418895392,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.6321044,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "company funding rounds venture capital",
+  "count": 1,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}

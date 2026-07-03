@@ -1,49 +1,496 @@
-========== MONID DISCOVER: job postings ==========
-- Searching for "job postings hiring signals company"...
-✔ Found 3 result(s)
-Provider      Endpoint                            Price          Description                                        Verified
-tikhub        /api/v1/linkedin/web_v2/search_jobs $0.0015/call   Search jobs                                           ✓    
-akta          /v1/company/employee-reviews        $0.0015/result Fetch a company's employee review signals and r...    ✓    
-api.strale.io /x402/job-posting-analyze           $0.011/call    Analyze a job posting. Extracts title, skills, ...         
-
-Update available: 0.1.0 → 0.1.1.
-  Run `npm update -g @monid-ai/cli` to update monid-cli.
-  Download the latest version of skill at https://monid.ai/SKILL.md.
+========== MONID DISCOVER #1: company funding rounds venture capital ==========
+{
+  "results": [
+    {
+      "provider": "blockrun.ai",
+      "providerName": "BlockRun",
+      "endpoint": "/api/v1/surf/fund/ranking",
+      "description": "Top VC funds ranking.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.00825,
+        "currency": "USD"
+      },
+      "score": 0.7486180418895392,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.6321044,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "company funding rounds venture capital",
+  "count": 1,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}
 discover_exit: 0
+json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-discover-1-company-funding-rounds-venture-capital.json
 
-========== MONID DISCOVER: tech stack ==========
-- Searching for "tech stack detection website technologies"...
-✔ Found 3 result(s)
-Provider      Endpoint                 Price         Description                                        Verified
-api.strale.io /x402/tech-stack-detect  $0.03564/call Detect technologies used by a website. Identifi...         
-api.strale.io /x402/company-tech-stack $0.011/call   Deep tech stack analysis of any domain. Analyze...         
-blockrun.ai   /api/v1/surf/search/web  $0.00825/call Web search across crypto sources.                     ✓    
-
-Update available: 0.1.0 → 0.1.1.
-  Run `npm update -g @monid-ai/cli` to update monid-cli.
-  Download the latest version of skill at https://monid.ai/SKILL.md.
+========== MONID DISCOVER #2: job postings hiring signals company ==========
+{
+  "results": [
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web_v2/search_jobs",
+      "description": "Search jobs",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.7365464167236387,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.61729795,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "akta",
+      "providerName": "Akta",
+      "endpoint": "/v1/company/employee-reviews",
+      "description": "Fetch a company's employee review signals and reviews.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.6965012743850051,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.60603895,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      },
+      "hints": {
+        "find the uuid or website for a company by name": "monid run -p akta -e /v1/company/search -i '<BODY>' --query '<QUERY_PARAMS>' --path '<PATH_PARAMS>'  # company accepts a website or uuid, not a bare name"
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/job-posting-analyze",
+      "description": "Analyze a job posting. Extracts title, skills, salary range, remote policy, benefits, red flags, culture signals. Accepts URL or text. SQS: 97/100.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.011,
+        "currency": "USD"
+      },
+      "score": 0.689492863537592,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.64514125,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "job postings hiring signals company",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}
 discover_exit: 0
+json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-discover-2-job-postings-hiring-signals-company.json
 
-========== MONID DISCOVER: news ==========
-- Searching for "news articles company press releases"...
-✔ Found 3 result(s)
-Provider Endpoint                                  Price          Description                                        Verified
-tikhub   /api/v1/linkedin/web_v2/get_company_posts $0.0015/call   Get company's recent posts                            ✓    
-tikhub   /api/v1/linkedin/web/get_company_posts    $0.006/call    Get company posts                                     ✓    
-akta     /v1/news                                  $0.0005/result Fetch enriched news articles for a company or i...    ✓    
-
-Update available: 0.1.0 → 0.1.1.
-  Run `npm update -g @monid-ai/cli` to update monid-cli.
-  Download the latest version of skill at https://monid.ai/SKILL.md.
+========== MONID DISCOVER #3: website change monitoring diff ==========
+{
+  "results": [
+    {
+      "provider": "exa",
+      "providerName": "Exa",
+      "endpoint": "/contents",
+      "description": "Fetch clean, LLM-ready content for a list of URLs.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.002,
+        "currency": "USD"
+      },
+      "score": 0.7224806702563411,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.60032035,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/competitor-compare",
+      "description": "Compare two company websites. Analyzes positioning, pricing model, features, target audience, trust signals, content strategy. Returns structured comparison + strategic analysis.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 1.188,
+        "currency": "USD"
+      },
+      "score": 0.6912530549422445,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.64702415,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/tech-stack-detect",
+      "description": "Detect technologies used by a website. Identifies CMS, frameworks, analytics, CDN, payment providers, marketing tools from HTTP headers and HTML patterns. No Browserless needed.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.03564,
+        "currency": "USD"
+      },
+      "score": 0.6903495151574472,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.64605745,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "website change monitoring diff",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}
 discover_exit: 0
+json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-discover-3-website-change-monitoring-diff.json
+
+========== MONID DISCOVER #4: tech stack detection website technologies ==========
+{
+  "results": [
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/tech-stack-detect",
+      "description": "Detect technologies used by a website. Identifies CMS, frameworks, analytics, CDN, payment providers, marketing tools from HTTP headers and HTML patterns. No Browserless needed.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.03564,
+        "currency": "USD"
+      },
+      "score": 0.9048873132125387,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.886225,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/company-tech-stack",
+      "description": "Deep tech stack analysis of any domain. Analyzes HTTP headers, HTML source, JS libraries, DNS records, meta tags. Returns frontend, analytics, CDN, hosting, CMS, and more. SQS: 84/100.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.011,
+        "currency": "USD"
+      },
+      "score": 0.8458675372460865,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.81795455,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "blockrun.ai",
+      "providerName": "BlockRun",
+      "endpoint": "/api/v1/surf/search/web",
+      "description": "Web search across crypto sources.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.00825,
+        "currency": "USD"
+      },
+      "score": 0.742534440784129,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.624615,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "tech stack detection website technologies",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}
+discover_exit: 0
+json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-discover-4-tech-stack-detection-website-technologie.json
+
+========== MONID DISCOVER #5: news articles company press releases ==========
+{
+  "results": [
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web_v2/get_company_posts",
+      "description": "Get company's recent posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.7482917281326704,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.63170125,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web/get_company_posts",
+      "description": "Get company posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.006,
+        "currency": "USD"
+      },
+      "score": 0.7398982379558738,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.62138705,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "akta",
+      "providerName": "Akta",
+      "endpoint": "/v1/news",
+      "description": "Fetch enriched news articles for a company or industry.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.0005,
+        "flatFee": 0.005,
+        "currency": "USD"
+      },
+      "score": 0.7207661961240618,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.63373305,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      },
+      "hints": {
+        "find the uuid or website for a company by name": "monid run -p akta -e /v1/company/search -i '<BODY>' --query '<QUERY_PARAMS>' --path '<PATH_PARAMS>'  # company accepts a website or uuid, not a bare name"
+      }
+    }
+  ],
+  "query": "news articles company press releases",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}
+discover_exit: 0
+json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-discover-5-news-articles-company-press-releases.json
+
+========== MONID DISCOVER #6: app store reviews product ratings ==========
+{
+  "results": [
+    {
+      "provider": "apify",
+      "providerName": "Apify",
+      "endpoint": "/apify/facebook-reviews-scraper",
+      "description": "Scrapes reviews from Facebook business pages. Returns review text, star ratings, reviewer metadata, and review-level details for reputation monitoring and customer feedback analysis across public Facebook pages.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.003,
+        "flatFee": 0.001,
+        "currency": "USD"
+      },
+      "score": 0.7063977307180986,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.61726425,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/douyin/web/fetch_product_review_score",
+      "description": "Get product review score",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.701467360953528,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.6579777,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "apify",
+      "providerName": "Apify",
+      "endpoint": "/web_wanderer/amazon-reviews-extractor",
+      "description": "Scrapes Amazon product reviews across 20+ regional domains with advanced filtering. Returns review text, star ratings, verified-purchase flags, reviewer metadata, timestamps, review media (images/videos), variant association, helpful/vote counts, language tags, and aspect-level sentiment summaries. Supports filtering by rating, keywords, media-only, verified purchases, and an expanded collection mode across star ratings.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.00135,
+        "currency": "USD"
+      },
+      "score": 0.7013385540047291,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.61151385,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      }
+    }
+  ],
+  "query": "app store reviews product ratings",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}
+discover_exit: 0
+json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-discover-6-app-store-reviews-product-ratings.json
+
+========== MONID DISCOVER #7: company social media posts ==========
+{
+  "results": [
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web_v2/get_company_posts",
+      "description": "Get company's recent posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.8644953776008879,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.786363,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web/get_company_posts",
+      "description": "Get company posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.006,
+        "currency": "USD"
+      },
+      "score": 0.8567696156648801,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.7753402,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web/get_group_posts",
+      "description": "Get group posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.006,
+        "currency": "USD"
+      },
+      "score": 0.7858280708224304,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.67916975,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "company social media posts",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}
+discover_exit: 0
+json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-discover-7-company-social-media-posts.json
 
 ========== MONID LIVE RUN: LinkedIn jobs (Stripe) ==========
 - Starting run: tikhub//api/v1/linkedin/web_v2/search_jobs...
-✔ Run completed: 01KWM8337C5X00MRHD65P8YA3M
+✔ Run completed: 01KWM8DTXJQE71NHDC8Q4AVJQX
 
 Run Details
 ────────────────────────────────────────
-  Run ID:   01KWM8337C5X00MRHD65P8YA3M
+  Run ID:   01KWM8DTXJQE71NHDC8Q4AVJQX
   Provider: TikHub
   Endpoint: /api/v1/linkedin/web_v2/search_jobs
   Status:   COMPLETED
@@ -71,37 +518,37 @@ Output
   "count": 3,
   "jobs": [
     {
-      "job_id": "4430118378",
-      "title": "Company Strategy & Operations",
+      "job_id": "4425970209",
+      "title": "Solutions Architect, AI",
       "company": "Stripe",
       "company_url": "https://www.linkedin.com/company/stripe",
-      "location": "United States",
-      "posted_at": "2026-06-17",
-      "url": "https://www.linkedin.com/jobs/view/company-strategy-operations-at-stripe-4430118378"
-    },
-    {
-      "job_id": "4436466538",
-      "title": "GTM Recruiter, AMER (Fixed Term)",
-      "company": "Stripe",
-      "company_url": "https://www.linkedin.com/company/stripe",
-      "location": "United States",
-      "posted_at": "2026-07-03",
-      "url": "https://www.linkedin.com/jobs/view/gtm-recruiter-amer-fixed-term-at-stripe-4436466538"
-    },
-    {
-      "job_id": "4435315281",
-      "title": "Data Analyst - Economic Insights & Communications",
-      "company": "Stripe",
-      "company_url": "https://www.linkedin.com/company/stripe",
-      "location": "United States",
+      "location": "San Francisco, CA",
       "posted_at": "2026-06-30",
-      "url": "https://www.linkedin.com/jobs/view/data-analyst-economic-insights-communications-at-stripe-4435315281"
+      "url": "https://www.linkedin.com/jobs/view/solutions-architect-ai-at-stripe-4425970209"
+    },
+    {
+      "job_id": "4428379668",
+      "title": "Payments Performance Strategist, Card Authorization",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "San Francisco, CA",
+      "posted_at": "2026-06-13",
+      "url": "https://www.linkedin.com/jobs/view/payments-performance-strategist-card-authorization-at-stripe-4428379668"
+    },
+    {
+      "job_id": "4430746266",
+      "title": "Solutions Architect, AI",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "New York, United States",
+      "posted_at": "2026-06-18",
+      "url": "https://www.linkedin.com/jobs/view/solutions-architect-ai-at-stripe-4430746266"
     }
   ]
 }
 
 Hints
-  retrieve the response later: monid runs get -r 01KWM8337C5X00MRHD65P8YA3M
+  retrieve the response later: monid runs get -r 01KWM8DTXJQE71NHDC8Q4AVJQX
 
 
 Update available: 0.1.0 → 0.1.1.
@@ -111,11 +558,11 @@ run_exit: 0
 
 ========== MONID LIVE RUN: company-tech-stack ==========
 - Starting run: api.strale.io//x402/company-tech-stack...
-✔ Run completed: 01KWM836495KFY05HG9S3E8960
+✔ Run completed: 01KWM8DXS6RB08CJHRCEFMXN6Y
 
 Run Details
 ────────────────────────────────────────
-  Run ID:   01KWM836495KFY05HG9S3E8960
+  Run ID:   01KWM8DXS6RB08CJHRCEFMXN6Y
   Provider: api.strale.io
   Endpoint: /x402/company-tech-stack
   Status:   COMPLETED
@@ -129,16 +576,13 @@ Output
   "frontend_framework": "React",
   "meta_framework": "Next.js",
   "css_framework": null,
-  "analytics": [
-    "Google Analytics",
-    "Stripe Analytics"
-  ],
+  "analytics": [],
   "cdn": "Stripe CDN (b.stripecdn.com)",
   "hosting_provider": "Nginx",
   "cms": null,
   "payment_processor": "Stripe",
   "email_provider": "Google Workspace (Gmail)",
-  "chat_widget": "Stripe Chat",
+  "chat_widget": null,
   "detected_technologies": [
     {
       "name": "Next.js",
@@ -166,25 +610,15 @@ Output
       "confidence": "high"
     },
     {
-      "name": "JavaScript",
-      "category": "language",
-      "confidence": "high"
-    },
-    {
-      "name": "Webpack",
-      "category": "bundler",
-      "confidence": "high"
-    },
-    {
-      "name": "Server-Side Rendering (SSR)",
-      "category": "rendering_strategy",
-      "confidence": "high"
+      "name": "Atlassian",
+      "category": "third_party_service",
+      "confidence": "medium"
     }
   ],
   "dns_records": {
     "a": [
-      "198.202.176.231",
-      "198.137.150.231"
+      "198.137.150.231",
+      "198.202.176.231"
     ],
     "mx": [
       {
@@ -209,37 +643,37 @@ Output
       }
     ],
     "txt": [
-      "docusign=4c9f5602-1c19-4e4c-bde7-77dc4b9ea8a0",
-      "z4mthhzk10l6qc0rg4211mnnppkh2y5b",
-      "neat-pulse-domain-verification-8GMn8nv=36eba03d-345e-421a-a823-d6d1f28938a4",
-      "postman-domain-verification=c3b168067b16085c452b04b643ae1000079b095e383b53d1074e409b0e600b6265e1c7963beca1ca87cc63c381dcea332544c92c919651e4cda69f9a6303079c",
-      "MS=ms80697640",
-      "google-site-verification=qjP3OAiraClha_40cX9Z9FrG5q3O_0InXSamXOswY-s",
       "00D50000000JV6w=1TBTQ0000000CIv;00DDn000000HWol=1TBVY00000002Hx;00D4x000003vxGL=1TBPQ00000008Tp;00Dfn00000BUlWD=1TBan0000000LPR",
-      "whimsical=253112f9add9790f3a27b9d9893626451fc4cda1",
-      "facebook-domain-verification=m7id9rt8ehlgcg9tt2yggbsi6gro7i",
-      "liveramp-site-verification=7gyFkTwGYsvgd7IUQwyAOfImETwR06wgKjKiXq90KEY",
-      "_mphpl78cv3thhugki4dkknlukgj1du6",
-      "elevenlabs=NpcIkVJW_8Vyd2gLKzPviuaU1g5rz83KiWQQ3sWKGtI",
       "atlassian-domain-verification=upLp21qQgja1aHG2gnAb1AmXRqb/zG0UK1a0n3zTSXZg5DgOSttR3i5uzA3T9Cdk",
       "google-site-verification=hPfjsDwiisKJ4RP1ExOst9gAOD_0P8Q7-kxdcKUvEcc",
+      "docusign=4a93db58-af07-4632-a881-b569d41a6c57",
+      "asv=8de0c1a866b958297e22a36216e594a6",
+      "z4mthhzk10l6qc0rg4211mnnppkh2y5b",
+      "whimsical=253112f9add9790f3a27b9d9893626451fc4cda1",
+      "stripe-verification=82ce82470fb8324e19fa65abdb6fd370da5a8f90bba09712f259760f625d0790",
+      "neat-pulse-domain-verification-8GMn8nv=36eba03d-345e-421a-a823-d6d1f28938a4",
+      "facebook-domain-verification=m7id9rt8ehlgcg9tt2yggbsi6gro7i",
+      "fastly-domain-delegation-3c9tdnjzdwy7wfffvyyy-786084-2024-07-08",
       "v=MCPv1; k=ed25519; p=WMeka0C1fIH9HQLMtsSM9DD9cM6Bz6Wz34mHnK86UcM=",
       "google-site-verification=PrlpJHdk11CIkPsiXoHEAJevWHAk39JRFAqVSe9l7n0",
-      "edcbf4c7-b604-457b-870e-1b05f655e769",
-      "h1-domain-verification=KhpNX9YNAc7bX95agGvFsPPKbYTVe1KC6xj7P1zKZrRzxcuS",
-      "docker-verification=ccde1a0d-8d2c-44b5-9d20-6c4e19113fc9",
-      "anthropic-domain-verification-zk7x9c=QfN52ECybLPUWh51R9pKF0QO3",
-      "docusign=4a93db58-af07-4632-a881-b569d41a6c57",
-      "apple-domain-verification=8kIS0gmJTvILWQuI",
-      "cursor-domain-verification-vncvvm=D0NzeIDbQa8PPgIf1ukp9UPiu",
-      "asv=8de0c1a866b958297e22a36216e594a6",
-      "v=spf1 ip4:198.2.180.60/32 ip4:13.111.2.227/32 include:spf1.stripe.com include:greenhouse-outbound-mail.stripe.com include:_spf.qualtrics.com ~all",
-      "google-site-verification=pmz8ueKvWMPxNlwUDcVroF91-tq6I9VM6wSO_0i7-wc",
-      "stripe-verification=82ce82470fb8324e19fa65abdb6fd370da5a8f90bba09712f259760f625d0790",
-      "canva-site-verification=xLypn0D9XANRy-lbwcMfHA",
+      "_mphpl78cv3thhugki4dkknlukgj1du6",
       "google-site-verification=ZgGi2-xDdfnaWxdfjn5AqtUS11jKWqSXAV_EHODFzdE",
-      "fastly-domain-delegation-3c9tdnjzdwy7wfffvyyy-786084-2024-07-08",
-      "google-site-verification=NLkFgZLHeVMVYlR3t1UZC9_1LzmqCAefJyNDs6ZQqBA"
+      "liveramp-site-verification=7gyFkTwGYsvgd7IUQwyAOfImETwR06wgKjKiXq90KEY",
+      "docusign=4c9f5602-1c19-4e4c-bde7-77dc4b9ea8a0",
+      "docker-verification=ccde1a0d-8d2c-44b5-9d20-6c4e19113fc9",
+      "v=spf1 ip4:198.2.180.60/32 ip4:13.111.2.227/32 include:spf1.stripe.com include:greenhouse-outbound-mail.stripe.com include:_spf.qualtrics.com ~all",
+      "google-site-verification=qjP3OAiraClha_40cX9Z9FrG5q3O_0InXSamXOswY-s",
+      "h1-domain-verification=KhpNX9YNAc7bX95agGvFsPPKbYTVe1KC6xj7P1zKZrRzxcuS",
+      "google-site-verification=NLkFgZLHeVMVYlR3t1UZC9_1LzmqCAefJyNDs6ZQqBA",
+      "anthropic-domain-verification-zk7x9c=QfN52ECybLPUWh51R9pKF0QO3",
+      "apple-domain-verification=8kIS0gmJTvILWQuI",
+      "postman-domain-verification=c3b168067b16085c452b04b643ae1000079b095e383b53d1074e409b0e600b6265e1c7963beca1ca87cc63c381dcea332544c92c919651e4cda69f9a6303079c",
+      "elevenlabs=NpcIkVJW_8Vyd2gLKzPviuaU1g5rz83KiWQQ3sWKGtI",
+      "google-site-verification=pmz8ueKvWMPxNlwUDcVroF91-tq6I9VM6wSO_0i7-wc",
+      "canva-site-verification=xLypn0D9XANRy-lbwcMfHA",
+      "MS=ms80697640",
+      "cursor-domain-verification-vncvvm=D0NzeIDbQa8PPgIf1ukp9UPiu",
+      "edcbf4c7-b604-457b-870e-1b05f655e769"
     ],
     "cname": []
   },
@@ -248,21 +682,21 @@ Output
   ],
   "_meta": {
     "capability": "company-tech-stack",
-    "latency_ms": 2882,
+    "latency_ms": 2658,
     "provenance": {
       "source": "html-analysis",
-      "fetched_at": "2026-07-03T15:03:30.795Z"
+      "fetched_at": "2026-07-03T15:09:22.446Z"
     },
     "payment": {
       "method": "x402",
-      "settlement_id": "0xd872ad8d612103b32c594f4ff052286513b39b13fb7fba03dcdd5a2e9054dda8",
+      "settlement_id": "0x0c53d4091b18f8504746392ff4669c62ff5da41e78ec576ffb671b1adcb729c9",
       "price_usd": 0.324
     }
   }
 }
 
 Hints
-  retrieve the response later: monid runs get -r 01KWM836495KFY05HG9S3E8960
+  retrieve the response later: monid runs get -r 01KWM8DXS6RB08CJHRCEFMXN6Y
 
 
 Update available: 0.1.0 → 0.1.1.
@@ -272,11 +706,11 @@ run_exit: 0
 
 ========== MONID LIVE RUN: tech-stack-detect ==========
 - Starting run: api.strale.io//x402/tech-stack-detect...
-✔ Run completed: 01KWM83CBQ089SDBJKE3XR84KR
+✔ Run completed: 01KWM8E3KBH0GG4V9AN8RD2T8E
 
 Run Details
 ────────────────────────────────────────
-  Run ID:   01KWM83CBQ089SDBJKE3XR84KR
+  Run ID:   01KWM8E3KBH0GG4V9AN8RD2T8E
   Provider: api.strale.io
   Endpoint: /x402/tech-stack-detect
   Status:   COMPLETED
@@ -328,21 +762,21 @@ Output
   },
   "_meta": {
     "capability": "tech-stack-detect",
-    "latency_ms": 36,
+    "latency_ms": 33,
     "provenance": {
       "source": "tech-stack-detect:algorithmic",
-      "fetched_at": "2026-07-03T15:03:34.168Z"
+      "fetched_at": "2026-07-03T15:09:25.762Z"
     },
     "payment": {
       "method": "x402",
-      "settlement_id": "0x9525bb9af904ac9fac05b5df897e8672212e735bcf457aed4b7003fcbb76c9fd",
+      "settlement_id": "0x955b39a1227dd56781393e97795cb92f94fda21133d8fc7cb65c1d6743c2cc3a",
       "price_usd": 0.0324
     }
   }
 }
 
 Hints
-  retrieve the response later: monid runs get -r 01KWM83CBQ089SDBJKE3XR84KR
+  retrieve the response later: monid runs get -r 01KWM8E3KBH0GG4V9AN8RD2T8E
 
 
 Update available: 0.1.0 → 0.1.1.

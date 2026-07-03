@@ -1,0 +1,72 @@
+{
+  "results": [
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web_v2/get_company_posts",
+      "description": "Get company's recent posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.8644953776008879,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.786363,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web/get_company_posts",
+      "description": "Get company posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.006,
+        "currency": "USD"
+      },
+      "score": 0.8567696156648801,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.7753402,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web/get_group_posts",
+      "description": "Get group posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.006,
+        "currency": "USD"
+      },
+      "score": 0.7858280708224304,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.67916975,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "company social media posts",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}

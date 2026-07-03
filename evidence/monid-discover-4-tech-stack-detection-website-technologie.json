@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/tech-stack-detect",
+      "description": "Detect technologies used by a website. Identifies CMS, frameworks, analytics, CDN, payment providers, marketing tools from HTTP headers and HTML patterns. No Browserless needed.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.03564,
+        "currency": "USD"
+      },
+      "score": 0.9048873132125387,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.886225,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/company-tech-stack",
+      "description": "Deep tech stack analysis of any domain. Analyzes HTTP headers, HTML source, JS libraries, DNS records, meta tags. Returns frontend, analytics, CDN, hosting, CMS, and more. SQS: 84/100.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.011,
+        "currency": "USD"
+      },
+      "score": 0.8458675372460865,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.81795455,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "blockrun.ai",
+      "providerName": "BlockRun",
+      "endpoint": "/api/v1/surf/search/web",
+      "description": "Web search across crypto sources.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.00825,
+        "currency": "USD"
+      },
+      "score": 0.742534440784129,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.624615,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "tech stack detection website technologies",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}

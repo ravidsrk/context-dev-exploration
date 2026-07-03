@@ -1,0 +1,73 @@
+{
+  "results": [
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web_v2/search_jobs",
+      "description": "Search jobs",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.7365464167236387,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.61729795,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "akta",
+      "providerName": "Akta",
+      "endpoint": "/v1/company/employee-reviews",
+      "description": "Fetch a company's employee review signals and reviews.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.6965012743850051,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.60603895,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      },
+      "hints": {
+        "find the uuid or website for a company by name": "monid run -p akta -e /v1/company/search -i '<BODY>' --query '<QUERY_PARAMS>' --path '<PATH_PARAMS>'  # company accepts a website or uuid, not a bare name"
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/job-posting-analyze",
+      "description": "Analyze a job posting. Extracts title, skills, salary range, remote policy, benefits, red flags, culture signals. Accepts URL or text. SQS: 97/100.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.011,
+        "currency": "USD"
+      },
+      "score": 0.689492863537592,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.64514125,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "job postings hiring signals company",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}

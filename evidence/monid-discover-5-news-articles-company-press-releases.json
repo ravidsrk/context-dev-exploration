@@ -1,0 +1,76 @@
+{
+  "results": [
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web_v2/get_company_posts",
+      "description": "Get company's recent posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.7482917281326704,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.63170125,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/linkedin/web/get_company_posts",
+      "description": "Get company posts",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.006,
+        "currency": "USD"
+      },
+      "score": 0.7398982379558738,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.62138705,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "akta",
+      "providerName": "Akta",
+      "endpoint": "/v1/news",
+      "description": "Fetch enriched news articles for a company or industry.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.0005,
+        "flatFee": 0.005,
+        "currency": "USD"
+      },
+      "score": 0.7207661961240618,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.63373305,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      },
+      "hints": {
+        "find the uuid or website for a company by name": "monid run -p akta -e /v1/company/search -i '<BODY>' --query '<QUERY_PARAMS>' --path '<PATH_PARAMS>'  # company accepts a website or uuid, not a bare name"
+      }
+    }
+  ],
+  "query": "news articles company press releases",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}

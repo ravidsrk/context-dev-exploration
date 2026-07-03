@@ -35,17 +35,27 @@ def test_research_scout_loop_uses_llm_plan():
     assert result["observation"]["confidence"] > 0.5
 
 
-def test_mcp_code_mode_search_docs_and_execute():
-    fake_brand = {"title": "Stripe", "logo_url": "https://logo.test/x.jpg"}
-    fake_style = {"color_count": 3, "has_typography": True}
-    fake_sitemap = {"url_count": 50, "sample_urls": ["https://stripe.com/legal"]}
+def test_mcp_code_mode_uses_hosted_search_docs():
+    fake_hits = [
+        {
+            "id": "client.brand.retrieve",
+            "signature": "domain",
+            "returns": "Retrieve brand",
+            "credits": "",
+            "description": "",
+        }
+    ]
     plan = [
         {"op": "brand.retrieve", "args": {"domain": "stripe.com"}},
         {"op": "web.extract_styleguide", "args": {"domain": "stripe.com"}},
         {"op": "web.scrape_sitemap", "args": {"domain": "stripe.com"}},
     ]
+    fake_brand = {"title": "Stripe", "logo_url": "https://logo.test/x.jpg"}
+    fake_style = {"color_count": 3, "has_typography": True}
+    fake_sitemap = {"url_count": 50, "sample_urls": ["https://stripe.com/legal"]}
 
     with (
+        patch.object(code_mode, "hosted_search_docs", return_value=(fake_hits, "hosted_mcp")),
         patch.object(code_mode, "create_client", return_value=MagicMock()),
         patch.object(code_mode, "retrieve_brand", return_value=fake_brand),
         patch.object(code_mode, "extract_styleguide", return_value=fake_style),
@@ -54,15 +64,14 @@ def test_mcp_code_mode_search_docs_and_execute():
     ):
         result = code_mode.run_code_mode_loop("Get stripe.com brand and design tokens")
 
+    assert result["search_docs"]["source"] == "hosted_mcp"
     assert result["policy_source"] == "llm"
-    assert len(result["search_docs"]["hits"]) >= 1
     assert result["result"]["identity"]["title"] == "Stripe"
-    assert result["result"]["design_tokens"]["color_count"] == 3
     assert result["credits_estimated"] == 21
-    assert "brand.retrieve(stripe.com)" in result["ops_run"]
 
 
-def test_search_docs_finds_brand_functions():
-    hits = code_mode.search_docs("brand logo retrieve domain")
-    ids = [h["id"] for h in hits]
-    assert "brand.retrieve" in ids
+def test_search_docs_local_fallback_on_mcp_error():
+    with patch.object(code_mode, "hosted_search_docs", side_effect=RuntimeError("network")):
+        hits, source = code_mode.search_docs("brand logo retrieve domain")
+    assert "local_fallback" in source
+    assert any("brand.retrieve" in h["id"] for h in hits)

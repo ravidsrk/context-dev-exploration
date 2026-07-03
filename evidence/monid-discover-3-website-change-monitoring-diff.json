@@ -1,0 +1,68 @@
+{
+  "results": [
+    {
+      "provider": "exa",
+      "providerName": "Exa",
+      "endpoint": "/contents",
+      "description": "Fetch clean, LLM-ready content for a list of URLs.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.002,
+        "currency": "USD"
+      },
+      "score": 0.7224806702563411,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.60032035,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/competitor-compare",
+      "description": "Compare two company websites. Analyzes positioning, pricing model, features, target audience, trust signals, content strategy. Returns structured comparison + strategic analysis.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 1.188,
+        "currency": "USD"
+      },
+      "score": 0.6912530549422445,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.64702415,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "api.strale.io",
+      "providerName": "Strale",
+      "endpoint": "/x402/tech-stack-detect",
+      "description": "Detect technologies used by a website. Identifies CMS, frameworks, analytics, CDN, payment providers, marketing tools from HTTP headers and HTML patterns. No Browserless needed.",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.03564,
+        "currency": "USD"
+      },
+      "score": 0.6903495151574472,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.64605745,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    }
+  ],
+  "query": "website change monitoring diff",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}

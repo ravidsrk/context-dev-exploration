@@ -194,4 +194,4 @@ Agents must **cache Context.dev** aggressively; Monid is cheap enough for **freq
 | `evidence/monid-techstack-stripe.json` | company-tech-stack | $0.011 |
 | `evidence/monid-techstack-detect-stripe.json` | tech-stack-detect | $0.03564 |
 
-Full discover JSON captured in `evidence/monid-discover-*.json` (generated during research session).
+Full discover JSON: `evidence/monid-discover-{1..7}-*.json` (captured by `scripts/capture_monid_evidence.sh`). Raw CLI transcript: `evidence/monid-deep-runs.log`.

@@ -1,0 +1,71 @@
+{
+  "results": [
+    {
+      "provider": "apify",
+      "providerName": "Apify",
+      "endpoint": "/apify/facebook-reviews-scraper",
+      "description": "Scrapes reviews from Facebook business pages. Returns review text, star ratings, reviewer metadata, and review-level details for reputation monitoring and customer feedback analysis across public Facebook pages.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.003,
+        "flatFee": 0.001,
+        "currency": "USD"
+      },
+      "score": 0.7063977307180986,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.61726425,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      }
+    },
+    {
+      "provider": "tikhub",
+      "providerName": "TikHub",
+      "endpoint": "/api/v1/douyin/web/fetch_product_review_score",
+      "description": "Get product review score",
+      "price": {
+        "type": "PER_CALL",
+        "amount": 0.0015,
+        "currency": "USD"
+      },
+      "score": 0.701467360953528,
+      "tags": [],
+      "scoreBreakdown": {
+        "querierScore": 0.6579777,
+        "verified_tag": 0,
+        "pricing_predictability": 0.2,
+        "performance": null
+      }
+    },
+    {
+      "provider": "apify",
+      "providerName": "Apify",
+      "endpoint": "/web_wanderer/amazon-reviews-extractor",
+      "description": "Scrapes Amazon product reviews across 20+ regional domains with advanced filtering. Returns review text, star ratings, verified-purchase flags, reviewer metadata, timestamps, review media (images/videos), variant association, helpful/vote counts, language tags, and aspect-level sentiment summaries. Supports filtering by rating, keywords, media-only, verified purchases, and an expanded collection mode across star ratings.",
+      "price": {
+        "type": "PER_RESULT",
+        "amount": 0.00135,
+        "currency": "USD"
+      },
+      "score": 0.7013385540047291,
+      "tags": [
+        "verified"
+      ],
+      "scoreBreakdown": {
+        "querierScore": 0.61151385,
+        "verified_tag": 0.35,
+        "pricing_predictability": 0.05,
+        "performance": null
+      }
+    }
+  ],
+  "query": "app store reviews product ratings",
+  "count": 3,
+  "notes": [
+    "Update available: 0.1.0 → 0.1.1. Run `npm update -g @monid-ai/cli` to update monid-cli. Download the latest version of skill at https://monid.ai/SKILL.md."
+  ]
+}

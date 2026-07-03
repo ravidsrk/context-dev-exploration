@@ -1,4 +1,4 @@
-========== Agent loops @ 2026-07-03T15:02:50Z domain=stripe.com ==========
+========== Agent loops @ 2026-07-03T15:09:47Z domain=stripe.com ==========
 --- research_scout_loop (LLM plan) ---
 {
   "domain": "stripe.com",
@@ -38,42 +38,54 @@ scout_exit: 0
   "goal": "Get stripe.com brand identity, design tokens, and site scale for a sales dossier",
   "search_docs": {
     "query": "Get stripe.com brand identity, design tokens, and site scale for a sales dossier",
+    "source": "hosted_mcp",
     "hits": [
       {
-        "id": "web.extract_styleguide",
-        "signature": "client.web.extract_styleguide({ domain: string })",
-        "returns": "styleguide.colors, styleguide.typography",
-        "credits": "10"
+        "id": "client.brand.identifyFromTransaction",
+        "signature": "{ transaction_info: string; city?: string; country_gl?: string; force_language?: string; high_confidence_only?: boolean; maxSpeed?: boolean; mcc?: string; phone?: number; timeoutMS?: number; };",
+        "returns": "Identify brand from transaction data",
+        "credits": "",
+        "description": "Endpoint specially designed for platforms that want to identify transaction data by the transaction title."
       },
       {
-        "id": "brand.retrieve",
-        "signature": "client.brand.retrieve({ domain: string })",
-        "returns": "title, domain, logos[], colors[], links",
-        "credits": "10"
+        "id": "client.brand.retrieveSimplified",
+        "signature": "{ domain: string; maxAgeMs?: number; timeoutMS?: number; };",
+        "returns": "Retrieve simplified brand data by domain",
+        "credits": "",
+        "description": "Returns a simplified version of brand data containing only essential information: domain, title, colors, logos, and backdrops. Optimized for faster responses and reduced data transfer."
       },
       {
-        "id": "web.scrape_sitemap",
-        "signature": "client.web.web_scrape_sitemap({ domain: string })",
-        "returns": "urls[]",
-        "credits": "1"
+        "id": "client.ai.extractProducts",
+        "signature": "domain: string;",
+        "returns": "Extract products from a brand's website",
+        "credits": "",
+        "description": "Extract product information from a brand's website. We will analyze the website and return a list of products with details such as name, description, image, pricing, features, and more."
+      },
+      {
+        "id": "client.web.extractStyleguide",
+        "signature": "{ colorScheme?: \"light\" | \"dark\"; directUrl?: string; domain?: string; maxAgeMs?: number; timeoutMS?: number; };",
+        "returns": "Scrape Styleguide",
+        "credits": "",
+        "description": "Extract a comprehensive design system from a website including colors, typography, spacing, shadows, and UI components."
+      },
+      {
+        "id": "client.brand.retrieveByTicker",
+        "signature": "{ ticker: string; force_language?: string; maxAgeMs?: number; maxSpeed?: boolean; ticker_exchange?: string; timeoutMS?: number; };",
+        "returns": "Retrieve brand data by stock ticker",
+        "credits": "",
+        "description": "Retrieve brand information using a stock ticker symbol."
       }
     ]
   },
   "execute_plan": [
     {
-      "op": "brand.retrieve",
+      "op": "client.brand.retrieveSimplified",
       "args": {
         "domain": "stripe.com"
       }
     },
     {
-      "op": "web.extract_styleguide",
-      "args": {
-        "domain": "stripe.com"
-      }
-    },
-    {
-      "op": "web.scrape_sitemap",
+      "op": "client.web.extractStyleguide",
       "args": {
         "domain": "stripe.com"
       }
@@ -81,29 +93,9 @@ scout_exit: 0
   ],
   "policy_source": "llm",
   "result": {
-    "identity": {
-      "title": "Stripe",
-      "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg"
-    },
-    "design_tokens": {
-      "color_count": 3,
-      "has_typography": true
-    },
-    "site_scale": {
-      "url_count": 6165,
-      "sample_paths": [
-        "https://stripe.com/legal",
-        "https://stripe.com/legal/ssa",
-        "https://stripe.com/ssa"
-      ]
-    },
-    "credits_estimated": 21
+    "credits_estimated": 0
   },
-  "ops_run": [
-    "brand.retrieve(stripe.com)",
-    "web.extract_styleguide(stripe.com)",
-    "web.scrape_sitemap(stripe.com)"
-  ],
-  "credits_estimated": 21
+  "ops_run": [],
+  "credits_estimated": 0
 }
 code_mode_exit: 0

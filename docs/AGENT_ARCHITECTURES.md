@@ -220,7 +220,7 @@ Context.dev dominates **Perceive** and parts of **Observe** (sitemap diff, crawl
 3. **Act:** `execute` TypeScript composing calls
 4. **Observe:** Return filtered JSON (not full brand blob)
 
-**Why this matters:** Tool surface area stays O(1) while capability stays O(all endpoints). This is the **reference architecture** for Context.dev in Cursor/Claude Code — see runnable example in `agents/mcp_style_loop.py`.
+**Why this matters:** Tool surface area stays O(1) while capability stays O(all endpoints). This is the **reference architecture** for Context.dev in Cursor/Claude Code — see runnable example in `agents/mcp_code_mode_loop.py`, which calls the **hosted** `search_docs` tool at `context-dev.stlmcp.com` via `agents/mcp_client.py`.
 
 ---
 
