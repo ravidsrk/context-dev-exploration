@@ -1,4 +1,4 @@
-========== Agent loops @ 2026-07-03T15:09:47Z domain=stripe.com ==========
+========== Agent loops @ 2026-07-03T15:15:20Z domain=stripe.com ==========
 --- research_scout_loop (LLM plan) ---
 {
   "domain": "stripe.com",
@@ -79,13 +79,19 @@ scout_exit: 0
   },
   "execute_plan": [
     {
-      "op": "client.brand.retrieveSimplified",
+      "op": "brand.retrieve",
       "args": {
         "domain": "stripe.com"
       }
     },
     {
-      "op": "client.web.extractStyleguide",
+      "op": "web.extract_styleguide",
+      "args": {
+        "domain": "stripe.com"
+      }
+    },
+    {
+      "op": "web.scrape_sitemap",
       "args": {
         "domain": "stripe.com"
       }
@@ -93,9 +99,29 @@ scout_exit: 0
   ],
   "policy_source": "llm",
   "result": {
-    "credits_estimated": 0
+    "identity": {
+      "title": "Stripe",
+      "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg"
+    },
+    "design_tokens": {
+      "color_count": 3,
+      "has_typography": true
+    },
+    "site_scale": {
+      "url_count": 6165,
+      "sample_paths": [
+        "https://stripe.com/legal",
+        "https://stripe.com/legal/ssa",
+        "https://stripe.com/ssa"
+      ]
+    },
+    "credits_estimated": 21
   },
-  "ops_run": [],
-  "credits_estimated": 0
+  "ops_run": [
+    "brand.retrieve(stripe.com)",
+    "web.extract_styleguide(stripe.com)",
+    "web.scrape_sitemap(stripe.com)"
+  ],
+  "credits_estimated": 21
 }
 code_mode_exit: 0

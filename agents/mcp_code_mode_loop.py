@@ -3,7 +3,7 @@
 MCP Code Mode agent loop: hosted search_docs → LLM execute plan → run → observe.
 
 Calls the real Context.dev MCP server at context-dev.stlmcp.com for search_docs.
-Execute step runs composed SDK calls via Python client (same ops MCP would sandbox).
+Execute step runs composed SDK calls via Python client (canonical ops only).
 
 Run:
   CONTEXT_DEV_API_KEY=... OPEN_ROUTER_KEY=... \\
@@ -15,13 +15,14 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Any, Callable
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT))
 
 from agents.llm_policy import plan_mcp_execute  # noqa: E402
 from agents.mcp_client import extract_domain_from_goal, hosted_search_docs  # noqa: E402
+from agents.mcp_op_map import OP_CREDITS, normalize_execute_plan  # noqa: E402
 from src.context_client import (  # noqa: E402
     create_client,
     extract_styleguide,
@@ -65,8 +66,40 @@ def search_docs(query: str, limit: int = 5) -> tuple[list[dict[str, str]], str]:
         return local, f"local_fallback:{type(exc).__name__}"
 
 
+def _apply_brand(client, domain: str, out: dict[str, Any]) -> None:
+    brand = retrieve_brand(client, domain)
+    out["identity"] = {
+        "title": brand.get("title"),
+        "logo_url": brand.get("logo_url"),
+    }
+
+
+def _apply_styleguide(client, domain: str, out: dict[str, Any]) -> None:
+    style = extract_styleguide(client, domain)
+    out["design_tokens"] = {
+        "color_count": style.get("color_count"),
+        "has_typography": style.get("has_typography"),
+    }
+
+
+def _apply_sitemap(client, domain: str, out: dict[str, Any]) -> None:
+    sm = scrape_sitemap(client, domain)
+    out["site_scale"] = {
+        "url_count": sm.get("url_count"),
+        "sample_paths": sm.get("sample_urls"),
+    }
+
+
+# Table-driven dispatch: canonical op → handler
+_CANONICAL_HANDLERS: dict[str, Callable[[Any, str, dict[str, Any]], None]] = {
+    "brand.retrieve": _apply_brand,
+    "web.extract_styleguide": _apply_styleguide,
+    "web.scrape_sitemap": _apply_sitemap,
+}
+
+
 def execute_plan(plan: list[dict[str, Any]]) -> tuple[dict[str, Any], list[str], int]:
-    """Execute composed SDK operations (MCP execute analogue via Python SDK)."""
+    """Execute composed SDK operations — accepts only canonical ops."""
     client = create_client()
     ops_run: list[str] = []
     credits = 0
@@ -74,66 +107,27 @@ def execute_plan(plan: list[dict[str, Any]]) -> tuple[dict[str, Any], list[str],
 
     for step in plan:
         op = step.get("op", "")
+        handler = _CANONICAL_HANDLERS.get(op)
+        if not handler:
+            continue
         args = step.get("args") or {}
         domain = args.get("domain", "")
-
-        if op in ("brand.retrieve", "client.brand.retrieve"):
-            brand = retrieve_brand(client, domain)
-            out["identity"] = {
-                "title": brand.get("title"),
-                "logo_url": brand.get("logo_url"),
-            }
-            credits += 10
-            ops_run.append(f"brand.retrieve({domain})")
-        elif op in ("web.extract_styleguide", "client.web.extract_styleguide"):
-            style = extract_styleguide(client, domain)
-            out["design_tokens"] = {
-                "color_count": style.get("color_count"),
-                "has_typography": style.get("has_typography"),
-            }
-            credits += 10
-            ops_run.append(f"web.extract_styleguide({domain})")
-        elif op in ("web.scrape_sitemap", "web.web_scrape_sitemap", "client.brand.webScrapeSitemap"):
-            sm = scrape_sitemap(client, domain)
-            out["site_scale"] = {
-                "url_count": sm.get("url_count"),
-                "sample_paths": sm.get("sample_urls"),
-            }
-            credits += 1
-            ops_run.append(f"web.scrape_sitemap({domain})")
+        if not domain:
+            continue
+        handler(client, domain, out)
+        credits += OP_CREDITS.get(op, 0)
+        ops_run.append(f"{op}({domain})")
 
     out["credits_estimated"] = credits
     return out, ops_run, credits
 
 
-def _normalize_plan_from_mcp_hits(
-    goal: str, hits: list[dict[str, str]], policy_source: str, raw_plan: list[dict[str, Any]]
-) -> list[dict[str, Any]]:
-    """Map MCP method IDs from search_docs into execute_plan ops."""
-    domain = extract_domain_from_goal(goal)
-    if raw_plan:
-        return raw_plan
-
-    plan: list[dict[str, Any]] = []
-    ids = " ".join(h.get("id", "") for h in hits).lower()
-    if "retrieve" in ids:
-        plan.append({"op": "brand.retrieve", "args": {"domain": domain}})
-    if "styleguide" in ids or "design" in goal.lower():
-        plan.append({"op": "web.extract_styleguide", "args": {"domain": domain}})
-    if "sitemap" in ids or "scale" in goal.lower():
-        plan.append({"op": "web.scrape_sitemap", "args": {"domain": domain}})
-    return plan or [
-        {"op": "brand.retrieve", "args": {"domain": domain}},
-        {"op": "web.extract_styleguide", "args": {"domain": domain}},
-        {"op": "web.scrape_sitemap", "args": {"domain": domain}},
-    ]
-
-
 def run_code_mode_loop(goal: str) -> dict[str, Any]:
+    domain = extract_domain_from_goal(goal)
     doc_query = goal
     doc_hits, docs_source = search_docs(doc_query)
     raw_plan, policy_source = plan_mcp_execute(goal, doc_hits)
-    plan_steps = _normalize_plan_from_mcp_hits(goal, doc_hits, policy_source, raw_plan)
+    plan_steps = normalize_execute_plan(goal, raw_plan, doc_hits, domain)
     result, ops_run, credits = execute_plan(plan_steps)
 
     return {
