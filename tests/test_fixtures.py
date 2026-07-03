@@ -18,3 +18,30 @@ def test_naics_fixture_has_codes():
     assert len(data["codes"]) >= 1
     assert data["codes"][0]["code"]
     assert data["codes"][0]["confidence"] in ("high", "medium", "low")
+
+
+def test_sic_fixture_has_codes():
+    data = json.loads((FIXTURES / "sic-stripe-sample.json").read_text())
+    assert data["codes"][0]["code"] == "6199"
+
+
+def test_styleguide_fixture():
+    data = json.loads((FIXTURES / "styleguide-stripe-sample.json").read_text())
+    assert data["color_count"] >= 1
+    assert data["has_typography"] is True
+
+
+def test_screenshot_fixture():
+    data = json.loads((FIXTURES / "screenshot-stripe-sample.json").read_text())
+    assert data["has_screenshot"] is True
+    assert data["screenshot_url"].startswith("https://")
+
+
+def test_crawl_fixture():
+    data = json.loads((FIXTURES / "crawl-stripe-sample.json").read_text())
+    assert data["num_succeeded"] >= 1
+
+
+def test_prefetch_fixture():
+    data = json.loads((FIXTURES / "prefetch-stripe-sample.json").read_text())
+    assert data["status"] == "ok"
