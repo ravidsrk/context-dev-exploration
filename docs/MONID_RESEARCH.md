@@ -148,7 +148,64 @@ Monid tikhub/get_company_profile           →  verify merchant still active
 
 ---
 
+### 4. Discover: Twitter Brand Mentions
+
+```bash
+monid discover -q "twitter brand mentions" -l 3
+```
+
+| Provider | Endpoint | Price | Context.dev Pairing |
+|----------|----------|-------|---------------------|
+| api.strale.io | `/x402/brand-mention-search` | $0.033/call | Layer on `/brand/retrieve` for mention monitoring |
+| mesh.heurist.xyz | `/x402/agents/ElfaTwitterIntelligenceAgent/search_mentions` | $0.011/call | Token/topic mention search |
+| tikhub | `/api/v1/twitter/web/fetch_trending` | $0.0015/call | Trending context for brand campaigns |
+
+### 5. Live Run: Stripe LinkedIn Posts
+
+```bash
+monid run -p tikhub -e /api/v1/linkedin/web_v2/get_company_posts \
+  --query '{"url":"stripe"}' -w -o monid-linkedin-posts-stripe.json
+```
+
+**Cost:** $0.0015  
+**Returned:** 4 recent posts with text, URLs, and `date_published` timestamps.  
+**Pairing:** Context.dev `/brand/retrieve` gives static profile; Monid posts give **messaging velocity** for sales triggers ("they just announced X").
+
+### 6. Discover: Competitor Pricing (re-run)
+
+```bash
+monid discover -q "competitor pricing data" -l 5
+```
+
+| Provider | Endpoint | Price | Pairing |
+|----------|----------|-------|---------|
+| api.strale.io | `/x402/competitor-compare` | $1.188/call | After Context.dev `/web/extract/product` |
+| api.strale.io | `/x402/price-compare` | $0.011/call | Cross-merchant price comparison |
+
+---
+
+## OpenRouter Synthesis (Low-Cost Inference)
+
+Used `OPEN_ROUTER_KEY` with `openai/gpt-4o-mini` to synthesize the pairing architecture. Reproducible via:
+
+```bash
+export OPEN_ROUTER_KEY="sk-or-v1-..."
+python scripts/synthesize_pairing.py
+```
+
+**Synthesis output** (captured in `implementer/openrouter-synthesis.txt`):
+
+> Monid enhances sales intelligence via LinkedIn posts, social search, and competitor pricing for real-time market insights. Context.dev provides brand logos, web scrape, transaction enrichment, and NAICS — creating a comprehensive data ecosystem. Brand identity and web presence from Context.dev enrich Monid's social insights; transaction enrichment reveals purchase behaviors; NAICS enables targeted outreach. Together they provide a multifaceted sales landscape view.
+
+This confirms the layered architecture: **Context.dev = structured foundation**, **Monid = real-time external signals**, **OpenRouter = synthesis/narrative layer**.
+
+---
+
 ## Evidence Files
 
-- `monid-linkedin-stripe.json` — Live LinkedIn profile run output (scratch dir)
-- Discover queries logged: social posts, competitor pricing, LinkedIn profiles
+| File | Description |
+|------|-------------|
+| `monid-linkedin-stripe.json` | Live LinkedIn company profile ($0.0015) |
+| `monid-linkedin-posts-stripe.json` | Live LinkedIn company posts ($0.0015) |
+| `openrouter-synthesis.txt` | GPT-4o-mini pairing synthesis |
+| `scripts/synthesize_pairing.py` | Reproducible OpenRouter synthesis script |
