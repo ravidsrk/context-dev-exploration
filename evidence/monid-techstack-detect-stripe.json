@@ -1,0 +1,55 @@
+{
+  "url": "https://stripe.com/",
+  "technologies_detected": 3,
+  "technologies": [
+    {
+      "name": "Nginx",
+      "category": "hosting",
+      "confidence": "high",
+      "evidence": "HTTP header server"
+    },
+    {
+      "name": "HSTS",
+      "category": "security",
+      "confidence": "high",
+      "evidence": "HTTP header strict-transport-security"
+    },
+    {
+      "name": "Next.js",
+      "category": "framework",
+      "confidence": "high",
+      "evidence": "HTML content pattern"
+    }
+  ],
+  "by_category": {
+    "hosting": [
+      "Nginx"
+    ],
+    "security": [
+      "HSTS"
+    ],
+    "framework": [
+      "Next.js"
+    ]
+  },
+  "signals": {
+    "has_analytics": false,
+    "has_chat_widget": false,
+    "has_payment_processing": false,
+    "has_marketing_automation": false,
+    "has_error_monitoring": false
+  },
+  "_meta": {
+    "capability": "tech-stack-detect",
+    "latency_ms": 40,
+    "provenance": {
+      "source": "tech-stack-detect:algorithmic",
+      "fetched_at": "2026-07-03T14:46:00.082Z"
+    },
+    "payment": {
+      "method": "x402",
+      "settlement_id": "0x3a5edafeccf46c8c9f9d3e0d6942de272945875ca5d1410d18ac9333fd82c57f",
+      "price_usd": 0.0324
+    }
+  }
+}

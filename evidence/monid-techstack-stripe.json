@@ -1,0 +1,131 @@
+{
+  "domain": "stripe.com",
+  "frontend_framework": "React",
+  "meta_framework": "Next.js",
+  "css_framework": null,
+  "analytics": [
+    "Google Analytics",
+    "Postman"
+  ],
+  "cdn": "Stripe CDN (b.stripecdn.com)",
+  "hosting_provider": "Nginx",
+  "cms": null,
+  "payment_processor": "Stripe",
+  "email_provider": "Google Workspace (Gmail)",
+  "chat_widget": "ElevenLabs",
+  "detected_technologies": [
+    {
+      "name": "Next.js",
+      "category": "meta_framework",
+      "confidence": "high"
+    },
+    {
+      "name": "React",
+      "category": "frontend_framework",
+      "confidence": "high"
+    },
+    {
+      "name": "Nginx",
+      "category": "web_server",
+      "confidence": "high"
+    },
+    {
+      "name": "Google Workspace",
+      "category": "email_provider",
+      "confidence": "high"
+    },
+    {
+      "name": "ElevenLabs",
+      "category": "chat_widget",
+      "confidence": "medium"
+    },
+    {
+      "name": "Postman",
+      "category": "api_testing",
+      "confidence": "medium"
+    },
+    {
+      "name": "Google Site Verification",
+      "category": "seo_tool",
+      "confidence": "high"
+    }
+  ],
+  "dns_records": {
+    "a": [
+      "198.202.176.231",
+      "198.137.150.231"
+    ],
+    "mx": [
+      {
+        "exchange": "aspmx3.googlemail.com",
+        "priority": 30
+      },
+      {
+        "exchange": "alt1.aspmx.l.google.com",
+        "priority": 20
+      },
+      {
+        "exchange": "aspmx2.googlemail.com",
+        "priority": 30
+      },
+      {
+        "exchange": "aspmx.l.google.com",
+        "priority": 10
+      },
+      {
+        "exchange": "alt2.aspmx.l.google.com",
+        "priority": 20
+      }
+    ],
+    "txt": [
+      "edcbf4c7-b604-457b-870e-1b05f655e769",
+      "elevenlabs=NpcIkVJW_8Vyd2gLKzPviuaU1g5rz83KiWQQ3sWKGtI",
+      "google-site-verification=PrlpJHdk11CIkPsiXoHEAJevWHAk39JRFAqVSe9l7n0",
+      "postman-domain-verification=c3b168067b16085c452b04b643ae1000079b095e383b53d1074e409b0e600b6265e1c7963beca1ca87cc63c381dcea332544c92c919651e4cda69f9a6303079c",
+      "google-site-verification=pmz8ueKvWMPxNlwUDcVroF91-tq6I9VM6wSO_0i7-wc",
+      "atlassian-domain-verification=upLp21qQgja1aHG2gnAb1AmXRqb/zG0UK1a0n3zTSXZg5DgOSttR3i5uzA3T9Cdk",
+      "anthropic-domain-verification-zk7x9c=QfN52ECybLPUWh51R9pKF0QO3",
+      "h1-domain-verification=KhpNX9YNAc7bX95agGvFsPPKbYTVe1KC6xj7P1zKZrRzxcuS",
+      "_mphpl78cv3thhugki4dkknlukgj1du6",
+      "fastly-domain-delegation-3c9tdnjzdwy7wfffvyyy-786084-2024-07-08",
+      "cursor-domain-verification-vncvvm=D0NzeIDbQa8PPgIf1ukp9UPiu",
+      "facebook-domain-verification=m7id9rt8ehlgcg9tt2yggbsi6gro7i",
+      "MS=ms80697640",
+      "neat-pulse-domain-verification-8GMn8nv=36eba03d-345e-421a-a823-d6d1f28938a4",
+      "docusign=4c9f5602-1c19-4e4c-bde7-77dc4b9ea8a0",
+      "docker-verification=ccde1a0d-8d2c-44b5-9d20-6c4e19113fc9",
+      "google-site-verification=qjP3OAiraClha_40cX9Z9FrG5q3O_0InXSamXOswY-s",
+      "stripe-verification=82ce82470fb8324e19fa65abdb6fd370da5a8f90bba09712f259760f625d0790",
+      "liveramp-site-verification=7gyFkTwGYsvgd7IUQwyAOfImETwR06wgKjKiXq90KEY",
+      "v=MCPv1; k=ed25519; p=WMeka0C1fIH9HQLMtsSM9DD9cM6Bz6Wz34mHnK86UcM=",
+      "canva-site-verification=xLypn0D9XANRy-lbwcMfHA",
+      "google-site-verification=NLkFgZLHeVMVYlR3t1UZC9_1LzmqCAefJyNDs6ZQqBA",
+      "v=spf1 ip4:198.2.180.60/32 ip4:13.111.2.227/32 include:spf1.stripe.com include:greenhouse-outbound-mail.stripe.com include:_spf.qualtrics.com ~all",
+      "docusign=4a93db58-af07-4632-a881-b569d41a6c57",
+      "whimsical=253112f9add9790f3a27b9d9893626451fc4cda1",
+      "00D50000000JV6w=1TBTQ0000000CIv;00DDn000000HWol=1TBVY00000002Hx;00D4x000003vxGL=1TBPQ00000008Tp;00Dfn00000BUlWD=1TBan0000000LPR",
+      "google-site-verification=hPfjsDwiisKJ4RP1ExOst9gAOD_0P8Q7-kxdcKUvEcc",
+      "google-site-verification=ZgGi2-xDdfnaWxdfjn5AqtUS11jKWqSXAV_EHODFzdE",
+      "z4mthhzk10l6qc0rg4211mnnppkh2y5b",
+      "asv=8de0c1a866b958297e22a36216e594a6",
+      "apple-domain-verification=8kIS0gmJTvILWQuI"
+    ],
+    "cname": []
+  },
+  "http_headers_analyzed": [
+    "server: nginx"
+  ],
+  "_meta": {
+    "capability": "company-tech-stack",
+    "latency_ms": 3376,
+    "provenance": {
+      "source": "html-analysis",
+      "fetched_at": "2026-07-03T14:45:51.045Z"
+    },
+    "payment": {
+      "method": "x402",
+      "settlement_id": "0x3179a95e4737809aa90f43a0bf795f6cae5ecb2f201a256c1cc1e3665c36c29f",
+      "price_usd": 0.324
+    }
+  }
+}

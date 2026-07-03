@@ -1,0 +1,56 @@
+{
+  "query": {
+    "keywords": "Stripe",
+    "f_TPR": "r2592000",
+    "start": 0,
+    "count": 5
+  },
+  "count": 5,
+  "jobs": [
+    {
+      "job_id": "4425970209",
+      "title": "Solutions Architect, AI",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "San Francisco, CA",
+      "posted_at": "2026-06-30",
+      "url": "https://www.linkedin.com/jobs/view/solutions-architect-ai-at-stripe-4425970209"
+    },
+    {
+      "job_id": "4428379668",
+      "title": "Payments Performance Strategist, Card Authorization",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "San Francisco, CA",
+      "posted_at": "2026-06-13",
+      "url": "https://www.linkedin.com/jobs/view/payments-performance-strategist-card-authorization-at-stripe-4428379668"
+    },
+    {
+      "job_id": "4430746266",
+      "title": "Solutions Architect, AI",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "New York, United States",
+      "posted_at": "2026-06-18",
+      "url": "https://www.linkedin.com/jobs/view/solutions-architect-ai-at-stripe-4430746266"
+    },
+    {
+      "job_id": "4413497473",
+      "title": "Product Manager, Startup Products",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "New York, United States",
+      "posted_at": "2026-06-17",
+      "url": "https://www.linkedin.com/jobs/view/product-manager-startup-products-at-stripe-4413497473"
+    },
+    {
+      "job_id": "4430116456",
+      "title": "Product Manager, Global Payouts – Cross-Border & Enterprise Capabilities",
+      "company": "Stripe",
+      "company_url": "https://www.linkedin.com/company/stripe",
+      "location": "New York, United States",
+      "posted_at": "2026-06-17",
+      "url": "https://www.linkedin.com/jobs/view/product-manager-global-payouts-%E2%80%93-cross-border-enterprise-capabilities-at-stripe-4430116456"
+    }
+  ]
+}

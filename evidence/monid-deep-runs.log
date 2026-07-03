@@ -1,0 +1,23 @@
+Monid deep research live runs — 2026-07-03
+
+Run A: tikhub /api/v1/linkedin/web_v2/search_jobs
+  query: keywords=Stripe, count=5, time_range=past_month
+  cost: $0.0015
+  result: 5 PM roles at Stripe (Global Payouts, Startup Products, ...)
+  evidence: evidence/monid-jobs-stripe.json
+
+Run B: api.strale.io /x402/company-tech-stack
+  query: domain=stripe.com
+  cost: $0.011
+  result: Next.js, React, Nginx, Google Workspace, ElevenLabs chat
+  evidence: evidence/monid-techstack-stripe.json
+
+Run C: api.strale.io /x402/tech-stack-detect
+  query: domain=stripe.com
+  cost: $0.03564
+  result: analytics, payment_processor categories confirmed
+  evidence: evidence/monid-techstack-detect-stripe.json
+
+Failed: akta /v1/news (HTTP 500 x2) — agents need fallback perception path
+
+Discover queries (7): funding, jobs, change-monitoring, tech-stack, news, app-reviews, social-posts
