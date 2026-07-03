@@ -1,0 +1,132 @@
+========== RUN 1 @ 2026-07-03T14:49:43Z ==========
+--- Python demos ---
+=== Prefetch Domain (0 credits) ===
+  status: ok
+  domain: stripe.com
+
+=== Brand Retrieve Demo ===
+  title: Stripe
+  domain: stripe.com
+  logo_url: https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg
+
+=== Web Scrape Markdown Demo ===
+  url: https://stripe.com
+  markdown_length: 21554
+
+=== Sitemap Discovery Demo ===
+  url_count: 6165
+  sample_urls: ['https://stripe.com/legal', 'https://stripe.com/legal/ssa', 'https://stripe.com/ssa']
+
+=== Web Crawl Markdown Demo (max_pages=2) ===
+  num_succeeded: 2
+  pages_with_markdown: 2
+
+=== Transaction Enrichment Demo ===
+  title: Starbucks
+  domain: starbucks.com
+
+=== NAICS Classification Demo ===
+  domain: stripe.com
+  codes: [{'code': '522320', 'name': 'Financial Transactions Processing', 'confidence': 'high'}, {'code': '522210', 'name': 'Credit Card Issuing', 'confidence': 'medium'}]
+
+=== SIC Classification Demo ===
+  domain: stripe.com
+  codes: [{'code': '6199', 'name': 'FINANCE SERVICES', 'confidence': 'high'}, {'code': '6282', 'name': 'INVESTMENT ADVICE', 'confidence': 'low'}]
+
+=== Extract Fonts Demo ===
+  font_count: 1
+  font_names: ['sohne-var']
+
+=== Extract Styleguide Demo ===
+  color_count: 3
+  has_typography: True
+--- TypeScript probe ---
+
+> context-dev-exploration-ts@0.1.0 probe
+> tsx src/probe.ts
+
+=== TS Brand Retrieve ===
+  title: Stripe
+  domain: stripe.com
+  logo_url: https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg
+
+=== TS Scrape Markdown ===
+  url: https://stripe.com
+  markdown_length: 21554
+
+=== TS NAICS Classification ===
+  domain: stripe.com
+  top_code: 522320 Financial Transactions Processing
+
+=== TS Sitemap ===
+  url_count: 6165
+  sample: https://stripe.com/legal, https://stripe.com/legal/ssa
+
+=== Done in 12544ms ===
+
+========== RUN 2 @ 2026-07-03T14:50:15Z ==========
+--- Python demos ---
+=== Prefetch Domain (0 credits) ===
+  status: ok
+  domain: stripe.com
+
+=== Brand Retrieve Demo ===
+  title: Stripe
+  domain: stripe.com
+  logo_url: https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg
+
+=== Web Scrape Markdown Demo ===
+  url: https://stripe.com
+  markdown_length: 21554
+
+=== Sitemap Discovery Demo ===
+  url_count: 6165
+  sample_urls: ['https://stripe.com/legal', 'https://stripe.com/legal/ssa', 'https://stripe.com/ssa']
+
+=== Web Crawl Markdown Demo (max_pages=2) ===
+  num_succeeded: 2
+  pages_with_markdown: 2
+
+=== Transaction Enrichment Demo ===
+  title: Starbucks
+  domain: starbucks.com
+
+=== NAICS Classification Demo ===
+  domain: stripe.com
+  codes: [{'code': '522320', 'name': 'Financial Transactions Processing', 'confidence': 'high'}, {'code': '522210', 'name': 'Credit Card Issuing', 'confidence': 'medium'}]
+
+=== SIC Classification Demo ===
+  domain: stripe.com
+  codes: [{'code': '6199', 'name': 'FINANCE SERVICES', 'confidence': 'high'}, {'code': '6282', 'name': 'INVESTMENT ADVICE', 'confidence': 'low'}]
+
+=== Extract Fonts Demo ===
+  font_count: 1
+  font_names: ['sohne-var']
+
+=== Extract Styleguide Demo ===
+  color_count: 3
+  has_typography: True
+--- TypeScript probe ---
+
+> context-dev-exploration-ts@0.1.0 probe
+> tsx src/probe.ts
+
+=== TS Brand Retrieve ===
+  title: Stripe
+  domain: stripe.com
+  logo_url: https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg
+
+=== TS Scrape Markdown ===
+  url: https://stripe.com
+  markdown_length: 21554
+
+=== TS NAICS Classification ===
+  domain: stripe.com
+  top_code: 522320 Financial Transactions Processing
+
+=== TS Sitemap ===
+  url_count: 6165
+  sample: https://stripe.com/legal, https://stripe.com/legal/ssa
+
+=== Done in 12530ms ===
+

@@ -1,0 +1,52 @@
+========== Agent loops @ 2026-07-03T14:49:08Z domain=stripe.com ==========
+--- research_scout_loop ---
+{
+  "domain": "stripe.com",
+  "company": "Stripe",
+  "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg",
+  "industry": {
+    "code": "522320",
+    "name": "Financial Transactions Processing",
+    "confidence": "high"
+  },
+  "sitemap_urls": 6165,
+  "has_pricing_content": true,
+  "pricing_preview": "# \n\n- Products\n- Solutions\n- Developers\n- Resources\n- [Pricing](https://stripe.com/pricing)\n\n[Sign in](https://dashboard.stripe.com/login)\u00a0\n\n[Contact sales](https://stripe.com/contact/sales)\u00a0\n\nBack\n\n-",
+  "credits_estimated": 22,
+  "tools_called": [
+    "retrieve_brand",
+    "classify_naics",
+    "scrape_sitemap",
+    "scrape_markdown:https://stripe.com/pricing"
+  ],
+  "observation": {
+    "confidence": 1.0,
+    "recommend_revisit_days": 7
+  }
+}
+--- mcp_style_loop ---
+{
+  "domain": "stripe.com",
+  "identity": {
+    "title": "Stripe",
+    "logo_url": "https://media.brand.dev/a04619c9-4993-4d27-9084-39abd855417f.jpg"
+  },
+  "design_tokens": {
+    "color_count": 3,
+    "has_typography": true
+  },
+  "site_scale": {
+    "url_count": 6165,
+    "sample_paths": [
+      "https://stripe.com/legal",
+      "https://stripe.com/legal/ssa",
+      "https://stripe.com/ssa"
+    ]
+  },
+  "credits_estimated": 21,
+  "composition": [
+    "brand.retrieve",
+    "web.extract_styleguide",
+    "web.sitemap"
+  ]
+}
