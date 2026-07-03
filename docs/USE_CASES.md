@@ -11,6 +11,48 @@ Complete catalog of official use-case guides plus derived build opportunities, g
 | Web APIs | Scrape, crawl, screenshot, extract | 1–50+ |
 | Classification APIs | NAICS, SIC, transaction enrichment | 10 |
 
+## All API Surfaces (every llms.txt page → endpoint)
+
+Full index: [DOC_INDEX.md](DOC_INDEX.md) (57 entries). Each row maps a doc page to a buildable use-case.
+
+| Doc Page | Endpoint / Integration | Use-Case Outcome | Credits |
+|----------|------------------------|------------------|---------|
+| retrieve-brand-data-by-domain.md | `GET /brand/retrieve?domain=` | Company profile + logos | 10 |
+| retrieve-brand-data-by-company-name.md | `GET /brand/retrieve?name=` | Lookup by company name | 10 |
+| retrieve-brand-data-by-email-address.md | `GET /brand/retrieve-by-email` | CRM/onboarding enrichment | 10 |
+| retrieve-brand-data-by-stock-ticker.md | `GET /brand/retrieve?ticker=` | Investor dashboards | 10 |
+| retrieve-simplified-brand-data-by-domain.md | `GET /brand/retrieve-simplified` | Fast mobile embeds | 10 |
+| identify-brand-from-transaction-data.md | `GET /brand/transaction_identifier` | Spend analytics | 10 |
+| scrape-styleguide.md | `web.extract_styleguide(domain)` | White-label theming | 50 |
+| scrape-fonts.md | `web.extract_fonts(domain)` | Email/PDF typography match | 5 |
+| prefetch-brand-data-for-a-domain.md | `utility.prefetch(domain)` | Hide cold-hit latency | 0 |
+| prefetch-brand-data-by-email.md | `utility.prefetch_by_email(email)` | Onboarding prefetch | 0 |
+| scrape-markdown.md | `GET /web/scrape/markdown` | LLM/RAG ingestion | 1 |
+| scrape-html.md | `GET /web/scrape/html` | Custom HTML parsers | 1 |
+| scrape-images.md | `GET /web/scrape/images` | Email/asset pipelines | 1–5 |
+| scrape-screenshot.md | `web.screenshot(domain)` | Link previews, emails | 5 |
+| crawl-website-&-scrape-markdown.md | `web.web_crawl_md` | Site-wide RAG | 1/page |
+| crawl-sitemap.md | `web.web_scrape_sitemap` | Crawl cost estimation | 1 |
+| web-search.md | `web.search` | Research agents | varies |
+| extract-a-single-product-from-a-url.md | `web.extract(product)` | Price monitoring | 10 |
+| extract-products-from-a-brands-website.md | `web.extract(products)` | Catalog scraping | 50+ |
+| extract-structured-website-data.md | `web.extract(schema)` | Comparison pages | 50+ |
+| classify-naics-industries.md | `industry.retrieve_naics` | Regulatory reporting | 10 |
+| classify-sic-industries.md | `industry.retrieve_sic` | Tax/accounting codes | 10 |
+| get-logo-from-url.md | Logo Link CDN | Logo walls, Sheets | Free |
+| use-cases/lead-enrichment.md | email retrieve + webhook | CRM auto-enrich | 10 |
+| use-cases/faster-onboarding-flows.md | email retrieve + prefetch | Signup prefill | 10 |
+| use-cases/custom-email-templates.md | brand + styleguide + screenshot | Branded emails | ~65 |
+| use-cases/build-rag-from-websites.md | crawl + embed | Docs chatbot | 1/page |
+| use-cases/branded-campaign-assets.md | brand + styleguide + LLM | Ad creative pipeline | ~60 |
+| nocode/zapier.md | Zapier actions | No-code automation | per-call |
+| nocode/make.md | Make scenarios | Visual automation | per-call |
+| nocode/google-sheets.md | Logo Link IMAGE() | Spreadsheet logos | Free |
+| nocode/microsoft-excel.md | Logo Link IMAGE() | Excel logos | Free |
+| install-mcp.md | MCP server | AI agent tooling | — |
+| install-cli.md | context-dev CLI | Terminal/CI probes | — |
+| install-skill.md | Agent skill | Correct API routing | — |
+
 ---
 
 ## Official Use-Case Guides (6)
