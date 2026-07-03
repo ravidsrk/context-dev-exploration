@@ -13,6 +13,20 @@ Phase 2 research: **5+ discover queries**, **3+ live runs**, reasoning about how
 
 ---
 
+## Phase 3 discover (additional agent signals)
+
+| Query | Top hit | Price | Agent family |
+|-------|---------|-------|--------------|
+| domain WHOIS registration | Strale `domain-age-check` | $0.011 | Fraud / vendor onboarding |
+| SEC filings 10-K | Strale `us-company-data` | $0.011 | Public-company compliance |
+| email deliverability | Strale `email-deliverability-check` | $0.011 | Lead-quality gate before RESOLVE |
+| competitor pricing SaaS | Strale `pricing-page-extract` | $0.36 | Family C when schema extract fails |
+| competitor compare | Strale `competitor-compare` | $1.19 | Strategic intel (batch, not per-lead) |
+
+Live notes: `us-company-data` for Stripe returned SEC HTTP 500 (degrade path required). `domain-age-check` for stripe.com returned 200 (fraud-agent viable).
+
+---
+
 ## Discover queries (7)
 
 | # | Query | Top hit | Score | Price | Agent use |

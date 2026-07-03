@@ -46,7 +46,8 @@ npm run mcp-code-mode -- "Get stripe.com brand identity, design tokens, and site
 
 ## Documentation
 
-- [Agent Architectures](docs/AGENT_ARCHITECTURES.md) — **Start here** for what agents you can build and why
+- [Agent Reasoning](docs/AGENT_REASONING.md) — **Start here** — why Context.dev is a perception OS, not a brand API
+- [Agent Architectures](docs/AGENT_ARCHITECTURES.md) — 12 archetypes with perceive→plan→act→observe loops
 - [Agent Opportunities](docs/AGENT_OPPORTUNITIES.md) — 20 reasoned build ideas with cost notes
 - [Monid Deep Research](docs/MONID_DEEP_RESEARCH.md) — Agent combo architectures + live runs
 - [Doc Index](docs/DOC_INDEX.md) — All pages from docs.context.dev
