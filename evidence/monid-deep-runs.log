@@ -486,11 +486,11 @@ json_saved: /Users/ravindra/projects/context-dev-exploration/evidence/monid-disc
 
 ========== MONID LIVE RUN: LinkedIn jobs (Stripe) ==========
 - Starting run: tikhub//api/v1/linkedin/web_v2/search_jobs...
-✔ Run completed: 01KWM8DTXJQE71NHDC8Q4AVJQX
+✔ Run completed: 01KWM9TC6W2XWMMH6P3KD0CW5J
 
 Run Details
 ────────────────────────────────────────
-  Run ID:   01KWM8DTXJQE71NHDC8Q4AVJQX
+  Run ID:   01KWM9TC6W2XWMMH6P3KD0CW5J
   Provider: TikHub
   Endpoint: /api/v1/linkedin/web_v2/search_jobs
   Status:   COMPLETED
@@ -548,7 +548,7 @@ Output
 }
 
 Hints
-  retrieve the response later: monid runs get -r 01KWM8DTXJQE71NHDC8Q4AVJQX
+  retrieve the response later: monid runs get -r 01KWM9TC6W2XWMMH6P3KD0CW5J
 
 
 Update available: 0.1.0 → 0.1.1.
@@ -558,11 +558,11 @@ run_exit: 0
 
 ========== MONID LIVE RUN: company-tech-stack ==========
 - Starting run: api.strale.io//x402/company-tech-stack...
-✔ Run completed: 01KWM8DXS6RB08CJHRCEFMXN6Y
+✔ Run completed: 01KWM9TF6S97NFTMZ41A817MMB
 
 Run Details
 ────────────────────────────────────────
-  Run ID:   01KWM8DXS6RB08CJHRCEFMXN6Y
+  Run ID:   01KWM9TF6S97NFTMZ41A817MMB
   Provider: api.strale.io
   Endpoint: /x402/company-tech-stack
   Status:   COMPLETED
@@ -576,13 +576,16 @@ Output
   "frontend_framework": "React",
   "meta_framework": "Next.js",
   "css_framework": null,
-  "analytics": [],
-  "cdn": "Stripe CDN (b.stripecdn.com)",
+  "analytics": [
+    "Google Analytics",
+    "Custom Analytics (q.stripe.com, r.stripe.com)"
+  ],
+  "cdn": "Stripe CDN (b.stripecdn.com, images.stripeassets.com, assets.stripeassets.com)",
   "hosting_provider": "Nginx",
   "cms": null,
   "payment_processor": "Stripe",
-  "email_provider": "Google Workspace (Gmail)",
-  "chat_widget": null,
+  "email_provider": "Google Workspace (Gmail MX records)",
+  "chat_widget": "Stripe Chat (inferred from acquisition_chat_cta experiments)",
   "detected_technologies": [
     {
       "name": "Next.js",
@@ -600,25 +603,25 @@ Output
       "confidence": "high"
     },
     {
-      "name": "Stripe CDN",
-      "category": "cdn",
-      "confidence": "high"
-    },
-    {
       "name": "Google Workspace",
       "category": "email_provider",
       "confidence": "high"
     },
     {
-      "name": "Atlassian",
-      "category": "third_party_service",
+      "name": "A/B Testing Platform",
+      "category": "analytics",
       "confidence": "medium"
+    },
+    {
+      "name": "Server-Side Rendering (SSR)",
+      "category": "rendering",
+      "confidence": "high"
     }
   ],
   "dns_records": {
     "a": [
-      "198.137.150.231",
-      "198.202.176.231"
+      "198.202.176.231",
+      "198.137.150.231"
     ],
     "mx": [
       {
@@ -643,37 +646,37 @@ Output
       }
     ],
     "txt": [
-      "00D50000000JV6w=1TBTQ0000000CIv;00DDn000000HWol=1TBVY00000002Hx;00D4x000003vxGL=1TBPQ00000008Tp;00Dfn00000BUlWD=1TBan0000000LPR",
-      "atlassian-domain-verification=upLp21qQgja1aHG2gnAb1AmXRqb/zG0UK1a0n3zTSXZg5DgOSttR3i5uzA3T9Cdk",
-      "google-site-verification=hPfjsDwiisKJ4RP1ExOst9gAOD_0P8Q7-kxdcKUvEcc",
-      "docusign=4a93db58-af07-4632-a881-b569d41a6c57",
-      "asv=8de0c1a866b958297e22a36216e594a6",
-      "z4mthhzk10l6qc0rg4211mnnppkh2y5b",
+      "cursor-domain-verification-vncvvm=D0NzeIDbQa8PPgIf1ukp9UPiu",
+      "docusign=4c9f5602-1c19-4e4c-bde7-77dc4b9ea8a0",
+      "google-site-verification=NLkFgZLHeVMVYlR3t1UZC9_1LzmqCAefJyNDs6ZQqBA",
+      "postman-domain-verification=c3b168067b16085c452b04b643ae1000079b095e383b53d1074e409b0e600b6265e1c7963beca1ca87cc63c381dcea332544c92c919651e4cda69f9a6303079c",
+      "google-site-verification=pmz8ueKvWMPxNlwUDcVroF91-tq6I9VM6wSO_0i7-wc",
+      "elevenlabs=NpcIkVJW_8Vyd2gLKzPviuaU1g5rz83KiWQQ3sWKGtI",
       "whimsical=253112f9add9790f3a27b9d9893626451fc4cda1",
-      "stripe-verification=82ce82470fb8324e19fa65abdb6fd370da5a8f90bba09712f259760f625d0790",
-      "neat-pulse-domain-verification-8GMn8nv=36eba03d-345e-421a-a823-d6d1f28938a4",
-      "facebook-domain-verification=m7id9rt8ehlgcg9tt2yggbsi6gro7i",
-      "fastly-domain-delegation-3c9tdnjzdwy7wfffvyyy-786084-2024-07-08",
-      "v=MCPv1; k=ed25519; p=WMeka0C1fIH9HQLMtsSM9DD9cM6Bz6Wz34mHnK86UcM=",
-      "google-site-verification=PrlpJHdk11CIkPsiXoHEAJevWHAk39JRFAqVSe9l7n0",
+      "anthropic-domain-verification-zk7x9c=QfN52ECybLPUWh51R9pKF0QO3",
       "_mphpl78cv3thhugki4dkknlukgj1du6",
+      "edcbf4c7-b604-457b-870e-1b05f655e769",
+      "google-site-verification=qjP3OAiraClha_40cX9Z9FrG5q3O_0InXSamXOswY-s",
       "google-site-verification=ZgGi2-xDdfnaWxdfjn5AqtUS11jKWqSXAV_EHODFzdE",
       "liveramp-site-verification=7gyFkTwGYsvgd7IUQwyAOfImETwR06wgKjKiXq90KEY",
-      "docusign=4c9f5602-1c19-4e4c-bde7-77dc4b9ea8a0",
+      "asv=8de0c1a866b958297e22a36216e594a6",
+      "h1-domain-verification=KhpNX9YNAc7bX95agGvFsPPKbYTVe1KC6xj7P1zKZrRzxcuS",
+      "apple-domain-verification=8kIS0gmJTvILWQuI",
+      "docusign=4a93db58-af07-4632-a881-b569d41a6c57",
+      "facebook-domain-verification=m7id9rt8ehlgcg9tt2yggbsi6gro7i",
+      "MS=ms80697640",
+      "00D50000000JV6w=1TBTQ0000000CIv;00DDn000000HWol=1TBVY00000002Hx;00D4x000003vxGL=1TBPQ00000008Tp;00Dfn00000BUlWD=1TBan0000000LPR",
+      "neat-pulse-domain-verification-8GMn8nv=36eba03d-345e-421a-a823-d6d1f28938a4",
       "docker-verification=ccde1a0d-8d2c-44b5-9d20-6c4e19113fc9",
       "v=spf1 ip4:198.2.180.60/32 ip4:13.111.2.227/32 include:spf1.stripe.com include:greenhouse-outbound-mail.stripe.com include:_spf.qualtrics.com ~all",
-      "google-site-verification=qjP3OAiraClha_40cX9Z9FrG5q3O_0InXSamXOswY-s",
-      "h1-domain-verification=KhpNX9YNAc7bX95agGvFsPPKbYTVe1KC6xj7P1zKZrRzxcuS",
-      "google-site-verification=NLkFgZLHeVMVYlR3t1UZC9_1LzmqCAefJyNDs6ZQqBA",
-      "anthropic-domain-verification-zk7x9c=QfN52ECybLPUWh51R9pKF0QO3",
-      "apple-domain-verification=8kIS0gmJTvILWQuI",
-      "postman-domain-verification=c3b168067b16085c452b04b643ae1000079b095e383b53d1074e409b0e600b6265e1c7963beca1ca87cc63c381dcea332544c92c919651e4cda69f9a6303079c",
-      "elevenlabs=NpcIkVJW_8Vyd2gLKzPviuaU1g5rz83KiWQQ3sWKGtI",
-      "google-site-verification=pmz8ueKvWMPxNlwUDcVroF91-tq6I9VM6wSO_0i7-wc",
       "canva-site-verification=xLypn0D9XANRy-lbwcMfHA",
-      "MS=ms80697640",
-      "cursor-domain-verification-vncvvm=D0NzeIDbQa8PPgIf1ukp9UPiu",
-      "edcbf4c7-b604-457b-870e-1b05f655e769"
+      "z4mthhzk10l6qc0rg4211mnnppkh2y5b",
+      "google-site-verification=hPfjsDwiisKJ4RP1ExOst9gAOD_0P8Q7-kxdcKUvEcc",
+      "atlassian-domain-verification=upLp21qQgja1aHG2gnAb1AmXRqb/zG0UK1a0n3zTSXZg5DgOSttR3i5uzA3T9Cdk",
+      "v=MCPv1; k=ed25519; p=WMeka0C1fIH9HQLMtsSM9DD9cM6Bz6Wz34mHnK86UcM=",
+      "stripe-verification=82ce82470fb8324e19fa65abdb6fd370da5a8f90bba09712f259760f625d0790",
+      "fastly-domain-delegation-3c9tdnjzdwy7wfffvyyy-786084-2024-07-08",
+      "google-site-verification=PrlpJHdk11CIkPsiXoHEAJevWHAk39JRFAqVSe9l7n0"
     ],
     "cname": []
   },
@@ -682,21 +685,21 @@ Output
   ],
   "_meta": {
     "capability": "company-tech-stack",
-    "latency_ms": 2658,
+    "latency_ms": 3388,
     "provenance": {
       "source": "html-analysis",
-      "fetched_at": "2026-07-03T15:09:22.446Z"
+      "fetched_at": "2026-07-03T15:33:42.575Z"
     },
     "payment": {
       "method": "x402",
-      "settlement_id": "0x0c53d4091b18f8504746392ff4669c62ff5da41e78ec576ffb671b1adcb729c9",
+      "settlement_id": "0xa2977d8a8dde05e3f0e53778286c178fcebe14f8c0cf2609865837b76b5df264",
       "price_usd": 0.324
     }
   }
 }
 
 Hints
-  retrieve the response later: monid runs get -r 01KWM8DXS6RB08CJHRCEFMXN6Y
+  retrieve the response later: monid runs get -r 01KWM9TF6S97NFTMZ41A817MMB
 
 
 Update available: 0.1.0 → 0.1.1.
@@ -706,11 +709,11 @@ run_exit: 0
 
 ========== MONID LIVE RUN: tech-stack-detect ==========
 - Starting run: api.strale.io//x402/tech-stack-detect...
-✔ Run completed: 01KWM8E3KBH0GG4V9AN8RD2T8E
+✔ Run completed: 01KWM9TN6JQH3QMNF43ME9CF89
 
 Run Details
 ────────────────────────────────────────
-  Run ID:   01KWM8E3KBH0GG4V9AN8RD2T8E
+  Run ID:   01KWM9TN6JQH3QMNF43ME9CF89
   Provider: api.strale.io
   Endpoint: /x402/tech-stack-detect
   Status:   COMPLETED
@@ -762,21 +765,21 @@ Output
   },
   "_meta": {
     "capability": "tech-stack-detect",
-    "latency_ms": 33,
+    "latency_ms": 35,
     "provenance": {
       "source": "tech-stack-detect:algorithmic",
-      "fetched_at": "2026-07-03T15:09:25.762Z"
+      "fetched_at": "2026-07-03T15:33:45.525Z"
     },
     "payment": {
       "method": "x402",
-      "settlement_id": "0x955b39a1227dd56781393e97795cb92f94fda21133d8fc7cb65c1d6743c2cc3a",
+      "settlement_id": "0xd935fd527b1b9745119f43cc44c1c1d8928f035bc5ab7b8610e5945e131ebe85",
       "price_usd": 0.0324
     }
   }
 }
 
 Hints
-  retrieve the response later: monid runs get -r 01KWM8E3KBH0GG4V9AN8RD2T8E
+  retrieve the response later: monid runs get -r 01KWM9TN6JQH3QMNF43ME9CF89
 
 
 Update available: 0.1.0 → 0.1.1.

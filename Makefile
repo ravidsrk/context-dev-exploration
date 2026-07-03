@@ -1,14 +1,18 @@
 .PHONY: test demos integration install agent-loops dual-lang ts-probe ts-agent-loops monid-evidence
 
+VENV_PY ?= .venv/bin/python
+VENV_PIP ?= .venv/bin/pip
+
 install:
-	pip install -r requirements.txt
+	@test -x $(VENV_PY) || python3 -m venv .venv
+	$(VENV_PIP) install -r requirements.txt
 	cd typescript && npm install
 
 test: install
-	pytest tests/ -v -m "not integration"
+	$(VENV_PY) -m pytest tests/ -v -m "not integration"
 
 integration: install
-	pytest tests/ -v -m integration
+	$(VENV_PY) -m pytest tests/ -v -m integration
 
 demos:
 	python scripts/run_demos.py

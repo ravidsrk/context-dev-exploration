@@ -1,3 +1,7 @@
+16ead55 docs: add reasoning-first agent framework beyond use-case catalog
+26bddd2 feat: add TypeScript scout and MCP code-mode agent loops
+c28570b feat: wire hosted MCP execute sandbox into code-mode agent loop
+3360d0a chore: refresh git-log and agent-loop evidence
 a8e526d fix: canonicalize MCP hosted/LLM op ids before execute
 ade21f2 chore: refresh git-log after verifier fixes
 6173d6d fix: capture 7 Monid discover queries with JSON evidence files
