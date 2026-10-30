@@ -33,7 +33,7 @@ async function main(): Promise<void> {
   const perceiveLog: string[] = [];
   let credits = 0;
 
-  const brandRes = await withRetry(() => client.brand.retrieve({ domain: DOMAIN }));
+  const brandRes = await withRetry(() => client.brand.retrieve({ type: "by_domain", domain: DOMAIN }));
   perceiveLog.push("brand.retrieve");
   credits += 10;
   const brand = brandRes.brand;
@@ -47,26 +47,32 @@ async function main(): Promise<void> {
     brandForPlan
   );
 
-  let naicsRes: Awaited<ReturnType<ContextDev["brand"]["retrieveNaics"]>> | null = null;
-  let smRes: Awaited<ReturnType<ContextDev["brand"]["webScrapeSitemap"]>> | null = null;
-  let pricingMarkdown = "";
+  let naicsRes: Awaited<ReturnType<ContextDev["industry"]["retrieveNaics"]>> | null = null;
+  let smRes: Awaited<ReturnType<ContextDev["web"]["mapUrls"]>> | null = null;
+  // July bug: has_pricing_content was markdown.length > 100, which nav-only Markdown passed.
+  // Now: ask Scrape for passages relevant to prices (highlights) and require at least one.
+  let pricingHighlights: string[] = [];
 
   for (const step of steps) {
     if (step === "naics") {
-      naicsRes = await withRetry(() => client.brand.retrieveNaics({ input: DOMAIN }));
+      naicsRes = await withRetry(() => client.industry.retrieveNaics({ input: DOMAIN }));
       perceiveLog.push("retrieveNaics");
       credits += 10;
     } else if (step === "sitemap") {
-      smRes = await withRetry(() => client.brand.webScrapeSitemap({ domain: DOMAIN }));
-      perceiveLog.push("webScrapeSitemap");
+      smRes = await withRetry(() => client.web.mapUrls({ domain: DOMAIN }));
+      perceiveLog.push("mapUrls");
       credits += 1;
     } else if (step === "pricing_scrape") {
       const pricingRes = await withRetry(() =>
-        client.brand.webScrapeMd({ url: `https://${DOMAIN}/pricing` })
+        client.web.scrape({
+          url: `https://${DOMAIN}/pricing`,
+          formats: { highlights: true },
+          highlightsParams: { query: "prices, fees and plan costs", maxCharacters: 1500 },
+        })
       );
-      perceiveLog.push("webScrapeMd:pricing");
-      credits += 1;
-      pricingMarkdown = pricingRes.markdown ?? "";
+      perceiveLog.push("scrape_highlights:pricing");
+      credits += 2; // scrape 1 + highlights 1 (pricing page); Sep 23 changelog said +3
+      pricingHighlights = pricingRes.highlights?.data ?? [];
     }
   }
 
@@ -80,8 +86,8 @@ async function main(): Promise<void> {
       ? { code: topCode.code, name: topCode.name, confidence: topCode.confidence }
       : null,
     sitemap_urls: (smRes?.urls ?? []).length,
-    has_pricing_content: pricingMarkdown.length > 100,
-    pricing_preview: pricingMarkdown.slice(0, 200) || null,
+    has_pricing_content: pricingHighlights.length > 0,
+    pricing_preview: pricingHighlights.join(" | ").slice(0, 200) || null,
     credits_estimated: credits,
     policy_source: policySource,
     plan_steps: steps,

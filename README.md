@@ -35,6 +35,19 @@ context-dev-exploration/
 └── evidence/              # live run logs (runs/, monid/)
 ```
 
+## October 2026 update
+
+The July code was written against `context.dev` 1.x (Python) and 0.1.x (TypeScript). By October, 4 of the 11 Python SDK methods it called were gone, the Stainless-hosted MCP URL returned HTTP 525, and the mocked unit tests still passed. This branch migrates both SDKs, switches the tests to autospecced mocks so drift fails loudly, and adds probes for features shipped since July.
+
+- [What changed since July](docs/reference/WHAT_CHANGED.md): the drift, the fix, and the July pricing-check bug
+- [Latest features](docs/reference/LATEST_FEATURES.md): feature inventory Jul 3 to Oct 28, 2026, with real probe output
+- Evidence: `evidence/runs/*-2026-10-30.*`
+
+```bash
+make sdk-compat   # offline: checks every SDK method this repo calls still exists
+make latest       # live: ~40 credits across 10 new-feature probes
+```
+
 ## Quick start
 
 ```bash

@@ -10,7 +10,7 @@
     "build": "tsc --noEmit"
   },
   "dependencies": {
-    "context.dev": "^0.1.0"
+    "context.dev": "^3.19.1"
   },
   "devDependencies": {
     "@types/node": "^26.1.0",

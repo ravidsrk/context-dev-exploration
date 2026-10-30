@@ -1,0 +1,21 @@
+context.dev 2.41.1
+  OK      brand.retrieve
+  OK      brand.search
+  OK      utility.prefetch
+  OK      industry.retrieve_naics
+  OK      industry.retrieve_sic
+  OK      web.scrape
+  OK      web.map_urls
+  OK      web.web_crawl_md
+  OK      web.screenshot
+  OK      web.extract_styleguide
+  OK      web.answers
+  OK      people.search
+  OK      news.search
+  OK      monitors.create
+  OK      monitors.delete
+  OK      batch.submit
+  gone    web.web_scrape_md (July 2026 call)
+  gone    web.web_scrape_sitemap (July 2026 call)
+  gone    brand.identify_from_transaction (July 2026 call)
+  gone    web.extract_fonts (July 2026 call)

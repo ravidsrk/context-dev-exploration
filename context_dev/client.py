@@ -1,4 +1,10 @@
-"""Thin Context.dev API client with env-based auth and 408/429 retry."""
+"""Thin Context.dev API client with env-based auth and 408/429 retry.
+
+Updated 2026-10-30 for context.dev SDK 2.41.x. Four methods this file used in
+July 2026 no longer exist in the SDK (web_scrape_md, web_scrape_sitemap,
+identify_from_transaction, extract_fonts) and two calls now need a `type`
+(brand.retrieve, utility.prefetch). See docs/reference/WHAT_CHANGED.md.
+"""
 
 from __future__ import annotations
 
@@ -46,6 +52,17 @@ def with_retry(
     raise last_err  # type: ignore[misc]
 
 
+def _ns(value: Any) -> Any:
+    """Recursively wrap raw JSON dicts so getattr-style access works."""
+    from types import SimpleNamespace
+
+    if isinstance(value, dict):
+        return SimpleNamespace(**{k: _ns(v) for k, v in value.items()})
+    if isinstance(value, list):
+        return [_ns(v) for v in value]
+    return value
+
+
 def _safe_str(value: Any) -> str | None:
     if value is None:
         return None
@@ -80,7 +97,7 @@ def _parse_industry_codes(codes: Any) -> list[dict[str, str]]:
 
 
 def retrieve_brand(client: ContextDev, domain: str) -> dict[str, Any]:
-    response = with_retry(lambda: client.brand.retrieve(domain=domain))
+    response = with_retry(lambda: client.brand.retrieve(type="by_domain", domain=domain))
     brand = getattr(response, "brand", None)
     if brand is None:
         return {"title": None, "domain": domain, "logo_url": None, "industries": None}
@@ -93,8 +110,12 @@ def retrieve_brand(client: ContextDev, domain: str) -> dict[str, Any]:
 
 
 def scrape_markdown(client: ContextDev, url: str) -> dict[str, Any]:
-    response = with_retry(lambda: client.web.web_scrape_md(url=url))
-    markdown = getattr(response, "markdown", None) or ""
+    # July 2026: client.web.web_scrape_md(url=...). Now: unified Scrape.
+    response = with_retry(
+        lambda: client.web.scrape(url=url, formats={"markdown": True})
+    )
+    md = getattr(response, "markdown", None)
+    markdown = (getattr(md, "data", None) if md is not None else None) or ""
     return {
         "url": _safe_str(getattr(response, "url", None)) or url,
         "markdown": markdown,
@@ -113,8 +134,13 @@ def identify_transaction(
         "country_gl": country_gl,
     }
     if mcc:
-        kwargs["mcc"] = mcc
-    response = with_retry(lambda: client.brand.identify_from_transaction(**kwargs))
+        kwargs["mcc"] = int(mcc) if str(mcc).isdigit() else mcc
+    # July 2026: client.brand.identify_from_transaction(...). Now: one
+    # POST /brand/retrieve with type="by_transaction". An unresolved merchant
+    # raises 400 NOT_FOUND (not charged).
+    response = with_retry(
+        lambda: client.brand.retrieve(type="by_transaction", **kwargs)
+    )
     brand = getattr(response, "brand", None)
     if brand is None:
         return {"title": None, "domain": None, "industries": None}
@@ -144,7 +170,9 @@ def classify_sic(client: ContextDev, input_value: str) -> dict[str, Any]:
 
 
 def prefetch_domain(client: ContextDev, domain: str) -> dict[str, Any]:
-    response = with_retry(lambda: client.utility.prefetch(domain=domain))
+    response = with_retry(
+        lambda: client.utility.prefetch(identifier={"domain": domain}, type="brand")
+    )
     return {
         "status": _safe_str(getattr(response, "status", None)),
         "domain": _safe_str(getattr(response, "domain", None)) or domain,
@@ -182,7 +210,13 @@ def extract_styleguide(client: ContextDev, domain: str) -> dict[str, Any]:
 
 
 def extract_fonts(client: ContextDev, domain: str) -> dict[str, Any]:
-    response = with_retry(lambda: client.web.extract_fonts(domain=domain))
+    # July 2026: client.web.extract_fonts. The SDK no longer has it; the HTTP
+    # route GET /web/fonts is still in the public OpenAPI, so call it raw.
+    response = with_retry(
+        lambda: client.get("/web/fonts", options={"params": {"domain": domain}}, cast_to=object)
+    )
+    if isinstance(response, dict):
+        response = _ns(response)
     fonts = getattr(response, "fonts", None) or []
     font_names = [
         _safe_str(
@@ -231,8 +265,9 @@ def crawl_markdown(
 
 
 def scrape_sitemap(client: ContextDev, domain: str) -> dict[str, Any]:
-    response = with_retry(lambda: client.web.web_scrape_sitemap(domain=domain))
-    urls = getattr(response, "urls", None) or []
+    # July 2026: client.web.web_scrape_sitemap. Now: Map URLs (1 credit).
+    response = with_retry(lambda: client.web.map_urls(domain=domain))
+    urls = [getattr(u, "url", u) for u in (getattr(response, "urls", None) or [])]
     return {
         "domain": domain,
         "url_count": len(urls),

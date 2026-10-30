@@ -58,7 +58,7 @@ async function executePlanLocal(
     if (!domain) continue;
 
     if (step.op === "brand.retrieve") {
-      const brandRes = await withRetry(() => client.brand.retrieve({ domain }));
+      const brandRes = await withRetry(() => client.brand.retrieve({ type: "by_domain", domain }));
       out.identity = {
         title: brandRes.brand?.title ?? null,
         logo_url: brandRes.brand?.logos?.[0]?.url ?? null,
@@ -66,7 +66,7 @@ async function executePlanLocal(
       credits += OP_CREDITS["brand.retrieve"];
       opsRun.push(`local:brand.retrieve(${domain})`);
     } else if (step.op === "web.extract_styleguide") {
-      const styleRes = await withRetry(() => client.brand.styleguide({ domain }));
+      const styleRes = await withRetry(() => client.web.extractStyleguide({ domain }));
       const colors = styleRes.styleguide?.colors;
       out.design_tokens = {
         color_count: [colors?.accent, colors?.background, colors?.text].filter(Boolean).length,
@@ -75,10 +75,10 @@ async function executePlanLocal(
       credits += OP_CREDITS["web.extract_styleguide"];
       opsRun.push(`local:brand.styleguide(${domain})`);
     } else if (step.op === "web.scrape_sitemap") {
-      const smRes = await withRetry(() => client.brand.webScrapeSitemap({ domain }));
+      const smRes = await withRetry(() => client.web.mapUrls({ domain }));
       out.site_scale = {
         url_count: (smRes.urls ?? []).length,
-        sample_paths: (smRes.urls ?? []).slice(0, 3),
+        sample_paths: (smRes.urls ?? []).slice(0, 3).map((u) => u.url),
       };
       credits += OP_CREDITS["web.scrape_sitemap"];
       opsRun.push(`local:brand.webScrapeSitemap(${domain})`);

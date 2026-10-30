@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from types import SimpleNamespace
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, create_autospec, patch
 
 import pytest
 from context.dev import APIStatusError
@@ -24,6 +24,17 @@ from context_dev.client import (
     scrape_sitemap,
     with_retry,
 )
+
+
+def sdk_mock():
+    """A mock that only has methods the installed SDK really has.
+
+    Plain MagicMock() accepts any attribute, which is how the July tests kept
+    passing after web_scrape_md and friends were removed from the SDK.
+    """
+    from context.dev import ContextDev
+
+    return create_autospec(ContextDev(api_key="test-no-network"), instance=True)
 
 
 def _brand_response(title="Acme", domain="acme.com", logos=None, industries=None):
@@ -111,9 +122,10 @@ class TestWithRetry:
 
 class TestRetrieveBrand:
     def test_maps_brand_fields(self):
-        client = MagicMock()
+        client = sdk_mock()
         client.brand.retrieve.return_value = _brand_response()
         result = retrieve_brand(client, "acme.com")
+        client.brand.retrieve.assert_called_once_with(type="by_domain", domain="acme.com")
         assert result["title"] == "Acme"
         assert result["domain"] == "acme.com"
         assert result["logo_url"] == "https://cdn/logo.png"
@@ -135,35 +147,37 @@ class TestRetrieveBrand:
 
 class TestScrapeMarkdown:
     def test_returns_markdown_length(self):
-        client = MagicMock()
-        client.web.web_scrape_md.return_value = SimpleNamespace(
+        client = sdk_mock()
+        client.web.scrape.return_value = SimpleNamespace(
             url="https://acme.com",
-            markdown="# Hello\n\nWorld",
+            markdown=SimpleNamespace(data="# Hello\n\nWorld"),
         )
         result = scrape_markdown(client, "https://acme.com")
         assert result["markdown_length"] == 14
         assert "Hello" in result["markdown"]
 
     def test_handles_none_markdown(self):
-        client = MagicMock()
-        client.web.web_scrape_md.return_value = SimpleNamespace(url="https://acme.com", markdown=None)
+        client = sdk_mock()
+        client.web.scrape.return_value = SimpleNamespace(url="https://acme.com", markdown=None)
         result = scrape_markdown(client, "https://acme.com")
         assert result["markdown_length"] == 0
 
 
 class TestIdentifyTransaction:
     def test_resolves_merchant(self):
-        client = MagicMock()
-        client.brand.identify_from_transaction.return_value = _brand_response(
+        client = sdk_mock()
+        client.brand.retrieve.return_value = _brand_response(
             title="Starbucks", domain="starbucks.com"
         )
         result = identify_transaction(client, "STARBUCKS 123", mcc="5814")
         assert result["domain"] == "starbucks.com"
-        client.brand.identify_from_transaction.assert_called_once()
+        client.brand.retrieve.assert_called_once_with(
+            type="by_transaction", transaction_info="STARBUCKS 123", country_gl="us", mcc=5814
+        )
 
     def test_handles_missing_brand(self):
-        client = MagicMock()
-        client.brand.identify_from_transaction.return_value = SimpleNamespace(brand=None)
+        client = sdk_mock()
+        client.brand.retrieve.return_value = SimpleNamespace(brand=None)
         result = identify_transaction(client, "UNKNOWN MERCHANT")
         assert result["domain"] is None
 
@@ -193,9 +207,12 @@ class TestClassifySic:
 
 class TestPrefetchDomain:
     def test_returns_status(self):
-        client = MagicMock()
+        client = sdk_mock()
         client.utility.prefetch.return_value = SimpleNamespace(status="ok", domain="stripe.com")
         result = prefetch_domain(client, "stripe.com")
+        client.utility.prefetch.assert_called_once_with(
+            identifier={"domain": "stripe.com"}, type="brand"
+        )
         assert result["status"] == "ok"
 
 
@@ -214,11 +231,11 @@ class TestExtractStyleguide:
 
 class TestExtractFonts:
     def test_lists_font_names(self):
-        client = MagicMock()
-        client.web.extract_fonts.return_value = SimpleNamespace(
-            domain="stripe.com",
-            fonts=[SimpleNamespace(font="Inter"), SimpleNamespace(font="Roboto")],
-        )
+        client = sdk_mock()
+        client.get.return_value = {
+            "domain": "stripe.com",
+            "fonts": [{"font": "Inter"}, {"font": "Roboto"}],
+        }
         result = extract_fonts(client, "stripe.com")
         assert result["font_count"] == 2
         assert "Inter" in result["font_names"]
@@ -249,11 +266,20 @@ class TestCrawlMarkdown:
         assert result["pages_with_markdown"] == 2
 
 
+class TestSdkSurface:
+    def test_july_methods_are_gone(self):
+        client = sdk_mock()
+        for path in ("web.web_scrape_md", "web.web_scrape_sitemap",
+                     "brand.identify_from_transaction", "web.extract_fonts"):
+            ns, name = path.split(".")
+            assert not hasattr(getattr(client, ns), name), path
+
+
 class TestScrapeSitemap:
     def test_returns_url_count(self):
-        client = MagicMock()
-        client.web.web_scrape_sitemap.return_value = SimpleNamespace(
-            urls=["https://stripe.com/", "https://stripe.com/pricing"]
+        client = sdk_mock()
+        client.web.map_urls.return_value = SimpleNamespace(
+            urls=[SimpleNamespace(url="https://stripe.com/"), SimpleNamespace(url="https://stripe.com/pricing")]
         )
         result = scrape_sitemap(client, "stripe.com")
         assert result["url_count"] == 2

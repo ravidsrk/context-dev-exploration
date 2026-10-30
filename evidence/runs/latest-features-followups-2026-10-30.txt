@@ -1,0 +1,24 @@
+people_search_simple {"query": "VPs of engineering at fintech companies", "result_count": 10, "results": [{"title": "Vice President of Engineering", "company": "Paymentology", "seniority": "executive"}, {"title": "Global Vice President of Software Engineering", "company": "Q2", "seniority": "executive"}, {"title": "VP of Engineering", "company": "Q2", "seniority": "executive"}, {"title": "VP of Engineering", "company": "Fin3 Tech", "seniority": "executive"}, {"title": "VP of Software Engineering", "company": "Q2", "seniority": null}], "credits": 10}
+Traceback (most recent call last):
+  File "<stdin>", line 7, in <module>
+  File "/tmp/cdv/lib/python3.13/site-packages/context/dev/resources/news.py", line 97, in search
+    return self._post(
+           ~~~~~~~~~~^
+        "/news/search",
+        ^^^^^^^^^^^^^^^
+    ...<15 lines>...
+        cast_to=NewsSearchResponse,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/tmp/cdv/lib/python3.13/site-packages/context/dev/_base_client.py", line 1284, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/cdv/lib/python3.13/site-packages/context/dev/_base_client.py", line 1071, in request
+    raise self._make_status_error_from_response(err.response) from None
+context.dev.BadRequestError: Error code: 400 - {'message': [{'code': 'custom', 'path': ['sortBy', 'type'], 'message': 'Natural-language searches are ordered by relevance only.'}], 'error_code': 'INPUT_VALIDATION_ERROR', 'key_metadata': {'credits_consumed': 0, 'credits_remaining': 59960}, 'request_id': '0499ffdf-e84d-4085-b3a5-d902fcd26d10'}
+news_newest_sortBy_error "400 INPUT_VALIDATION_ERROR: Natural-language searches are ordered by relevance only. (0 credits)"
+news_since_sep1 [{"title": "Five of the web's biggest data-scraping brands now sit under one $3.6 billion umbrella, and AI agents are the reason why", "published": "2026-10-16 19:20:00+00:00"}, {"title": "Web scraping startup Firecrawl closes $75M investment", "published": "2026-09-22 22:46:49+00:00"}, {"title": "DeepSeek Nears a $15 Billion Raise Days After a U.S. Federal Removal Order", "published": "2026-10-22 13:25:33.644000+00:00"}, {"title": "DeepSeek V4.1-Flash-1017: A Minor Update Focused on Coding Speed and Cost", "published": "2026-10-17 08:55:53.657000+00:00"}, {"title": "Wikimedia Investigates OpenAI Agent Activity as AI Scraping Intensifies", "published": "2026-10-06 10:00:06+00:00"}, {"credits": 1}]
+batch_status {"status": "completed", "credits": "Credits(net=2, ocr_charged=0, refunded=0, reserved=2)"}
+batch_results "BatchGetResultsResponse(request_id='e61f917e-b3d1-4cf9-b82c-95b76be2cbd6', data=[DataOk(credits_used=None, result=None, status='ok', url='https://docs.context.dev/changelog', item_id=None, meta=None, ocr_pages=None, http_status=200, final_url='https://docs.context.dev/changelog', markdown='> ## Documentation Index\\n> \\n> Fetch the complete documentation index at: [/llms.txt](https://docs.context.dev/llms.txt)\\n> \\n> Use this file to discover all available pages before exploring further.\\n\\n[Skip to main content](https://docs.context.dev/changelog#content-area)\\n\\nAssistant\\n\\nResponses are gen"
+monitor_limits {"monitors_limit": 100, "monitors_used": 1, "plan": "starter", "request_id": "0e4132fb-0b53-483a-81a4-35e34e7ede18", "key_metadata": {"credits_consumed": 0, "credits_remaining": 59959}}

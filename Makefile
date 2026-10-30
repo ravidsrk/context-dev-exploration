@@ -1,4 +1,4 @@
-.PHONY: test demos integration install agent-loops dual-lang ts-probe ts-agent-loops monid-evidence verify
+.PHONY: latest sdk-compat test demos integration install agent-loops dual-lang ts-probe ts-agent-loops monid-evidence verify
 
 VENV_PY ?= .venv/bin/python
 VENV_PIP ?= .venv/bin/pip
@@ -38,3 +38,8 @@ ts-probe:
 ts-agent-loops:
 	cd typescript && npm run scout-loop -- stripe.com
 	cd typescript && npm run mcp-code-mode -- "Get stripe.com brand identity, design tokens, and site scale"
+latest:
+	PYTHONPATH=. $(VENV_PY) scripts/run/latest_features.py
+
+sdk-compat:
+	PYTHONPATH=. $(VENV_PY) scripts/verify/sdk_compat.py
