@@ -1,0 +1,236 @@
+{
+  "started_utc": "2026-10-30T05:41:53.706981+00:00",
+  "sdk": "context.dev (python) 2.41.1",
+  "credits_reported": 28,
+  "results": {
+    "scrape_highlights": {
+      "ok": true,
+      "ms": 541,
+      "result": {
+        "url": "https://stripe.com/pricing",
+        "query": "What does Stripe charge per card transaction?",
+        "markdown_length": 60562,
+        "markdown_head": "# \n\n- Products\n- Solutions\n- Developers\n- Resources\n- [Pricing](https://stripe.com/pricing)\n- [Guide me](https://stripe.com/personalize)\n\n[Contact sales](https://stripe.com/contact/sales)\u00a0\n\n[Go to the Stripe homepage](https://stripe.com/)\n\nBack\n\n- Products\n\n- Solutions\n\n- Developers\n\n- Resources\n\n- [Pricing](https://stripe.com/pricing)\n\nNot sure where to start?\n\n[Get recommendations Tell us about ",
+        "highlights": [
+          "[Standard > 2.9% + 30\u00a2]\n\nper successful transaction for domestic\u00a0cards\n\n\u2026\n\n[Cards and wallets]\n\n**2.9% + 30\u00a2**\n\nper successful transaction for domestic\u00a0cards\n\n\u2026\n\n[Pix and UPI]\n\n**1.8% + 30\u00a2**\n\n\u2026\n\n[Cards and wallets]\n\n**2.7% + 5\u00a2**\n\n\u2026\n\n[Transactions]\n\n**$0.30**\n\n\u2026\n\n[Tax Basic]\n\nper transaction, where you\u2019re registered to collect\u00a0taxes\n\n\u2026\n\n[Pay as you go]\n\n**Starting at $0.05**"
+        ],
+        "highlights_code": null,
+        "cache_status": "hit",
+        "credits": 2
+      }
+    },
+    "map_search": {
+      "ok": true,
+      "ms": 5657,
+      "result": {
+        "domain": "stripe.com",
+        "search": "pricing and fees",
+        "urls": [
+          {
+            "url": "https://stripe.com/pricing",
+            "title": "Pricing & Fees"
+          },
+          {
+            "url": "https://stripe.com/blog/adaptive-pricing-for-subscriptions",
+            "title": "Testing the impact of Adaptive Pricing across 1.5M subscription checkout sessions"
+          },
+          {
+            "url": "https://stripe.com/billing/pricing",
+            "title": "Stripe Billing | Pricing"
+          },
+          {
+            "url": "https://stripe.com/connect/pricing",
+            "title": "Pricing information | Stripe Connect"
+          },
+          {
+            "url": "https://stripe.com/sigma/pricing",
+            "title": "Stripe Sigma | Pricing and Fees"
+          }
+        ],
+        "credits": 2
+      }
+    },
+    "brand_by_transaction": {
+      "ok": true,
+      "ms": 3217,
+      "result": {
+        "transaction_info": "STARBUCKS STORE 12345",
+        "title": "Starbucks",
+        "domain": "starbucks.com",
+        "credits": 10
+      }
+    },
+    "brand_search": {
+      "ok": true,
+      "ms": 206,
+      "result": {
+        "query": "linear",
+        "results": [
+          {
+            "name": "Linear",
+            "domain": "linear.app"
+          },
+          {
+            "name": "Linear Technology",
+            "domain": "linear.com"
+          },
+          {
+            "name": "Linearity",
+            "domain": "linearity.io"
+          },
+          {
+            "name": "Linear Air",
+            "domain": "linearair.com"
+          },
+          {
+            "name": "Thomson Linear",
+            "domain": "thomsonlinear.com"
+          }
+        ],
+        "credits": 1
+      }
+    },
+    "company_search": {
+      "ok": true,
+      "ms": 1009,
+      "result": {
+        "query": "Developer tools companies that sell a web scraping API",
+        "results": [
+          {
+            "name": "WebScraping.AI",
+            "domain": "webscraping.ai"
+          },
+          {
+            "name": "WebScrapingAPI",
+            "domain": "webscrapingapi.com"
+          },
+          {
+            "name": "Edge Scraper",
+            "domain": "edgescraper.com"
+          },
+          {
+            "name": "ScraperAPI",
+            "domain": "scraperapi.com"
+          },
+          {
+            "name": "Scrape.do",
+            "domain": "scrape.do"
+          }
+        ],
+        "credits": 2
+      }
+    },
+    "people_search": {
+      "ok": true,
+      "ms": 2082,
+      "result": {
+        "query": "Heads of developer relations at API companies in India",
+        "result_count": 0,
+        "results": [],
+        "credits": 0
+      }
+    },
+    "news_search": {
+      "ok": true,
+      "ms": 300,
+      "result": {
+        "query": "web scraping API funding",
+        "articles": [
+          {
+            "title": "Luminati review",
+            "url": "https://techradar.com/reviews/luminati",
+            "published": "2020-01-11 16:17:00+00:00"
+          },
+          {
+            "title": "Bright Data review",
+            "url": "https://techradar.com/reviews/bright-data",
+            "published": "2022-02-14 09:00:49+00:00"
+          },
+          {
+            "title": "Wikipedia urges AI companies to use its paid API, and stop scraping | TechCrunch",
+            "url": "https://techcrunch.com/2025/11/10/wikipedia-urges-ai-companies-to-use-its-paid-api-and-stop-scraping",
+            "published": "2025-11-10 18:30:59+00:00"
+          },
+          {
+            "title": "Cloverly snags $2.1M seed to continue developing API to measure and offset carbon usage \u2013 TechCrunch",
+            "url": "https://techcrunch.com/2021/07/07/cloverly-snags-2-1m-seed-to-continue-developing-api-to-measure-and-offset-carbon-usage",
+            "published": "2021-07-07 13:18:00+00:00"
+          },
+          {
+            "title": "Form S-1",
+            "url": "https://sec.gov/Archives/edgar/data/1582961/000119312521055798/d898181ds1.htm",
+            "published": "2021-02-25 15:02:00+00:00"
+          }
+        ],
+        "credits": 1
+      }
+    },
+    "answers_fast": {
+      "ok": true,
+      "ms": 5464,
+      "result": {
+        "task": "What is the monthly price and included credits of each Context.dev self-serve plan?",
+        "json_content": {
+          "plans": [
+            {
+              "name": "Free",
+              "monthly_usd": 0,
+              "credits": 1000
+            },
+            {
+              "name": "Developer",
+              "monthly_usd": 25,
+              "credits": 10000
+            },
+            {
+              "name": "Pro",
+              "monthly_usd": null,
+              "credits": null
+            },
+            {
+              "name": "Growth",
+              "monthly_usd": null,
+              "credits": null
+            },
+            {
+              "name": "Scale",
+              "monthly_usd": null,
+              "credits": null
+            }
+          ]
+        },
+        "sources": [
+          "https://www.context.dev/pricing"
+        ],
+        "partial": null,
+        "credits": 10
+      }
+    },
+    "batch": {
+      "ok": true,
+      "ms": 392,
+      "result": {
+        "batch_id": "batch_4ca1d5f9245544a0909dcd50aee8e5a8",
+        "status": "queued",
+        "url_count": 2,
+        "invalid_urls": 0,
+        "credits": 0
+      }
+    },
+    "semantic_monitor": {
+      "ok": true,
+      "ms": 1072,
+      "result": {
+        "monitor_id": "mon_a709612186ab4d8f988ab2b1c7d5617f",
+        "status": "active",
+        "initial_run_id": "run_96291c95befc4c58899a3899b5284d46",
+        "url": "https://stripe.com/pricing",
+        "instructions": "Alert only when a listed price, fee or plan changes. Ignore testimonials and layout.",
+        "cleanup": {
+          "monitor_id": "mon_a709612186ab4d8f988ab2b1c7d5617f",
+          "deleted": true
+        }
+      }
+    }
+  }
+}

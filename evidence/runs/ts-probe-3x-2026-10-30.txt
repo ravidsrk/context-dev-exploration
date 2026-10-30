@@ -1,0 +1,18 @@
+=== TS Brand Retrieve ===
+  title: Stripe
+  domain: stripe.com
+  logo_url: https://media.brand.dev/b81e9ab9-9a61-4c0f-89a1-5cb2e99f4a48.svg
+
+=== TS Scrape Markdown ===
+  url: https://stripe.com/
+  markdown_length: 20919
+
+=== TS NAICS Classification ===
+  domain: stripe.com
+  top_code: 522320 Financial Transactions Processing
+
+=== TS Sitemap ===
+  url_count: 7160
+  sample: https://stripe.com/legal, https://stripe.com/legal/ssa
+
+=== Done in 8818ms ===

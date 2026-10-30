@@ -142,3 +142,13 @@ def test_mcp_code_mode_falls_back_to_local_on_execute_error():
 
     assert "local_sdk_fallback" in result["execute_source"]
     assert result["result"]["identity"]["title"] == "Stripe"
+
+def test_scout_pricing_needs_relevant_passages():
+    """Regression for the July run: nav-only Markdown must not count as pricing."""
+    mem = scout_loop.ScoutMemory(domain="stripe.com")
+    with patch("context_dev.latest.scrape_highlights", return_value={"highlights": []}):
+        scout_loop.perceive_pricing_page(mem, MagicMock())
+    assert mem.pricing_snippet is None
+    with patch("context_dev.latest.scrape_highlights", return_value={"highlights": ["2.9% + 30c"]}):
+        scout_loop.perceive_pricing_page(mem, MagicMock())
+    assert mem.pricing_snippet == "2.9% + 30c"

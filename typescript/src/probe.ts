@@ -3,7 +3,7 @@
  * Auth: CONTEXT_DEV_API_KEY env (never hardcode).
  */
 import ContextDev from "context.dev";
-// TS SDK namespaces web + industry helpers under client.brand
+// context.dev 3.x: web.*, industry.*, brand.retrieve({ type }) (July used 0.1.x brand.* helpers)
 
 const DOMAIN = "stripe.com";
 const URL = "https://stripe.com";
@@ -39,7 +39,7 @@ async function main(): Promise<void> {
   const started = Date.now();
 
   console.log("=== TS Brand Retrieve ===");
-  const brandRes = await withRetry(() => client.brand.retrieve({ domain: DOMAIN }));
+  const brandRes = await withRetry(() => client.brand.retrieve({ type: "by_domain", domain: DOMAIN }));
   const brand = brandRes.brand;
   console.log(`  title: ${brand?.title ?? "n/a"}`);
   console.log(`  domain: ${brand?.domain ?? DOMAIN}`);
@@ -47,14 +47,14 @@ async function main(): Promise<void> {
   console.log(`  logo_url: ${logoUrl}`);
 
   console.log("\n=== TS Scrape Markdown ===");
-  const scrapeRes = await withRetry(() => client.brand.webScrapeMd({ url: URL }));
-  const md = scrapeRes.markdown ?? "";
+  const scrapeRes = await withRetry(() => client.web.scrape({ url: URL, formats: { markdown: true } }));
+  const md = scrapeRes.markdown?.data ?? "";
   console.log(`  url: ${scrapeRes.url ?? URL}`);
   console.log(`  markdown_length: ${md.length}`);
 
   console.log("\n=== TS NAICS Classification ===");
   const naicsRes = await withRetry(() =>
-    client.brand.retrieveNaics({ input: DOMAIN })
+    client.industry.retrieveNaics({ input: DOMAIN })
   );
   const codes = naicsRes.codes ?? [];
   console.log(`  domain: ${naicsRes.domain ?? DOMAIN}`);
@@ -64,11 +64,11 @@ async function main(): Promise<void> {
 
   console.log("\n=== TS Sitemap ===");
   const sitemapRes = await withRetry(() =>
-    client.brand.webScrapeSitemap({ domain: DOMAIN })
+    client.web.mapUrls({ domain: DOMAIN })
   );
   const urls = sitemapRes.urls ?? [];
   console.log(`  url_count: ${urls.length}`);
-  console.log(`  sample: ${urls.slice(0, 2).join(", ") || "n/a"}`);
+  console.log(`  sample: ${urls.slice(0, 2).map((u) => u.url).join(", ") || "n/a"}`);
 
   console.log(`\n=== Done in ${Date.now() - started}ms ===`);
 }

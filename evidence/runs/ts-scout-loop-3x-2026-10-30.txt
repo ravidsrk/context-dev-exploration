@@ -1,0 +1,32 @@
+{
+  "domain": "stripe.com",
+  "goal": "Build a sales intelligence dossier with industry, site scale, and pricing signals.",
+  "company": "Stripe",
+  "logo_url": "https://media.brand.dev/b81e9ab9-9a61-4c0f-89a1-5cb2e99f4a48.svg",
+  "industry": {
+    "code": "522320",
+    "name": "Financial Transactions Processing",
+    "confidence": "high"
+  },
+  "sitemap_urls": 7160,
+  "has_pricing_content": true,
+  "pricing_preview": "[Standard > 2.9% + 30¢]\n\nper successful transaction for domestic cards\n\n…\n\n[Cards and wallets]\n\n**2.9% + 30¢**\n\n…\n\n[Buy Now Pay Later]\n\n**5.99% + 30¢**\n\n…\n\n[Disputes]\n\nDispute countered fee **$15.00**",
+  "credits_estimated": 23,
+  "policy_source": "fallback",
+  "plan_steps": [
+    "naics",
+    "sitemap",
+    "pricing_scrape"
+  ],
+  "perceive_log": [
+    "brand.retrieve",
+    "retrieveNaics",
+    "mapUrls",
+    "scrape_highlights:pricing"
+  ],
+  "observation": {
+    "confidence": 0.95,
+    "recommend_revisit_days": 7,
+    "policy_source": "fallback"
+  }
+}

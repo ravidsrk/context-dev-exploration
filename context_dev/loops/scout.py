@@ -69,12 +69,22 @@ def perceive_sitemap(memory: ScoutMemory, client) -> None:
 
 
 def perceive_pricing_page(memory: ScoutMemory, client) -> None:
+    """Ask for pricing passages, not "any Markdown".
+
+    July 2026 bug: this scraped /pricing as Markdown and treated any non-empty
+    text as pricing. On stripe.com the page body came back as top-bar
+    navigation only, and the brief still said has_pricing_content: true.
+    Highlights (Sep 23) returns only passages relevant to the query, so an
+    empty list now means "no pricing found".
+    """
+    from context_dev.latest import scrape_highlights
+
     url = f"https://{memory.domain}/pricing"
-    page = scrape_markdown(client, url)
-    memory.credits_estimated += 1
-    memory.perceive_log.append(f"scrape_markdown:{url}")
-    md = page.get("markdown") or ""
-    memory.pricing_snippet = md[:500] if md else None
+    page = scrape_highlights(client, url, "prices, fees and plan costs")
+    memory.credits_estimated += 2
+    memory.perceive_log.append(f"scrape_highlights:{url}")
+    passages = page.get("highlights") or []
+    memory.pricing_snippet = "\n".join(passages)[:500] if passages else None
 
 
 def execute_plan(memory: ScoutMemory, client, steps: list[str]) -> None:

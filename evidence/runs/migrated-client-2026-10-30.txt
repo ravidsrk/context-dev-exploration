@@ -1,0 +1,4 @@
+scrape_markdown OK 3
+scrape_sitemap OK {'domain': 'stripe.com', 'url_count': 7160, 'sample_urls': ['https://stripe.com/legal', 'https://stripe.com/legal/ssa', 'https://stripe.com/ssa']}
+prefetch OK {'status': 'ok', 'domain': 'linear.app'}
+extract_fonts OK {'domain': 'linear.app', 'font_count': 2, 'font_names': ['Inter Variable', 'Berkeley Mono']}
