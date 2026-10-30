@@ -1,0 +1,253 @@
+{
+  "run_at": "2026-10-30T13:14:17+05:30",
+  "sdk": "context.dev 2.41.1",
+  "results": {
+    "web_search": {
+      "ok": true,
+      "query": "open source web scraping API for AI agents",
+      "results": [
+        {
+          "url": "https://fast.io/resources/best-web-scraping-tools-ai-agents/",
+          "relevance": "medium",
+          "highlight_head": "[Best Web Scraping Tools for AI Agents > What to check before scaling best web scraping tools for ai agents > Quick]\n\n| Tool | Best For | Output Format | Pricing |\n| - | - | - | - |\n| **Firecrawl** | "
+        },
+        {
+          "url": "https://www.reddit.com/r/LangChain/comments/1th04v7/curated_list_of_aipowered_web_scraping_tools/",
+          "relevance": "medium",
+          "highlight_head": "[Curated list of AI-powered web scraping tools]\n\nWas researching AI scraping tools for a project and noticed the existing awesome lists either cover traditional scraping (Scrapy, BeautifulSoup) or web"
+        },
+        {
+          "url": "https://shattered.io/reduck-secures-3m-ai-agent-web-automation-2026",
+          "relevance": "medium",
+          "highlight_head": "[Reduck Secures $3M to Cut AI Agent Web Tasks 3x [2026]]\n\nA French-American startup called Reduck has raised $3 million in a pre-seed funding round to solve a problem that has quietly become one of th"
+        },
+        {
+          "url": "https://siliconangle.com/2026/09/22/web-scraping-startup-firecrawl-closes-75m-investment",
+          "relevance": "medium",
+          "highlight_head": "[Web scraping startup Firecrawl closes $75M investment > Web scraping startup Firecrawl closes $75M investment]\n\nAI agents rely on information from the web for a wide range of tasks. In theory, they c"
+        }
+      ],
+      "credits": 2
+    },
+    "crawl": {
+      "ok": true,
+      "start_url": "https://docs.context.dev/scrape/overview",
+      "pages": [
+        {
+          "url": "https://docs.context.dev/scrape/overview",
+          "markdown_chars": 11793
+        },
+        {
+          "url": "https://docs.context.dev/",
+          "markdown_chars": 12278
+        },
+        {
+          "url": "https://docs.context.dev/api-reference/web-scraping/scrape",
+          "markdown_chars": 15101
+        }
+      ],
+      "metadata": {
+        "max_crawl_depth": 2,
+        "num_failed": 0,
+        "num_skipped": 2,
+        "num_succeeded": 3,
+        "num_urls": 3
+      },
+      "credits": 3
+    },
+    "scrape_json": {
+      "ok": true,
+      "url": "https://www.context.dev/pricing",
+      "data": {
+        "plans": [
+          {
+            "name": "Free Tier",
+            "price_usd_per_month": 0,
+            "credits_per_month": 1000
+          },
+          {
+            "name": "Developer",
+            "price_usd_per_month": 20,
+            "credits_per_month": 10000
+          },
+          {
+            "name": "Pro",
+            "price_usd_per_month": 90,
+            "credits_per_month": 100000
+          },
+          {
+            "name": "Growth",
+            "price_usd_per_month": 300,
+            "credits_per_month": 500000
+          },
+          {
+            "name": "Scale",
+            "price_usd_per_month": 500,
+            "credits_per_month": 1000000
+          },
+          {
+            "name": "Scale 2.5M",
+            "price_usd_per_month": 950,
+            "credits_per_month": 2500000
+          }
+        ]
+      },
+      "credits": 5
+    },
+    "scrape_product": {
+      "ok": true,
+      "url": "https://www.allbirds.com/products/mens-tree-runners",
+      "is_product_page": true,
+      "product": {
+        "name": "Men's Tree Runner",
+        "brand": "Allbirds",
+        "price": 100.0,
+        "currency": "USD",
+        "availability": "in_stock",
+        "category": "Shoes",
+        "sku": "MENS_TREE_RUNNERS"
+      },
+      "variant_count": 42,
+      "credits": 2
+    },
+    "prebuilt_parser": {
+      "ok": true,
+      "url": "https://play.google.com/store/apps/details?id=com.duolingo",
+      "parser": "google-play",
+      "fields": {
+        "app_id": "com.duolingo",
+        "name": "Duolingo: Learn Languages",
+        "rating": 4.7464848,
+        "rating_count": 51434553,
+        "downloads": "500,000,000+",
+        "offered_by": "Duolingo"
+      },
+      "credits": 1
+    },
+    "screenshot": {
+      "ok": true,
+      "domain": "stripe.com",
+      "screenshot": "https://media.brand.dev/screenshots/cache/7a489d31486af61e8d0bb4451e61026f.png",
+      "screenshot_type": "viewport",
+      "width": 1920,
+      "height": 1080,
+      "credits": 1
+    },
+    "styleguide": {
+      "ok": true,
+      "domain": "linear.app",
+      "mode": "dark",
+      "colors": {
+        "accent": "#7170ff",
+        "background": "#08090a",
+        "text": "#f7f8f8"
+      },
+      "spacing": {
+        "lg": "60px",
+        "md": "30px",
+        "sm": "20px",
+        "xl": "96px",
+        "xs": "6px"
+      },
+      "fonts": [
+        "Inter Variable",
+        "Roboto",
+        "Oxygen",
+        "Ubuntu"
+      ],
+      "credits": 10
+    },
+    "brand_by_domain": {
+      "ok": true,
+      "domain": "linear.app",
+      "title": "Linear",
+      "slogan": "The product development system for teams and agents.",
+      "colors": [
+        "#7170ff",
+        "#000000",
+        "#7c7c7c"
+      ],
+      "logo_types": [
+        "icon",
+        "icon",
+        "logo"
+      ],
+      "industries": {
+        "eic": [
+          {
+            "industry": "Technology",
+            "subindustry": "Software (B2B)"
+          }
+        ]
+      },
+      "employees": {
+        "range": "51 to 200"
+      },
+      "links": [
+        "careers",
+        "contact",
+        "pricing",
+        "privacy",
+        "terms"
+      ],
+      "credits": 10
+    },
+    "competitors": {
+      "ok": true,
+      "domain": "linear.app",
+      "field": "product development workflow management (issue tracking, planning, and agile delivery for product teams)",
+      "competitors": [
+        {
+          "name": "Jira Software",
+          "domain": "atlassian.com",
+          "confidence": "high"
+        },
+        {
+          "name": "Azure DevOps",
+          "domain": "azure.microsoft.com",
+          "confidence": "medium"
+        },
+        {
+          "name": "GitLab",
+          "domain": "gitlab.com",
+          "confidence": "medium"
+        },
+        {
+          "name": "Trello",
+          "domain": "trello.com",
+          "confidence": "medium"
+        },
+        {
+          "name": "ClickUp",
+          "domain": "clickup.com",
+          "confidence": "medium"
+        }
+      ],
+      "credits": 10
+    },
+    "images": {
+      "ok": true,
+      "url": "https://linear.app",
+      "image_count": 111,
+      "first": [
+        "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/6600ca96-e49b-4fd9-c03a-7979faddad00/f=auto,fit=scale-down,metadata=none,width=2560",
+        "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/c7fa8f5f-d439-4329-6a65-de549b51e300/f=auto,fit=scale-down,metadata=none,width=2560",
+        "https://webassets.linear.app/images/ornj730p/production/f79251b06e9edeeacbf2875384defe629e000b3c-352x352.png?w=72&q=95&auto=format&dpr=2"
+      ],
+      "credits": 1
+    },
+    "parse_file": {
+      "ok": true,
+      "file": "invoice-sample.pdf",
+      "markdown": "Context.dev parse fixture\nInvoice INV-1042 for Acme Robotics. Total due: USD 480.00 by 2026-11-15.",
+      "keys": [
+        "key_metadata",
+        "markdown",
+        "request_id",
+        "success",
+        "type"
+      ],
+      "credits": 1
+    }
+  }
+}
