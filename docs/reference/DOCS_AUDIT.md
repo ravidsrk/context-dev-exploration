@@ -17,7 +17,8 @@ that the capability tour and latest-features probes didn't cover. Evidence:
 | bytes | favicon.ico | contentType + base64 | 1 |
 | map_regex | urlRegex prebuilt-parsers | 21 URLs | 1 |
 | search_filters | includeDomains + freshness last_month | 5 results; `month` rejected (400, free) | 1 |
-| answers_ultra | Developer plan price | $20 / 10,000 credits, source /pricing, 5.1 s | 100 |
+| answers_ultra | Developer plan price | $20 / 10,000 credits, source /pricing, 5.1 s. Caveat: the json_format example held these same values. | 100 |
+| answers_ultra_neutral | Same task, neutral schema placeholders | $20 / 10,000 credits, source /pricing, 4.4 s (confirms) | 100 |
 | brand_name / email / ticker / url | by_name Linear, by_email vercel, by_ticker AAPL, by_direct_url | linear.app, vercel.com, apple.com, stripe.com | 40 |
 | brand_autocomplete | query "lin" | 10 candidates, linkedin.com first | 1 |
 | styleguide | linear.app | dark mode, accent #7170ff, Inter Variable 72px h1 | 10 |
@@ -26,4 +27,4 @@ that the capability tour and latest-features probes didn't cover. Evidence:
 | monitor_sitemap | sitemap target, /changelog* | baseline in 0.3 s, 1 credit, then deleted | 1 |
 | usage, usage_history, logs, monitor_limits, webhook_deliveries | account APIs | all 200, 0 credits | 0 |
 
-Total: 186 credits.
+Total: 286 credits (186 + the neutral ultra re-run).

@@ -3256,5 +3256,26 @@
    "request_id": "139ee541-7415-4056-973b-8322d278119a"
   },
   "delete": 200
+ },
+ "answers_ultra_neutral": {
+  "status": 200,
+  "ms": 4375,
+  "credits": "100",
+  "body": {
+   "json_content": {
+    "plan": "Developer",
+    "monthly_usd": 20,
+    "credits": 10000,
+    "source_url": "https://www.context.dev/pricing"
+   },
+   "sources": [
+    "https://www.context.dev/pricing"
+   ],
+   "key_metadata": {
+    "credits_consumed": 100,
+    "credits_remaining": 59497
+   },
+   "request_id": "d9ae3919-09a8-43fb-84c5-a28a46b9afb9"
+  }
  }
 }

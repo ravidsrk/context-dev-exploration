@@ -59,6 +59,11 @@ PROBES = {
  "answers_ultra": ("POST", "/web/answers", {"mode": "ultra",
      "task": "What does the Developer plan of Context.dev cost per month and how many credits does it include? Use context.dev pages.",
      "json_format": {"plan": "Developer", "monthly_usd": 20, "credits": 10000, "source_url": "https://..."}}, None, 200),
+ # Re-run: the first answers_ultra schema example held the real values (20, 10000),
+ # which could leak the answer. This one uses neutral placeholders.
+ "answers_ultra_neutral": ("POST", "/web/answers", {"mode": "ultra",
+     "task": "What does the Developer plan of Context.dev cost per month and how many credits does it include? Use context.dev pages.",
+     "json_format": {"plan": "string", "monthly_usd": 0, "credits": 0, "source_url": "string"}}, None, 200),
  "brand_name": ("POST", "/brand/retrieve", {"type": "by_name", "name": "Linear"}),
  "brand_email": ("POST", "/brand/retrieve", {"type": "by_email", "email": "hello@vercel.com"}),
  "brand_ticker": ("POST", "/brand/retrieve", {"type": "by_ticker", "ticker": "AAPL"}),
