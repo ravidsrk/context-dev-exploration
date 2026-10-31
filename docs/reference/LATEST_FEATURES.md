@@ -205,3 +205,25 @@ Authenticated browser profiles (Oct 13), browser actions (Jul 22), prebuilt pars
 - 2026-07-04 | Scrape PowerPoint presentations | [Scrape PowerPoint URLs] into Markdown or HTML, including slide text, tables, and speaker notes. Supports PPTX and legacy PPT. Crawls can follow links to presentations. 
 - 2026-07-03 | Scrape spreadsheets and CSV files | Scrape [Excel and CSV URLs] into tables. Workbooks return separate sheet tables, and CSV output preserves an optional title or attribution above the header. Markdown, HTML, and Crawl support the new formats. 
 
+
+## Capability tour (2026-10-30)
+
+`context_dev/capabilities.py`, run by `scripts/run/capabilities_tour.py`, output in
+`evidence/runs/capabilities-2026-10-30.json`. One call per capability; credits from `key_metadata`.
+
+| Capability | Call | Input | What came back | Credits |
+|---|---|---|---|---|
+| Web Search + highlights | `web.search` | "open source web scraping API for AI agents" | 4 results with relevance + passages (aiagentsdirectory, reddit r/LangChain, shattered.io, siliconangle Firecrawl $75M) | 2 |
+| Crawl | `web.web_crawl_md` | docs.context.dev/scrape/overview, max 3 | 3 pages, 11.8K–15.1K chars Markdown each, 2 skipped | 3 |
+| JSON extraction | `web.scrape` formats.json | context.dev/pricing + plans schema | 7 plans: Free 0/1,000 · Developer $20/10K · Pro $90/100K · Growth $300/500K · Scale $500/1M · Scale 2.5M $950 · Enterprise | 5 |
+| Product | `web.scrape` formats.product | allbirds.com men's Tree Runners | is_product_page true, Men's Tree Runner, USD 100.0, in_stock | 2 |
+| Prebuilt parser | formats.parse, `google-play` | Duolingo app page | rating 4.746, 51,434,561 ratings, 500,000,000+ downloads | 1 |
+| Screenshot | `web.screenshot` | stripe.com | 1920x1080 viewport PNG URL | 1 |
+| Styleguide | `web.extract_styleguide` | linear.app | dark mode, accent #7170ff, bg #08090a, spacing xs 6px … xl 96px | 10 |
+| Brand by domain | `brand.retrieve` by_domain | linear.app | title, slogan, colors, 3 logos, EIC Technology / Software (B2B), 51–200 employees | 10 |
+| Competitors (SDK only, undocumented) | `web.extract_competitors` | linear.app, 5 | Jira (high), Azure DevOps, GitLab, Trello, ClickUp (medium) | 10 |
+| Images | formats.images | linear.app | 111 image URLs | 1 |
+| Parse | `parse.handle` | tests/fixtures/files/invoice-sample.pdf | exact text back as Markdown | 1 |
+
+Not run: People Enrich (returns personal profiles; skipped on purpose), browser profiles/actions (paid plan),
+access policies (enabled per org by support).
