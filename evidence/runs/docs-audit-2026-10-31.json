@@ -1,0 +1,3260 @@
+{
+ "monitor_limits": {
+  "status": 200,
+  "ms": 539,
+  "credits": 0,
+  "body": {
+   "monitors_used": 1,
+   "monitors_limit": 100,
+   "plan": "starter",
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59660
+   },
+   "request_id": "2388d0d8-e958-4510-bf5d-9b2c2dba4247"
+  }
+ },
+ "usage": {
+  "status": 200,
+  "ms": 408,
+  "credits": 0,
+  "body": {
+   "credits_remaining": 59597,
+   "period": {
+    "start": "2026-10-13T07:01:00.000Z",
+    "credits_used": 342
+   },
+   "next_refill": {
+    "at": "2026-11-13T08:01:00.000Z",
+    "credits": 10000
+   },
+   "auto_topup": {
+    "enabled": false,
+    "credits_used_this_period": 0,
+    "monthly_budget_credits": null
+   },
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59597
+   },
+   "request_id": "0d175f01-c9f9-4033-ab8a-b013383c450b"
+  }
+ },
+ "custom_parser": {
+  "status": 200,
+  "ms": 503,
+  "credits": "1",
+  "body": {
+   "url": "https://news.ycombinator.com/",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": true,
+    "success": true,
+    "data": {
+     "stories": [
+      {
+       "title": "Qwenputer: A functioning, deterministic RISC-V CPU inside Qwen3.5",
+       "url": "https://divagr.com/blog/qwenputer"
+      },
+      {
+       "title": "Why is this fingerprinting script creating bioweapons?",
+       "url": "https://nullpt.rs/fingerprinting-bioweapons"
+      },
+      {
+       "title": "Claude Code burns ~15–20% of your tokens on a 3-word status line",
+       "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce"
+      },
+      {
+       "title": "GitLab Security Incident: Attempted Exploitation of CVE-2026-97229",
+       "url": "https://alpinelinux.org/posts/GitLab-security-incident-CVE-2026-97229.html"
+      },
+      {
+       "title": "A Health Update",
+       "url": "https://furbo.org/2026/10/28/a-health-update/"
+      },
+      {
+       "title": "CNC Stone Carving",
+       "url": "https://carmelitegothic.com/cnc-stone-carving/"
+      },
+      {
+       "title": "StackOverflow now gets fewer than 1000 questions a month",
+       "url": "https://data.stackexchange.com/stackoverflow/query/1926661#graph?t=1"
+      },
+      {
+       "title": "The 'else' keyword is probably a literal translation from German (2020)",
+       "url": "https://github.com/e-n-f/if-then-else/blob/master/if-then-else.md"
+      },
+      {
+       "title": "Gemini 4 Carbon",
+       "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/"
+      },
+      {
+       "title": "OpenAI's agents talked to each other through the CPU Cache",
+       "url": "https://the-decoder.com/openais-isolated-ai-agents-found-ways-to-talk-to-each-other-through-cpu-cache/"
+      },
+      {
+       "title": "The Grid, a factory-scale robot in Massachusetts that builds PCBs on demand",
+       "url": "https://www.circuithub.com/post/unveiling-the-grid"
+      },
+      {
+       "title": "Formlabs Studio 1 $699 Resin Printer",
+       "url": "https://formlabs.com/products/form-studio-1-basic-founders-edition/"
+      },
+      "... 18 more"
+     ]
+    },
+    "type": "custom"
+   },
+   "highlights": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {
+    "title": "Hacker News",
+    "language": "en",
+    "favicon": "https://news.ycombinator.com/y18.svg",
+    "alternates": [
+     {
+      "href": "https://news.ycombinator.com/rss",
+      "type": "application/rss+xml",
+      "title": "RSS"
+     }
+    ],
+    "additionalMeta": {
+     "referrer": "origin",
+     "viewport": "width=device-width, initial-scale=1.0"
+    }
+   },
+   "request_id": "190c07e6-759c-47c3-ae0d-d9c9d2019d94",
+   "cache_metadata": {
+    "status": "hit",
+    "age_ms": 180324119
+   },
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59658
+   }
+  }
+ },
+ "parser_emails": {
+  "status": 200,
+  "ms": 1349,
+  "credits": "1",
+  "body": {
+   "url": "https://www.python.org/about/help/",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": true,
+    "success": true,
+    "data": {
+     "emails": [
+      {
+       "email": "python-announce@python.org"
+      },
+      {
+       "email": "psf@python.org"
+      },
+      {
+       "email": "webmaster@python.org"
+      }
+     ]
+    },
+    "type": "emails"
+   },
+   "highlights": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {
+    "title": "Help",
+    "description": "The official home of the Python Programming Language",
+    "language": "en",
+    "keywords": [
+     "Python programming language object oriented web free open source software license documentation download community"
+    ],
+    "siteName": "Python.org",
+    "image": "https://www.python.org/static/opengraph-icon-200x200.png",
+    "favicon": "https://www.python.org/static/favicon.ico",
+    "openGraph": {
+     "type": "website",
+     "siteName": "Python.org",
+     "title": "Help",
+     "description": "The official home of the Python Programming Language",
+     "image": "https://www.python.org/static/opengraph-icon-200x200.png",
+     "imageSecureUrl": "https://www.python.org/static/opengraph-icon-200x200.png",
+     "url": "https://www.python.org/about/help/"
+    },
+    "alternates": [
+     {
+      "href": "https://peps.python.org/peps.rss",
+      "type": "application/rss+xml",
+      "title": "Python Enhancement Proposals"
+     },
+     {
+      "href": "https://www.python.org/jobs/feed/rss/",
+      "type": "application/rss+xml",
+      "title": "Python Job Opportunities"
+     },
+     {
+      "href": "https://pyfound.blogspot.com/feeds/posts/default?alt=rss",
+      "type": "application/rss+xml",
+      "title": "Python Software Foundation News"
+     },
+     {
+      "href": "https://blog.python.org/feeds/posts/default?alt=rss",
+      "type": "application/rss+xml",
+      "title": "Python Insider"
+     },
+     {
+      "href": "https://www.python.org/downloads/feed.rss",
+      "type": "application/rss+xml",
+      "title": "Python Releases"
+     }
+    ],
+    "headings": [
+     {
+      "level": 4,
+      "text": "Python is a programming language that lets you work more quickly and integrate your systems more effectively."
+     },
+     {
+      "level": 3,
+      "text": "Python Source"
+     },
+     {
+      "level": 4,
+      "text": "Download for Windows"
+     },
+     {
+      "level": 4,
+      "text": "Download for macOS"
+     },
+     {
+      "level": 4,
+      "text": "Download Python for Any OS"
+     },
+     {
+      "level": 4,
+      "text": "Python’s standard documentation: download, browse or watch a tutorial."
+     },
+     {
+      "level": 4,
+      "text": "The Python Community"
+     },
+     {
+      "level": 1,
+      "text": "Help"
+     },
+     {
+      "level": 1,
+      "text": "New to programming and to Python?"
+     },
+     {
+      "level": 1,
+      "text": "New to Python?"
+     },
+     {
+      "level": 1,
+      "text": "Looking for code?"
+     },
+     {
+      "level": 1,
+      "text": "Got a Python problem or question?"
+     },
+     "... 6 more"
+    ],
+    "additionalMeta": {
+     "charset": "utf-8",
+     "apple-mobile-web-app-capable": "yes",
+     "apple-mobile-web-app-status-bar-style": "black",
+     "viewport": "width=device-width, initial-scale=1.0",
+     "handheldfriendly": "True",
+     "format-detection": "telephone=no",
+     "msapplication-tileimage": "/static/metro-icon-144x144.png",
+     "msapplication-tilecolor": "#3673a5",
+     "msapplication-navbutton-color": "#3673a5"
+    },
+    "jsonLd": [
+     {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://www.python.org/",
+      "potentialAction": {
+       "@type": "SearchAction",
+       "target": "https://www.python.org/search/?q={search_term_string}",
+       "query-input": "required name=search_term_string"
+      }
+     }
+    ]
+   },
+   "request_id": "2fb3908c-e2e6-4487-9a7c-aaaad994af18",
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59782
+   }
+  }
+ },
+ "parser_links": {
+  "status": 200,
+  "ms": 329,
+  "credits": "1",
+  "body": {
+   "url": "https://docs.context.dev/introduction",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": true,
+    "success": true,
+    "data": {
+     "links": [
+      {
+       "url": "https://docs.context.dev/llms.txt",
+       "text": null
+      },
+      {
+       "url": "https://docs.context.dev/cdn-cgi/l/email-protection#89efe6fce7edecfbfac9eae6e7fdecf1fda7edecff",
+       "text": null
+      },
+      {
+       "url": "https://docs.context.dev/",
+       "text": "Context.dev home page"
+      },
+      {
+       "url": "https://status.context.dev/",
+       "text": "Status"
+      },
+      {
+       "url": "https://docs.context.dev/cdn-cgi/l/email-protection#9bf3fef7f7f4dbf8f4f5effee3efb5fffeed",
+       "text": "Support"
+      },
+      {
+       "url": "https://context.dev/signup",
+       "text": "Get API key"
+      },
+      {
+       "url": "https://docs.context.dev/introduction",
+       "text": "Documentation"
+      },
+      {
+       "url": "https://docs.context.dev/api-reference/web-scraping/scrape",
+       "text": "API Reference"
+      },
+      {
+       "url": "https://docs.context.dev/use-cases/live-web-context-for-agents",
+       "text": "Recipes"
+      },
+      {
+       "url": "https://docs.context.dev/integrations/claude-connector",
+       "text": "Integrations"
+      },
+      {
+       "url": "https://docs.context.dev/changelog",
+       "text": "Changelog"
+      },
+      {
+       "url": "https://docs.context.dev/install-skill",
+       "text": "Skill"
+      },
+      "... 40 more"
+     ]
+    },
+    "type": "links"
+   },
+   "highlights": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {
+    "title": "Context.dev: the web data API - Context.dev",
+    "description": "Fast web scraping with browsers, proxies, retries, batches, and monitors built in.",
+    "language": "en",
+    "canonicalUrl": "https://docs.context.dev/introduction",
+    "siteName": "Context.dev",
+    "image": "https://branddev.mintlify.app/_mintlify/api/og/v2?division=Get+started&title=Context.dev%3A+the+web+data+API&description=Fast+web+scraping+with+browsers%2C+proxies%2C+retries%2C+batches%2C+and+monitors+built+in.&theme=c0dd5d1e119149821dc98dca&signature=8d36259521795627924a633f0e0a1f599fef188656788e8825b39285a175baab",
+    "favicon": "https://docs.context.dev/mintlify-assets/_mintlify/favicons/branddev/eHtzC-r-MtjWWTqp/_generated/favicon/android-chrome-192x192.png",
+    "openGraph": {
+     "title": "Context.dev: the web data API - Context.dev",
+     "description": "Fast web scraping with browsers, proxies, retries, batches, and monitors built in.",
+     "siteName": "Context.dev",
+     "url": "https://docs.context.dev/introduction",
+     "type": "website",
+     "image": "https://branddev.mintlify.app/_mintlify/api/og/v2?division=Get+started&title=Context.dev%3A+the+web+data+API&description=Fast+web+scraping+with+browsers%2C+proxies%2C+retries%2C+batches%2C+and+monitors+built+in.&theme=c0dd5d1e119149821dc98dca&signature=8d36259521795627924a633f0e0a1f599fef188656788e8825b39285a175baab",
+     "imageWidth": "1200",
+     "imageHeight": "630"
+    },
+    "twitter": {
+     "card": "summary_large_image",
+     "title": "Context.dev: the web data API - Context.dev",
+     "description": "Fast web scraping with browsers, proxies, retries, batches, and monitors built in.",
+     "image": "https://branddev.mintlify.app/_mintlify/api/og/v2?division=Get+started&title=Context.dev%3A+the+web+data+API&description=Fast+web+scraping+with+browsers%2C+proxies%2C+retries%2C+batches%2C+and+monitors+built+in.&theme=c0dd5d1e119149821dc98dca&signature=8d36259521795627924a633f0e0a1f599fef188656788e8825b39285a175baab",
+     "imageWidth": "1200",
+     "imageHeight": "630"
+    },
+    "alternates": [
+     {
+      "href": "https://docs.context.dev/sitemap.xml",
+      "type": "application/xml"
+     },
+     {
+      "href": "https://docs.context.dev/introduction.md",
+      "type": "text/markdown"
+     }
+    ],
+    "headings": [
+     {
+      "level": 2,
+      "text": "Documentation Index"
+     },
+     {
+      "level": 3,
+      "text": "Get started"
+     },
+     {
+      "level": 3,
+      "text": "Web data"
+     },
+     {
+      "level": 3,
+      "text": "Entity Enrichment"
+     },
+     {
+      "level": 3,
+      "text": "Automation"
+     },
+     {
+      "level": 3,
+      "text": "Account and billing"
+     },
+     {
+      "level": 3,
+      "text": "Production"
+     },
+     {
+      "level": 2,
+      "text": "On this page"
+     },
+     {
+      "level": 1,
+      "text": "Context.dev: the web data API"
+     },
+     {
+      "level": 2,
+      "text": "Quickstart"
+     },
+     {
+      "level": 2,
+      "text": "Agent quickstart"
+     },
+     {
+      "level": 2,
+      "text": "API reference"
+     },
+     "... 26 more"
+    ],
+    "additionalMeta": {
+     "charset": "utf-8",
+     "viewport": "width=device-width, initial-scale=1, viewport-fit=cover",
+     "generator": "Mintlify",
+     "msapplication-config": "/mintlify-assets/_mintlify/favicons/branddev/eHtzC-r-MtjWWTqp/_generated/favicon/browserconfig.xml",
+     "msapplication-tilecolor": "#1d4ed8"
+    },
+    "jsonLd": [
+     {
+      "@context": "https://schema.org",
+      "@graph": [
+       {
+        "@type": "...",
+        "@id": "...",
+        "name": "...",
+        "url": "...",
+        "logo": "..."
+       },
+       {
+        "@type": "...",
+        "@id": "...",
+        "name": "...",
+        "url": "...",
+        "publisher": "..."
+       },
+       {
+        "@type": "...",
+        "@id": "...",
+        "url": "...",
+        "name": "...",
+        "description": "...",
+        "dateModified": "...",
+        "isPartOf": "...",
+        "breadcrumb": "..."
+       },
+       {
+        "@type": "...",
+        "@id": "...",
+        "itemListElement": "..."
+       },
+       {
+        "@type": "...",
+        "@id": "...",
+        "headline": "...",
+        "name": "...",
+        "description": "...",
+        "url": "...",
+        "mainEntityOfPage": "...",
+        "dateModified": "...",
+        "publisher": "...",
+        "isPartOf": "..."
+       }
+      ]
+     },
+     {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Context.dev",
+      "creator": {
+       "@type": "Organization",
+       "name": "Mintlify",
+       "url": "https://mintlify.com"
+      }
+     }
+    ]
+   },
+   "request_id": "6544cd19-0707-42f0-a5ba-260ce90fa06c",
+   "cache_metadata": {
+    "status": "hit",
+    "age_ms": 72929560
+   },
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59781
+   }
+  }
+ },
+ "youtube": {
+  "status": 200,
+  "ms": 4578,
+  "credits": "1",
+  "body": {
+   "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": true,
+    "success": true,
+    "data": "# Me at the zoo\n\n**Channel**: jawed\n**Duration**: 0:19\n**Views**: 447,270,761\n**Keywords**: me at the zoo, jawed karim, first youtube video\n\n## Description\n\nMicroplastics are accumulating in human brains at an alarming rate\nhttps://www.youtube.com/watch?v=0PT5c1z3LL8\n\n“Nanoplastics and Human Health” with Matthew J Campen, PhD, MSPH\nhttps://www.youtube.com/watch?v=RRBN_4L09Mg\n\n00:00 Intro\n00:05 The cool thing\n00:17 End\n\n## Transcript\n\n**[0:01]** All right, so here we are, in front of the elephants the cool thing about these guys is that they have really... really really long trunks and that's cool (baaaaaaaaaaahhh!!) and that's pretty much all there is to say"
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": false,
+    "success": null,
+    "data": null,
+    "type": "custom"
+   },
+   "highlights": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {
+    "title": "Me at the zoo",
+    "description": "Microplastics are accumulating in human brains at an alarming ratehttps://www.youtube.com/watch?v=0PT5c1z3LL8“Nanoplastics and Human Health” with Matthew J C...",
+    "language": "en",
+    "keywords": [
+     "me at the zoo",
+     "jawed karim",
+     "first youtube video"
+    ],
+    "canonicalUrl": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+    "siteName": "YouTube",
+    "image": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AG-AoAC8AGKAgwIABABGFUgWShlMA8=&rs=AOn4CLA9eLBatYv9WbkD4BbZ2Im-biSPTw",
+    "favicon": "https://www.youtube.com/s/desktop/e358493a/img/favicon.ico",
+    "publishedTime": "2005-04-23T20:31:52-07:00",
+    "openGraph": {
+     "siteName": "YouTube",
+     "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+     "title": "Me at the zoo",
+     "image": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AG-AoAC8AGKAgwIABABGFUgWShlMA8=&rs=AOn4CLA9eLBatYv9WbkD4BbZ2Im-biSPTw",
+     "imageWidth": "480",
+     "imageHeight": "360",
+     "description": "Microplastics are accumulating in human brains at an alarming ratehttps://www.youtube.com/watch?v=0PT5c1z3LL8“Nanoplastics and Human Health” with Matthew J C...",
+     "type": "video.other",
+     "videoUrl": "https://www.youtube.com/embed/jNQXAC9IVRw",
+     "videoSecureUrl": "https://www.youtube.com/embed/jNQXAC9IVRw",
+     "videoType": "text/html",
+     "videoWidth": "960",
+     "videoHeight": "720",
+     "videoTag": [
+      "me at the zoo",
+      "jawed karim",
+      "first youtube video"
+     ]
+    },
+    "twitter": {
+     "card": "summary_large_image",
+     "site": "@youtube",
+     "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+     "title": "Me at the zoo",
+     "description": "Microplastics are accumulating in human brains at an alarming ratehttps://www.youtube.com/watch?v=0PT5c1z3LL8“Nanoplastics and Human Health” with Matthew J C...",
+     "image": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AG-AoAC8AGKAgwIABABGFUgWShlMA8=&rs=AOn4CLA9eLBatYv9WbkD4BbZ2Im-biSPTw",
+     "appNameIphone": "YouTube",
+     "appIdIphone": "544007664",
+     "appNameIpad": "YouTube",
+     "appIdIpad": "544007664",
+     "appUrlIphone": "vnd.youtube://www.youtube.com/watch?v=jNQXAC9IVRw&feature=applinks",
+     "appUrlIpad": "vnd.youtube://www.youtube.com/watch?v=jNQXAC9IVRw&feature=applinks",
+     "appNameGoogleplay": "YouTube",
+     "appIdGoogleplay": "com.google.android.youtube",
+     "appUrlGoogleplay": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+     "player": "https://www.youtube.com/embed/jNQXAC9IVRw",
+     "playerWidth": "960",
+     "playerHeight": "720"
+    },
+    "alternates": [
+     {
+      "href": "https://m.youtube.com/watch?v=jNQXAC9IVRw"
+     },
+     {
+      "href": "https://m.youtube.com/watch?v=jNQXAC9IVRw"
+     },
+     {
+      "href": "android-app://com.google.android.youtube/http/www.youtube.com/watch?v=jNQXAC9IVRw"
+     },
+     {
+      "href": "ios-app://544007664/vnd.youtube/www.youtube.com/watch?v=jNQXAC9IVRw"
+     },
+     {
+      "href": "https://www.youtube.com/oembed?format=json&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjNQXAC9IVRw",
+      "type": "application/json+oembed",
+      "title": "Me at the zoo"
+     },
+     {
+      "href": "https://www.youtube.com/oembed?format=xml&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DjNQXAC9IVRw",
+      "type": "text/xml+oembed",
+      "title": "Me at the zoo"
+     }
+    ],
+    "additionalMeta": {
+     "origin-trial": "ApvK67ociHgr2egd6c2ZjrfPuRs8BHcvSggogIOPQNH7GJ3cVlyJ1NOq/COCdj0+zxskqHt9HgLLETc8qqD+vwsAAABteyJvcmlnaW4iOiJodHRwczovL3lvdXR1YmUuY29tOjQ0MyIsImZlYXR1cmUiOiJQcml2YWN5U2FuZGJveEFkc0FQSXMiLCJleHBpcnkiOjE2OTUxNjc5OTksImlzU3ViZG9tYWluIjp0cnVlfQ==",
+     "apple-itunes-app": "app-id=544007664, app-argument=https://www.youtube.com/watch?v=jNQXAC9IVRw&referring_app=com.apple.mobilesafari-smartbanner, affiliate-data=ct=smart_app_banner_polymer&pt=9008",
+     "theme-color": "rgba(255, 255, 255, 0.98)",
+     "title": "Me at the zoo",
+     "al:ios:app_store_id": "544007664",
+     "al:ios:app_name": "YouTube",
+     "al:ios:url": "vnd.youtube://www.youtube.com/watch?v=jNQXAC9IVRw&feature=applinks",
+     "al:android:url": "vnd.youtube://www.youtube.com/watch?v=jNQXAC9IVRw&feature=applinks",
+     "al:web:url": "http://www.youtube.com/watch?v=jNQXAC9IVRw&feature=applinks",
+     "al:android:app_name": "YouTube",
+     "al:android:package": "com.google.android.youtube",
+     "fb:app_id": "87741124305",
+     "referrer": "origin-when-cross-origin",
+     "name": [
+      "Me at the zoo",
+      "jawed"
+     ],
+     "requiressubscription": "False",
+     "identifier": "jNQXAC9IVRw",
+     "duration": "PT0M19S",
+     "position": "1",
+     "width": [
+      "480",
+      "960"
+     ],
+     "height": [
+      "360",
+      "720"
+     ],
+     "playertype": "HTML5 Flash",
+     "isfamilyfriendly": "true",
+     "regionsallowed": "AD,AE,AF,AG,AI,AL,AM,AO,AQ,AR,AS,AT,AU,AW,AX,AZ,BA,BB,BD,BE,BF,BG,BH,BI,BJ,BL,BM,BN,BO,BQ,BR,BS,BT,BV,BW,BY,BZ,CA,CC,CD,CF,CG,CH,CI,CK,CL,CM,CN,CO,CR,CU,CV,CW,CX,CY,CZ,DE,DJ,DK,DM,DO,DZ,EC,EE,EG,EH,ER,ES,ET,FI,FJ,FK,FM,FO,FR,GA,GB,GD,GE,GF,GG,GH,GI,GL,GM,GN,GP,GQ,GR,GS,GT,GU,GW,GY,HK,HM,HN,HR,HT,HU,ID,IE,IL,IM,IN,IO,IQ,IR,IS,IT,JE,JM,JO,JP,KE,KG,KH,KI,KM,KN,KP,KR,KW,KY,KZ,LA,LB,LC,LI,LK,LR,LS,LT,LU,LV,LY,MA,MC,MD,ME,MF,MG,MH,MK,ML,MM,MN,MO,MP,MQ,MR,MS,MT,MU,MV,MW,MX,MY,MZ,NA,NC,NE,NF,NG,NI,NL,NO,NP,NR,NU,NZ,OM,PA,PE,PF,PG,PH,PK,PL,PM,PN,PR,PS,PT,PW,PY,QA,RE,RO,RS,RU,RW,SA,SB,SC,SD,SE,SG,SH,SI,SJ,SK,SL,SM,SN,SO,SR,SS,ST,SV,SX,SY,SZ,TC,TD,TF,TG,TH,TJ,TK,TL,TM,TN,TO,TR,TT,TV,TW,TZ,UA,UG,UM,US,UY,UZ,VA,VC,VE,VG,VI,VN,VU,WF,WS,YE,YT,ZA,ZM,ZW",
+     "interactiontype": [
+      "https://schema.org/LikeAction",
+      "https://schema.org/WatchAction"
+     ],
+     "userinteractioncount": [
+      "20120960",
+      "447270761"
+     ],
+     "uploaddate": "2005-04-23T20:31:52-07:00",
+     "genre": "Film & Animation"
+    },
+    "jsonLd": [
+     {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "@id": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+      "name": "Me at the zoo",
+      "thumbnailUrl": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg?sqp=-oaymwEmCOADEOgC8quKqQMa8AEB-AG-AoAC8AGKAgwIABABGFUgWShlMA8=&rs=AOn4CLA9eLBatYv9WbkD4BbZ2Im-biSPTw",
+      "uploadDate": "2005-04-23T20:31:52-07:00",
+      "comment": [
+       {
+        "@type": "...",
+        "dateCreated": "...",
+        "text": "...",
+        "author": "...",
+        "upvoteCount": "..."
+       }
+      ]
+     }
+    ]
+   },
+   "request_id": "78d3b124-fdf8-4d81-a3c2-e9fc52f2ea06",
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59780
+   }
+  }
+ },
+ "screenshot_images_meta": {
+  "status": 200,
+  "ms": 4989,
+  "credits": "1",
+  "body": {
+   "url": "https://linear.app/",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "screenshot": {
+    "requested": true,
+    "success": true,
+    "data": "<base64 866710 chars>"
+   },
+   "images": {
+    "requested": true,
+    "success": true,
+    "data": [
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/6600ca96-e49b-4fd9-c03a-7979faddad00/f=auto,fit=scale-down,metadata=none,width=2560",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/c7fa8f5f-d439-4329-6a65-de549b51e300/f=auto,fit=scale-down,metadata=none,width=2560",
+      "alt": null
+     },
+     {
+      "url": "https://webassets.linear.app/images/ornj730p/production/f79251b06e9edeeacbf2875384defe629e000b3c-352x352.png?w=72&q=95&auto=format&dpr=2",
+      "alt": "Avatar of Karri"
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/f28b59f4-538c-4517-cfd7-510913015200/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/c2f6447a-d507-43c1-f3ab-3f2c6fbceb00/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/086b510a-f5da-414b-bc9d-228afb968600/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/302b16a5-f9ca-42f2-dbae-3c76f19b2d00/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/1eb8f8b2-3593-473f-ba8a-acac99aa0300/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/6550520e-9e50-441d-b9e8-579be321f900/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/4d3381aa-fb2f-4d3d-1a06-957fc616d400/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/7ea107e7-c1a0-4c99-756d-5837fd91f200/f=auto,fit=scale-down,metadata=none",
+      "alt": null
+     },
+     {
+      "url": "https://linear.app/cdn-cgi/imagedelivery/fO02fVwohEs9s9UHFwon6A/c8aeedda-7726-4a4f-226a-f573f85d8d00/f=auto,fit=scale-down,metadata=none",
+      "alt": "didier"
+     },
+     "... 99 more"
+    ]
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": false,
+    "success": null,
+    "data": null,
+    "type": "custom"
+   },
+   "highlights": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {
+    "title": "Linear – The system for product development",
+    "description": "Purpose-built for planning and building products with AI agents.",
+    "language": "en",
+    "canonicalUrl": "https://linear.app/",
+    "author": "@linear",
+    "siteName": "Linear",
+    "image": "https://linear.app/api/og/main?title=Linear&v=4",
+    "favicon": "https://linear.app/favicon.ico?v=2",
+    "openGraph": {
+     "title": "Linear – The system for product development",
+     "description": "Purpose-built for planning and building products with AI agents.",
+     "image": "https://linear.app/api/og/main?title=Linear&v=4"
+    },
+    "twitter": {
+     "card": "summary_large_image",
+     "site": "@linear",
+     "title": "Linear – The system for product development",
+     "description": "Purpose-built for planning and building products with AI agents.",
+     "creator": "@linear",
+     "image": "https://linear.app/api/og/main?title=Linear&v=4"
+    },
+    "headings": [
+     {
+      "level": 1,
+      "text": "The product development system for teams and agentsThe product developmentsystem for teams and agentsThe product development system for teams and agents"
+     },
+     {
+      "level": 3,
+      "text": "Faster app launch"
+     },
+     {
+      "level": 4,
+      "text": "Activity"
+     },
+     {
+      "level": 2,
+      "text": "A new species of product tool. Purpose-built for modern teams with AI workflows at its core, Linear sets a new standard for planning and building products."
+     },
+     {
+      "level": 2,
+      "text": "Intakeand integrations"
+     },
+     {
+      "level": 2,
+      "text": "Planningand monitoring"
+     },
+     {
+      "level": 2,
+      "text": "AI andautomations"
+     },
+     {
+      "level": 2,
+      "text": "Build, review,and ship"
+     },
+     {
+      "level": 2,
+      "text": "Changelog"
+     },
+     {
+      "level": 2,
+      "text": "Built for the future. Available today."
+     },
+     {
+      "level": 3,
+      "text": "Product"
+     },
+     {
+      "level": 3,
+      "text": "Features"
+     },
+     "... 4 more"
+    ],
+    "additionalMeta": {
+     "charset": "utf-8",
+     "format-detection": "telephone=no, address=no, email=no",
+     "mobile-web-app-capable": "yes",
+     "apple-mobile-web-app-status-bar-style": "black",
+     "viewport": "width=device-width, height=device-height, initial-scale=1, viewport-fit=cover",
+     "theme-color": "#08090a"
+    }
+   },
+   "request_id": "ee2f7469-86a7-49bd-bbe1-346ca0b5479d",
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59779
+   }
+  }
+ },
+ "browser_actions": {
+  "status": 200,
+  "ms": 8227,
+  "credits": "2",
+  "body": {
+   "url": "https://news.ycombinator.com/?p=2",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": true,
+    "success": true,
+    "data": "<base64 15199 chars>"
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": false,
+    "success": null,
+    "data": null,
+    "type": "custom"
+   },
+   "highlights": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {
+    "title": "Hacker News",
+    "language": "en",
+    "favicon": "https://news.ycombinator.com/y18.svg",
+    "alternates": [
+     {
+      "href": "https://news.ycombinator.com/rss",
+      "type": "application/rss+xml",
+      "title": "RSS"
+     }
+    ],
+    "additionalMeta": {
+     "referrer": "origin",
+     "viewport": "width=device-width, initial-scale=1.0"
+    }
+   },
+   "request_id": "0c7cd1ae-5b24-4a47-9265-6a9d14b4b1de",
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 2,
+    "credits_remaining": 59777
+   }
+  }
+ },
+ "country_fresh": {
+  "status": 200,
+  "ms": 6690,
+  "credits": "2",
+  "body": {
+   "url": "https://www.apple.com/shop/buy-iphone",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": false,
+    "success": null,
+    "data": null,
+    "type": "custom"
+   },
+   "highlights": {
+    "requested": true,
+    "success": true,
+    "data": [
+     "Shop iPhone"
+    ]
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {
+    "title": "Buy iPhone",
+    "description": "Shop the latest iPhone models and accessories. Save with Apple Trade In, carrier offers, and flexible monthly payment options. Get expert help today.",
+    "language": "en-US",
+    "canonicalUrl": "https://www.apple.com/shop/buy-iphone",
+    "siteName": "Apple",
+    "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-og-image-202609?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1787160115585",
+    "robots": "max-image-preview:large",
+    "openGraph": {
+     "url": "https://www.apple.com/shop/buy-iphone",
+     "title": "Buy iPhone",
+     "image": "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iphone-og-image-202609?wid=1200&hei=630&fmt=jpeg&qlt=95&.v=1787160115585",
+     "siteName": "Apple",
+     "locale": "en_US",
+     "description": "Shop the latest iPhone models and accessories. Save with Apple Trade In, carrier offers, and flexible monthly payment options. Get expert help today.",
+     "type": "product"
+    },
+    "twitter": {
+     "site": "@apple",
+     "card": "summary_large_image"
+    },
+    "headings": [
+     {
+      "level": 1,
+      "text": "Shop iPhone"
+     },
+     {
+      "level": 2,
+      "text": "Footer"
+     },
+     {
+      "level": 3,
+      "text": "footnotes"
+     },
+     {
+      "level": 3,
+      "text": "Shop and Learn Shop and Learn +"
+     },
+     {
+      "level": 3,
+      "text": "Apple Wallet Apple Wallet +"
+     },
+     {
+      "level": 3,
+      "text": "Account Account +"
+     },
+     {
+      "level": 3,
+      "text": "Entertainment Entertainment +"
+     },
+     {
+      "level": 3,
+      "text": "Apple Store Apple Store +"
+     },
+     {
+      "level": 3,
+      "text": "For Business For Business +"
+     },
+     {
+      "level": 3,
+      "text": "For Education For Education +"
+     },
+     {
+      "level": 3,
+      "text": "For Healthcare For Healthcare +"
+     },
+     {
+      "level": 3,
+      "text": "For Government For Government +"
+     },
+     "... 2 more"
+    ],
+    "additionalMeta": {
+     "viewport": "width=device-width, height=device-height, initial-scale=1",
+     "charset": "utf-8",
+     "x-ua-compatible": "IE=edge,chrome=1",
+     "format-detection": "telephone=no",
+     "aos-gn-template": "2.25.1-SNAPSHOT - Wed Oct 14 2026 18:59:46 GMT-0700 (Pacific Daylight Time)",
+     "globalnav-store-key": "SJHJUH4YFCTTPD4F4",
+     "globalnav-search-field[action]": "/search",
+     "globalnav-submenus-enabled": "true",
+     "globalmessage-segment-redirect": "true",
+     "globalnav-search-suggestions-enabled": "true",
+     "globalnav-bag-flyout-enabled": "true",
+     "position": "2"
+    },
+    "jsonLd": [
+     {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+       {
+        "@type": "...",
+        "position": "...",
+        "item": "..."
+       },
+       {
+        "@type": "...",
+        "position": "...",
+        "name": "..."
+       }
+      ]
+     }
+    ]
+   },
+   "request_id": "90d55c57-efb6-4fd8-a64f-b5c181ff63bd",
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 2,
+    "credits_remaining": 59775
+   }
+  }
+ },
+ "pdf_scrape": {
+  "status": 200,
+  "ms": 898,
+  "credits": "2",
+  "body": {
+   "url": "https://arxiv.org/pdf/1706.03762",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "parsed": {
+    "requested": false,
+    "success": null,
+    "data": null,
+    "type": "custom"
+   },
+   "highlights": {
+    "requested": true,
+    "success": true,
+    "data": [
+     "[Abstract]\n\nThe dominant sequence transduction models are based on complex recurrent or convolutional neural networks that include an encoder and a decoder. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely. Experiments on two machine translation tasks show these models to be superior in quality while being more parallelizable and requiring significantly less time to train. Our model achieves 28.4 BLEU on the WMT 2014 English- to-German translation task, improving over the existing best results, including ensembles, by over 2 BLEU. On the WMT 2014 English-to-French translation task, our model establishes a new single-model state-of-the-art BLEU score of 41.8 after training for 3.5 days on eight GPUs, a small fraction of the training costs of the best models from the literature. We show that the Transformer generalizes well to other tasks by applying it successfully to English constituency parsing both with large and limited training data.\n\n…\n\n[6 Results > 6.1 Machine Translation]\n\nOn the WMT 2014 English-to-German translation task, the big transformer model (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is listed in t...[1711 chars]"
+    ]
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {},
+   "request_id": "78db2c20-2ee4-42fd-9b01-64b7937796e8",
+   "cache_metadata": {
+    "status": "hit",
+    "age_ms": 16744539
+   },
+   "key_metadata": {
+    "credits_consumed": 2,
+    "credits_remaining": 59773
+   }
+  }
+ },
+ "bytes": {
+  "status": 200,
+  "ms": 722,
+  "credits": "1",
+  "body": {
+   "url": "https://www.context.dev/favicon.ico",
+   "html": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "markdown": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "screenshot": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "images": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "bytes": {
+    "requested": true,
+    "success": true,
+    "data": {
+     "contentType": "image/vnd.microsoft.icon",
+     "base64": "<base64 20544 chars>"
+    }
+   },
+   "parsed": {
+    "requested": false,
+    "success": null,
+    "data": null,
+    "type": "custom"
+   },
+   "highlights": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "json": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "product": {
+    "requested": false,
+    "success": null,
+    "data": null
+   },
+   "profile": null,
+   "metadata": {},
+   "request_id": "43301b81-6c06-4053-8d88-5274e1592a5a",
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59772
+   }
+  }
+ },
+ "map_regex": {
+  "status": 200,
+  "ms": 2155,
+  "credits": "1",
+  "body": {
+   "success": true,
+   "domain": "docs.context.dev",
+   "urls": [
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/app-store",
+     "title": "App Store - Context.dev",
+     "description": "Get app details, ratings, pricing, and screenshots from the App Store.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/app-store-reviews",
+     "title": "App Store reviews - Context.dev",
+     "description": "Get up to 500 recent App Store reviews for an app and storefront.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/emails",
+     "title": "Emails - Context.dev",
+     "description": "Extract and deduplicate contact email addresses from a page.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/g2-reviews",
+     "title": "G2 reviews - Context.dev",
+     "description": "Get the 25 most recent G2 reviews for a product, optionally filtered by star rating.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/google-maps",
+     "title": "Google Maps - Context.dev",
+     "description": "Get business records from a Google Maps search or place ID.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/google-maps-reviews",
+     "title": "Google Maps reviews - Context.dev",
+     "description": "Get up to 1,000 Google Maps reviews for a place, newest, oldest, most relevant, or by rating.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/google-play",
+     "title": "Google Play - Context.dev",
+     "description": "Get app details, ratings, downloads, and data safety from Google Play.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/google-play-reviews",
+     "title": "Google Play reviews - Context.dev",
+     "description": "Get up to 200 recent Google Play reviews for an app.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/instagram-feed",
+     "title": "Instagram feed - Context.dev",
+     "description": "Get the top Instagram posts for a hashtag or keyword, or the recent posts at a location.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/instagram-post",
+     "title": "Instagram post - Context.dev",
+     "description": "Get an Instagram post or reel with its stats, media, and top comments.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/instagram-profile",
+     "title": "Instagram profile - Context.dev",
+     "description": "Get an Instagram profile with its stats, similar accounts, and latest posts.",
+     "language": "en"
+    },
+    {
+     "url": "https://docs.context.dev/scrape/prebuilt-parsers/links",
+     "title": "Links - Context.dev",
+     "description": "Extract absolute HTTP and HTTPS links with their text labels.",
+     "language": "en"
+    },
+    "... 9 more"
+   ],
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59771
+   },
+   "request_id": "8c7ae9c3-3f42-41a7-9a46-957b17d4a415"
+  }
+ },
+ "search_filters": {
+  "status": 200,
+  "ms": 1841,
+  "credits": "1",
+  "body": {
+   "results": [
+    {
+     "url": "https://www.context.dev/blog/archive",
+     "title": "All articles | Context.dev",
+     "description": "Changelog. Resources. Blog · Guides · Prompt Library · Customers · Use Cases · Compare Alternatives · Free Tools · Glossary · HTTP Error Codes · Startups & ...",
+     "relevance": "medium",
+     "markdown": {
+      "markdown": null,
+      "code": "NOT_REQUESTED"
+     },
+     "highlights": {
+      "highlights": null,
+      "code": "NOT_REQUESTED"
+     }
+    },
+    {
+     "url": "https://www.context.dev/prompts",
+     "title": "AI prompt library for ChatGPT and Claude - Context.dev",
+     "description": "Changelog. Resources. Blog · Guides · Prompt Library · Customers · Use Cases · Compare Alternatives · Free Tools · Glossary · HTTP Error Codes · Startups & ...",
+     "relevance": "medium",
+     "markdown": {
+      "markdown": null,
+      "code": "NOT_REQUESTED"
+     },
+     "highlights": {
+      "highlights": null,
+      "code": "NOT_REQUESTED"
+     }
+    },
+    {
+     "url": "https://www.context.dev/blog/category/announcements",
+     "title": "Announcements | Blog - Context.dev",
+     "description": "Context.dev is now available in the Cursor Marketplace, bundling 34 live-web tools with focused skills, commands, and rules for research, extraction, brand ...",
+     "relevance": "medium",
+     "markdown": {
+      "markdown": null,
+      "code": "NOT_REQUESTED"
+     },
+     "highlights": {
+      "highlights": null,
+      "code": "NOT_REQUESTED"
+     }
+    },
+    {
+     "url": "https://www.context.dev/guides",
+     "title": "Guides | Context.dev",
+     "description": "Changelog. Resources. Blog · Guides · Customers · Use Cases · Compare Alternatives · Free Tools · Glossary · HTTP Error Codes · Startups & nonprofits · RL ...",
+     "relevance": "medium",
+     "markdown": {
+      "markdown": null,
+      "code": "NOT_REQUESTED"
+     },
+     "highlights": {
+      "highlights": null,
+      "code": "NOT_REQUESTED"
+     }
+    },
+    {
+     "url": "https://www.context.dev/brand",
+     "title": "Brand & Press - Context.dev",
+     "description": "Changelog. Resources. Blog · Guides · Prompt Library · Customers · Use Cases · Compare Alternatives · Free Tools · Glossary · HTTP Error Codes · Startups & ...",
+     "relevance": "medium",
+     "markdown": {
+      "markdown": null,
+      "code": "NOT_REQUESTED"
+     },
+     "highlights": {
+      "highlights": null,
+      "code": "NOT_REQUESTED"
+     }
+    }
+   ],
+   "query": "Context.dev changelog",
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59657
+   },
+   "request_id": "e198b6b9-3e5e-4542-a4b5-041146112773"
+  }
+ },
+ "answers_ultra": {
+  "status": 200,
+  "ms": 5097,
+  "credits": "100",
+  "body": {
+   "json_content": {
+    "plan": "Developer",
+    "monthly_usd": 20,
+    "credits": 10000,
+    "source_url": "https://www.context.dev/pricing"
+   },
+   "sources": [
+    "https://www.context.dev/pricing"
+   ],
+   "key_metadata": {
+    "credits_consumed": 100,
+    "credits_remaining": 59671
+   },
+   "request_id": "6db3b392-28eb-49ea-ae67-a62940adcf0d"
+  }
+ },
+ "brand_name": {
+  "status": 200,
+  "ms": 1057,
+  "credits": "10",
+  "body": {
+   "status": "ok",
+   "brand": {
+    "domain": "linear.app",
+    "title": "Linear",
+    "description": "Linear is a product development platform designed for modern teams and AI‑augmented workflows. It provides a fast, purpose‑built system for planning, tracking, and shipping software, integrating issue tracking, project roadmaps, and real‑time collaboration. Linear’s AI agents help automate tasks such as drafting PRDs, triaging feedback, and pushing pull requests, while its speed‑focused UI reduces noise and accelerates launch cycles. The platform syncs with tools like Slack, GitHub, and customer feedback channels, turning conversations into actionable issues that are automatically labeled, prioritized, and assigned. By combining a clean interface with intelligent automation, Linear enables product teams to move from idea to release with high velocity and clear alignment.",
+    "slogan": "Build product development workflows for teams and AI agents",
+    "colors": [
+     {
+      "hex": "#7170ff",
+      "name": "Stargate Shimmer",
+      "source": "site"
+     },
+     {
+      "hex": "#000000",
+      "name": "Black",
+      "source": "site"
+     },
+     {
+      "hex": "#8c9494",
+      "name": "Millennium Silver",
+      "source": "logo"
+     },
+     {
+      "hex": "#202022",
+      "name": "Lead",
+      "source": "logo"
+     },
+     {
+      "hex": "#d7d7d7",
+      "name": "Cape Hope",
+      "source": "logo"
+     }
+    ],
+    "logos": [
+     {
+      "url": "https://media.brand.dev/02168d12-3874-4270-aac0-34e3aa1ead20.png",
+      "mode": "has_opaque_background",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 180,
+       "height": 180,
+       "aspect_ratio": 1
+      },
+      "type": "icon"
+     },
+     {
+      "url": "https://media.brand.dev/02dd0ab8-f45e-45ab-af54-9e4837f80dae.png",
+      "mode": "dark",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 144,
+       "height": 144,
+       "aspect_ratio": 1
+      },
+      "type": "icon"
+     },
+     {
+      "url": "https://media.brand.dev/ff46f7c3-fb58-4d01-b822-e9a1ef403d1b.svg",
+      "mode": "light",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 88,
+       "height": 22,
+       "aspect_ratio": 4
+      },
+      "type": "logo"
+     }
+    ],
+    "backdrops": [
+     {
+      "url": "https://media.brand.dev/cfb6313d-69bf-429f-b512-7851f76e3d47.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 333,
+       "aspect_ratio": 3
+      }
+     },
+     {
+      "url": "https://media.brand.dev/1b085bf2-92a4-4122-ad7a-765b50a16c4f.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 169,
+       "aspect_ratio": 5.92
+      }
+     },
+     {
+      "url": "https://media.brand.dev/7d1d584d-7214-4736-9f2e-c492cfd8edc5.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 166,
+       "aspect_ratio": 6.02
+      }
+     },
+     {
+      "url": "https://media.brand.dev/c0294bd1-8b70-499f-80a2-e2c6a6a81860.png",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 525,
+       "aspect_ratio": 1.9
+      }
+     }
+    ],
+    "address": {
+     "city": "San Francisco",
+     "country": "United States",
+     "country_code": "US",
+     "state_province": "California",
+     "state_code": "CA",
+     "postal_code": "94103"
+    },
+    "socials": [
+     {
+      "type": "x",
+      "url": "https://x.com/linear"
+     },
+     {
+      "type": "youtube",
+      "url": "https://youtube.com/@linear"
+     },
+     {
+      "type": "github",
+      "url": "https://github.com/linear"
+     },
+     {
+      "type": "linkedin",
+      "url": "https://linkedin.com/company/linearapp"
+     }
+    ],
+    "employees": {
+     "range": "51 to 200"
+    },
+    "is_nsfw": false,
+    "industries": {
+     "eic": [
+      {
+       "industry": "Technology",
+       "subindustry": "Software (B2B)"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Artificial Intelligence & Machine Learning"
+      }
+     ]
+    },
+    "links": {
+     "careers": "https://linear.app/careers",
+     "terms": "https://linear.app/terms",
+     "contact": "https://linear.app/contact",
+     "privacy": "https://linear.app/privacy",
+     "pricing": "https://linear.app/pricing",
+     "blog": null
+    },
+    "primary_language": "english"
+   },
+   "code": 200,
+   "cache_metadata": {
+    "status": "hit",
+    "age_ms": 16233004
+   },
+   "key_metadata": {
+    "credits_consumed": 10,
+    "credits_remaining": 59647
+   },
+   "request_id": "916442a8-1c03-4a7c-9de0-f8f36d7eb02e"
+  }
+ },
+ "brand_email": {
+  "status": 200,
+  "ms": 373,
+  "credits": "10",
+  "body": {
+   "status": "ok",
+   "brand": {
+    "domain": "vercel.com",
+    "title": "Vercel",
+    "description": "Vercel is a cloud platform that enables developers and enterprises to build, deploy, and scale web applications, AI‑driven agents, and serverless services. Through its Agent Stack—including an AI SDK, AI Gateway, sandboxed environments, and workflow tools—Vercel lets teams create autonomous agents that can investigate errors, plan fixes, and open pull requests. Its core platform provides global content delivery, fluid compute, CI/CD pipelines, observability, and robust security features such as WAF and bot management. Supporting popular frameworks like Next.js, Nuxt, SvelteKit, and FastAPI, Vercel offers seamless integration, domain management, custom SSL, and preview URLs, empowering developers to ship anything from marketing sites to complex commerce platforms with instant scalability from zero to millions of users.",
+    "slogan": "The platform where humans and AI agents build, ship, and scale software.",
+    "colors": [
+     {
+      "hex": "#171717",
+      "name": "Cynical Black",
+      "source": "site"
+     },
+     {
+      "hex": "#fafafa",
+      "name": "Dr. White",
+      "source": "site"
+     },
+     {
+      "hex": "#7c7c7c",
+      "name": "Namara Grey",
+      "source": "logo"
+     },
+     {
+      "hex": "#cdcdcd",
+      "name": "Compact Disc Grey",
+      "source": "logo"
+     }
+    ],
+    "logos": [
+     {
+      "url": "https://media.brand.dev/108aef63-4811-4b14-8fc9-c7b44433f43c.png",
+      "mode": "light",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 144,
+       "height": 144,
+       "aspect_ratio": 1
+      },
+      "type": "icon"
+     }
+    ],
+    "backdrops": [
+     {
+      "url": "https://media.brand.dev/495383ca-1b5b-4dcf-b61a-220f66175903.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 327,
+       "aspect_ratio": 3.06
+      }
+     },
+     {
+      "url": "https://media.brand.dev/fb02736c-16b0-4d74-af0c-a1810cc95141.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 169,
+       "aspect_ratio": 5.92
+      }
+     },
+     {
+      "url": "https://media.brand.dev/a8d72842-493f-45ec-9f3d-545f8e6dff10.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 166,
+       "aspect_ratio": 6.02
+      }
+     },
+     {
+      "url": "https://media.brand.dev/c30109ae-aea6-4a14-a798-47797a1810fb.png",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 563,
+       "aspect_ratio": 1.78
+      }
+     }
+    ],
+    "address": {
+     "street": "Covina Avenue",
+     "city": "San Francisco",
+     "country": "United States",
+     "country_code": "US",
+     "state_province": "California",
+     "state_code": "CA",
+     "postal_code": "94133"
+    },
+    "socials": [
+     {
+      "type": "x",
+      "url": "https://x.com/vercel"
+     },
+     {
+      "type": "instagram",
+      "url": "https://instagram.com/vercel"
+     },
+     {
+      "type": "linkedin",
+      "url": "https://linkedin.com/company/vercel"
+     },
+     {
+      "type": "github",
+      "url": "https://github.com/vercel"
+     },
+     {
+      "type": "youtube",
+      "url": "https://youtube.com/@vercelhq"
+     }
+    ],
+    "employees": {
+     "range": "501 to 1000"
+    },
+    "email": "",
+    "is_nsfw": false,
+    "industries": {
+     "eic": [
+      {
+       "industry": "Technology",
+       "subindustry": "Cloud Infrastructure & DevOps"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Developer Tools & APIs"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Cybersecurity"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Artificial Intelligence & Machine Learning"
+      }
+     ]
+    },
+    "links": {
+     "careers": "https://vercel.com/careers",
+     "blog": "https://vercel.com/blog",
+     "login": null,
+     "signup": null,
+     "pricing": "https://vercel.com/pricing",
+     "terms": "https://vercel.com/legal/terms",
+     "contact": "https://vercel.com/contact/sales",
+     "privacy": "https://vercel.com/legal/privacy-notice"
+    },
+    "primary_language": "english"
+   },
+   "code": 200,
+   "cache_metadata": {
+    "status": "hit",
+    "age_ms": 279226
+   },
+   "key_metadata": {
+    "credits_consumed": 10,
+    "credits_remaining": 59637
+   },
+   "request_id": "6ff22853-91f8-4e4c-92c2-0484d5140b2d"
+  }
+ },
+ "brand_ticker": {
+  "status": 200,
+  "ms": 443,
+  "credits": "10",
+  "body": {
+   "status": "ok",
+   "brand": {
+    "domain": "apple.com",
+    "title": "Apple",
+    "description": "Apple is a global technology company that designs, manufactures, and sells consumer electronics, software, and services. Its product lineup includes the Mac family of computers, iPad tablets, iPhone smartphones, Apple Watch wearables, Vision Pro mixed‑reality headset, AirPods audio devices, and a range of Home products such as Apple TV and HomePod. Apple also offers accessories, refurbished devices, and specialized solutions for education, business, veterans, and government. Through services like iCloud+, Apple Music, Apple TV+, Apple Arcade, and Apple Fitness+, the company provides integrated digital experiences. Apple supports customers with trade‑in, financing, personal setup, and extensive support resources, while maintaining a retail presence both online and in physical stores worldwide.",
+    "slogan": "Think Different",
+    "colors": [
+     {
+      "hex": "#0071e3",
+      "name": "Níu Zǎi Sè Denim",
+      "source": "site"
+     },
+     {
+      "hex": "#656565",
+      "name": "Hard Coal",
+      "source": "logo"
+     },
+     {
+      "hex": "#acacac",
+      "name": "Flagstone",
+      "source": "logo"
+     }
+    ],
+    "logos": [
+     {
+      "url": "https://media.brand.dev/a279b52d-d7a7-44b1-9df1-f52f4a74f0b6.png",
+      "mode": "has_opaque_background",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 302,
+       "height": 302,
+       "aspect_ratio": 1
+      },
+      "type": "icon"
+     }
+    ],
+    "backdrops": [
+     {
+      "url": "https://media.brand.dev/d9f587a3-4bbe-4b52-8627-4ae0b99d31b8.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 169,
+       "aspect_ratio": 5.92
+      }
+     },
+     {
+      "url": "https://media.brand.dev/f5513ca4-151e-4ce3-89ed-fefcd0e74e8c.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 166,
+       "aspect_ratio": 6.02
+      }
+     },
+     {
+      "url": "https://media.brand.dev/1c2403bf-a13d-414c-af8a-f95a3f4f6af0.png",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 525,
+       "aspect_ratio": 1.9
+      }
+     }
+    ],
+    "address": {
+     "street": "1 Apple Park Way",
+     "city": "Cupertino",
+     "country": "United States",
+     "country_code": "US",
+     "state_province": "California",
+     "state_code": "CA",
+     "postal_code": "95014"
+    },
+    "socials": [
+     {
+      "type": "appstore",
+      "url": "https://apps.apple.com/us/app/hello-kitty-island-adventure/id1553505132"
+     },
+     {
+      "type": "x",
+      "url": "https://x.com/Apple"
+     },
+     {
+      "type": "linkedin",
+      "url": "https://linkedin.com/company/apple"
+     },
+     {
+      "type": "youtube",
+      "url": "https://youtube.com/apple"
+     }
+    ],
+    "stock": {
+     "ticker": "AAPL",
+     "exchange": "NASDAQ"
+    },
+    "employees": {
+     "range": "10001+",
+     "exact": 224096
+    },
+    "phone": "4836393385",
+    "is_nsfw": false,
+    "industries": {
+     "eic": [
+      {
+       "industry": "Technology",
+       "subindustry": "Hardware & Semiconductors"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Software (B2C)"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "eCommerce & Marketplace Platforms"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Cloud Infrastructure & DevOps"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Artificial Intelligence & Machine Learning"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "XR & Spatial Computing"
+      },
+      {
+       "industry": "Technology",
+       "subindustry": "Developer Tools & APIs"
+      },
+      {
+       "industry": "Retail & E-commerce",
+       "subindustry": "Direct-to-Consumer (DTC) Brands"
+      },
+      {
+       "industry": "Retail & E-commerce",
+       "subindustry": "Online Marketplaces"
+      },
+      {
+       "industry": "Retail & E-commerce",
+       "subindustry": "Subscription & Membership Commerce"
+      },
+      {
+       "industry": "Entertainment",
+       "subindustry": "Streaming Platforms (Video, Music, Audio)"
+      },
+      {
+       "industry": "Finance",
+       "subindustry": "Payments & Money Movement"
+      }
+     ]
+    },
+    "links": {
+     "careers": "https://www.apple.com/careers/us/",
+     "terms": "https://www.apple.com/legal/internet-services/terms/site.html",
+     "contact": "https://www.apple.com/contact/",
+     "privacy": "https://www.apple.com/privacy/",
+     "blog": null,
+     "pricing": null
+    },
+    "primary_language": "english"
+   },
+   "code": 200,
+   "cache_metadata": {
+    "status": "hit",
+    "age_ms": 74116032
+   },
+   "key_metadata": {
+    "credits_consumed": 10,
+    "credits_remaining": 59627
+   },
+   "request_id": "4ccfa385-f3c0-4e4d-b87c-2349a9cadd75"
+  }
+ },
+ "brand_url": {
+  "status": 200,
+  "ms": 5035,
+  "credits": "10",
+  "body": {
+   "status": "ok",
+   "code": 200,
+   "brand": {
+    "domain": "stripe.com",
+    "title": "Stripe",
+    "description": "Stripe is a technology company that provides economic infrastructure for businesses of all sizes, enabling them to accept online and in‑person payments, manage recurring billing, handle invoices, and access a suite of financial services such as treasury, capital, and crypto solutions. Its platform includes pre‑built checkout, customizable UI components, payment links, and a global network of payment methods. Stripe also offers tools for marketplaces and platforms through Connect, fraud protection via Radar, and developer‑friendly APIs and SDKs. By integrating payments, revenue operations, and money‑management products, Stripe helps companies launch, scale, and automate commerce worldwide.",
+    "slogan": "Build the economic infrastructure for AI.",
+    "colors": [
+     {
+      "hex": "#635bff",
+      "name": "Blue Genie",
+      "source": "site"
+     },
+     {
+      "hex": "#ae9cfc",
+      "name": "Shy Moment",
+      "source": "logo"
+     },
+     {
+      "hex": "#040404",
+      "name": "Armor Wash",
+      "source": "logo"
+     }
+    ],
+    "logos": [
+     {
+      "url": "https://media.brand.dev/323e2ad2-3105-450a-aa77-230218b91c86.svg",
+      "mode": "dark",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 512,
+       "height": 512,
+       "aspect_ratio": 1
+      },
+      "type": "icon"
+     },
+     {
+      "url": "https://media.brand.dev/18119d7a-c862-40ba-a380-243ed3acd95f.png",
+      "mode": "dark",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 180,
+       "height": 180,
+       "aspect_ratio": 1
+      },
+      "type": "icon"
+     },
+     {
+      "url": "https://media.brand.dev/b35e14bf-1c37-4eb6-8627-a57903176b69.svg",
+      "mode": "light",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 60,
+       "height": 25,
+       "aspect_ratio": 2.4
+      },
+      "type": "logo"
+     }
+    ],
+    "backdrops": [
+     {
+      "url": "https://media.brand.dev/c3cc0514-d190-485a-8360-57e89e6f2c27.jpg",
+      "colors": [
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       },
+       {
+        "hex": "...",
+        "name": "..."
+       }
+      ],
+      "resolution": {
+       "width": 1000,
+       "height": 563,
+       "aspect_ratio": 1.78
+      }
+     }
+    ],
+    "socials": [
+     {
+      "type": "x",
+      "url": "https://x.com/stripe"
+     }
+    ],
+    "email": "sales@stripe.com",
+    "is_nsfw": false,
+    "industries": {
+     "eic": [
+      {
+       "industry": "Finance",
+       "subindustry": "Payments & Money Movement"
+      },
+      {
+       "industry": "Finance",
+       "subindustry": "Financial Infrastructure & APIs"
+      },
+      {
+       "industry": "Finance",
+       "subindustry": "Accounting, Tax & Financial Planning Tools"
+      },
+      {
+       "industry": "Finance",
+       "subindustry": "Cryptocurrency & Digital Assets"
+      }
+     ]
+    },
+    "links": {
+     "blog": "https://stripe.com/blog",
+     "careers": "https://stripe.com/careers",
+     "privacy": "https://stripe.com/privacy",
+     "terms": null,
+     "contact": "https://stripe.com/contact/sales",
+     "pricing": "https://stripe.com/pricing"
+    },
+    "primary_language": "english"
+   },
+   "cache_metadata": {
+    "status": "miss",
+    "age_ms": 0
+   },
+   "key_metadata": {
+    "credits_consumed": 10,
+    "credits_remaining": 59617
+   },
+   "request_id": "80892b30-3657-4924-a383-89b5d7bab00b"
+  }
+ },
+ "brand_autocomplete": {
+  "status": 200,
+  "ms": 810,
+  "credits": "1",
+  "body": {
+   "results": [
+    {
+     "domain": "linkedin.com",
+     "name": "LinkedIn",
+     "description": "LinkedIn is the world's largest professional networking site, founded in 2003. It enables members to create business connections, search for jobs, and find potential clients, fostering a community of career opportunities, advice, and inspiration. With over 1 billion members globally, including executives from every Fortune 500 company, LinkedIn aims to make professionals more productive and successful. The company generates revenue through its Talent Solutions, Marketing Solutions, Sales Solutions, and Premium Subscriptions offerings. Headquartered in Silicon Valley with offices worldwide, LinkedIn is a premier platform for managing professional identity, building and engaging with professional networks, and accessing valuable knowledge, insights, and opportunities.",
+     "country": "US",
+     "language": "english",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=linkedin.com"
+    },
+    {
+     "domain": "line.me",
+     "name": "LINE",
+     "description": "LINE Corporation, based in Japan, develops and operates the LINE messaging app, a global communication platform offering free messaging, voice and video calls, expressive stickers, a personal timeline, and a suite of family apps such as games and camera, serving users in 230 countries.",
+     "country": "US",
+     "language": "english",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=line.me"
+    },
+    {
+     "domain": "linkmake.in",
+     "name": "Linkmake",
+     "description": "LinkMake is a link protection service that helps users safeguard their links from being compromised. They provide a secure way to share links by using their Link Protector tool, making it difficult for others to access or misuse the original link.",
+     "language": "english",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=linkmake.in"
+    },
+    {
+     "domain": "archlinux.org",
+     "name": "Arch Linux",
+     "description": "Arch Linux is a lightweight, flexible Linux distribution that follows the KISS (Keep It Simple) principle. It provides officially maintained packages for x86‑64 and a community‑driven repository (AUR) that expands the software ecosystem. The project offers extensive documentation through its wiki, forums, mailing lists, and IRC channels, fostering a diverse and helpful community. Users can download the latest ISO releases, access security updates, and contribute to development via GitLab and various community projects. Arch Linux emphasizes user control, rolling releases, and a minimalist base system that can be customized for any purpose, from desktops to servers.",
+     "country": "US",
+     "language": "english",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=archlinux.org"
+    },
+    {
+     "domain": "lin.ee",
+     "name": "ฉัตรชัย บัวฤทธิ์ Ｃｈｕｔｃｈａｉ_ｂｕａｒｉｔ",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=lin.ee"
+    },
+    {
+     "domain": "page.link",
+     "name": "Invalid Dynamic Link",
+     "description": "Firebase is a Google‑backed development platform that offers a suite of tools and services for building, improving, and growing mobile and web applications. Its features include real‑time databases, cloud storage, authentication, hosting, analytics, and Dynamic Links—a service that creates smart URLs that work across platforms and direct users to the appropriate content or app store. By handling deep linking, user onboarding, and cross‑platform navigation, Firebase helps developers deliver seamless experiences and accelerate app growth.",
+     "country": "BE",
+     "language": "english",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=page.link"
+    },
+    {
+     "domain": "linternaute.com",
+     "name": "Linternaute",
+     "description": "Linternaute.com is a French digital media portal that aggregates a wide range of content for everyday life. It delivers up‑to‑date news covering politics, society, world events, sports and culture, while also offering specialized sections on finance, automotive, high‑tech, DIY, travel, health, lifestyle, and entertainment. The site features product guides, shopping deals, TV programming, dictionaries, genealogy tools, forums and community features such as “Copains d'avant.” By combining editorial articles, expert reviews, practical advice and interactive community spaces, Linternaute serves as a comprehensive online destination for French‑speaking users seeking information, inspiration and tools for informed decisions across all aspects of daily life.",
+     "country": "FR",
+     "language": "french",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=linternaute.com"
+    },
+    {
+     "domain": "linkvertise.com",
+     "name": "Linkvertise",
+     "description": "Linkvertise is a monetization platform that enables creators and publishers to earn revenue by sharing short links to downloadable content, applications, and other online resources. Users browse a vast library of over 15 million links, while the service tracks clicks and payouts, providing a dashboard for creators to monitor earnings, manage links, and access analytics. Linkvertise offers a secure, privacy‑focused environment with clear terms and policies, allowing both advertisers and content creators to benefit from a performance‑based advertising model.",
+     "country": "DE",
+     "language": "english",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=linkvertise.com"
+    },
+    {
+     "domain": "liu.se",
+     "name": "Linköping University",
+     "description": "Linköping University (LiU) is a research‑intensive Swedish university offering a wide range of undergraduate, graduate, and professional programs across its four campuses. It combines interdisciplinary education with cutting‑edge research in fields such as AI, health, energy, and autonomous systems. LiU collaborates with industry, public sector, and international partners to translate scientific discoveries into societal benefits, while supporting lifelong learning and career development for its 50,000 students and staff. The university is recognized among the top 2 % of global institutions, boasts a high graduate employment rate, and provides extensive resources including modern labs, digital platforms, and a vibrant campus community.",
+     "country": "SE",
+     "language": "swedish",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=liu.se"
+    },
+    {
+     "domain": "lindependant.fr",
+     "name": "L'Indépendant",
+     "description": "Lindependant.fr is a regional digital media company serving Perpignan and the wider Pyrénées‑Orientales area. It operates an online news portal that aggregates local, national and international headlines across topics such as politics, economy, sports, culture, health and environment. The site also provides a comprehensive events calendar, podcasts, video content, and real‑time traffic updates. In addition to editorial coverage, Lindependant.fr hosts classified ads, legal notices, real‑estate listings, job postings and marketplace services for businesses and private users. By combining news, community information and commercial services, the platform aims to be the primary source of information and a hub for daily life in the Catalan‑French region.",
+     "country": "FR",
+     "language": "french",
+     "logo": "https://logos.context.dev/?publicClientId=brandLL_a2f94a9e46cd612e95d11dffc85a760346262710ac438a88&domain=lindependant.fr"
+    }
+   ],
+   "key_metadata": {
+    "credits_consumed": 1,
+    "credits_remaining": 59670
+   },
+   "request_id": "cba55a21-d5c8-4704-84dc-b71c2079f267"
+  }
+ },
+ "styleguide": {
+  "status": 200,
+  "ms": 432,
+  "credits": "10",
+  "body": {
+   "status": "ok",
+   "finalDOMState": "loaded",
+   "domain": "linear.app",
+   "styleguide": {
+    "mode": "dark",
+    "colors": {
+     "accent": "#7170ff",
+     "background": "#08090a",
+     "text": "#f7f8f8"
+    },
+    "typography": {
+     "headings": {
+      "h1": {
+       "fontFamily": "Inter Variable",
+       "fontSize": "72px",
+       "fontWeight": 510,
+       "lineHeight": "86px",
+       "letterSpacing": "-1.408px",
+       "fontFallbacks": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+       ]
+      },
+      "h2": {
+       "fontFamily": "Inter Variable",
+       "fontSize": "49px",
+       "fontWeight": 510,
+       "lineHeight": "72px",
+       "letterSpacing": "-1.584px",
+       "fontFallbacks": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+       ]
+      },
+      "h3": {
+       "fontFamily": "Inter Variable",
+       "fontSize": "33px",
+       "fontWeight": 510,
+       "lineHeight": "40px",
+       "letterSpacing": "-0.24px",
+       "fontFallbacks": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+       ]
+      },
+      "h4": {
+       "fontFamily": "Inter Variable",
+       "fontSize": "22px",
+       "fontWeight": 510,
+       "lineHeight": "28px",
+       "letterSpacing": "0px",
+       "fontFallbacks": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+       ]
+      }
+     },
+     "p": {
+      "fontFamily": "Inter Variable",
+      "fontSize": "15px",
+      "fontWeight": 400,
+      "lineHeight": "24px",
+      "letterSpacing": "-0.165px",
+      "fontFallbacks": [
+       "Inter Variable",
+       "SF Pro Display",
+       "-apple-system",
+       "BlinkMacSystemFont",
+       "Segoe UI",
+       "Roboto",
+       "Oxygen",
+       "Ubuntu",
+       "Cantarell",
+       "Open Sans",
+       "Helvetica Neue",
+       "sans-serif"
+      ]
+     }
+    },
+    "elementSpacing": {
+     "xs": "6px",
+     "sm": "20px",
+     "md": "30px",
+     "lg": "60px",
+     "xl": "96px"
+    },
+    "shadows": {
+     "sm": "rgba(0, 0, 0, 0.4) 0px 1px 0px 0px",
+     "md": "none",
+     "lg": "none",
+     "xl": "none",
+     "inner": "rgba(255, 255, 255, 0.08) 0px 0px 0px 0.5px inset"
+    },
+    "components": {
+     "button": {
+      "primary": {
+       "backgroundColor": "#e5e5e6",
+       "color": "#08090a",
+       "borderColor": "#e5e5e6",
+       "borderRadius": "9999px",
+       "borderWidth": "1px",
+       "borderStyle": "solid",
+       "padding": "14px 20px",
+       "fontSize": "16px",
+       "fontWeight": 510,
+       "minWidth": "127px",
+       "minHeight": "44px",
+       "textDecoration": "none",
+       "boxShadow": "rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px",
+       "fontFallbacks": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+       ],
+       "fontFamily": "Inter Variable",
+       "css": "box-sizing: border-box; display: inline-block; min-width: 127px; min-height: 44px; background-color: #e5e5e6; color: #08090a; border: 1px solid #e5e5e6; border-radius: 9999px; padding: 14px 20px; font-size: 16px; font-weight: 510; font-family: \"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif; text-decoration: none; box-shadow: rgba(0, 0, 0, 0.01) 0px 5px 2px 0px, rgba(0, 0, 0, 0.04) 0px 3px 2px 0px, rgba(0, 0, 0, 0.07) 0px 1px 1px 0px, rgba(0, 0, 0, 0.08) 0px 0px 1px 0px;"
+      },
+      "secondary": {
+       "backgroundColor": "transparent",
+       "color": "#f7f8f8",
+       "borderColor": "#f7f8f8",
+       "borderRadius": "9999px",
+       "borderWidth": "0px",
+       "borderStyle": "none",
+       "padding": "14px 20px",
+       "fontSize": "16px",
+       "fontWeight": 510,
+       "minWidth": "127px",
+       "minHeight": "44px",
+       "textDecoration": "none",
+       "boxShadow": "rgba(255, 255, 255, 0.03) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 4px 0px",
+       "fontFallbacks": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+       ],
+       "fontFamily": "Inter Variable",
+       "css": "box-sizing: border-box; display: inline-block; min-width: 127px; min-height: 44px; background-color: transparent; color: #f7f8f8; border: 0px none #f7f8f8; border-radius: 9999px; padding: 14px 20px; font-size: 16px; font-weight: 510; font-family: \"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif; text-decoration: none; box-shadow: rgba(255, 255, 255, 0.03) 0px 0px 0px 1px inset, rgba(255, 255, 255, 0.04) 0px 1px 0px 0px inset, rgba(0, 0, 0, 0.6) 0px 0px 0px 1px, rgba(0, 0, 0, 0.1) 0px 4px 4px 0px;"
+      },
+      "link": {
+       "borderRadius": "0px",
+       "borderWidth": "0px",
+       "borderStyle": "none",
+       "padding": "0px",
+       "fontSize": "16px",
+       "fontWeight": 400,
+       "minWidth": "0px",
+       "minHeight": "0px",
+       "textDecoration": "underline",
+       "boxShadow": "none",
+       "backgroundColor": "transparent",
+       "color": "#f7f8f8",
+       "borderColor": "transparent",
+       "fontFallbacks": [
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "...",
+        "..."
+       ],
+       "fontFamily": "Inter Variable",
+       "css": "color: #f7f8f8; font-size: 16px; font-weight: 400; font-family: \"Inter Variable\", \"SF Pro Display\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Oxygen, Ubuntu, Cantarell, \"Open Sans\", \"Helvetica Neue\", sans-serif; text-decoration: underline;"
+      }
+     },
+     "card": {
+      "backgroundColor": "#0f1011",
+      "borderColor": "#ffffff14",
+      "borderRadius": "9px",
+      "borderWidth": "1px",
+      "borderStyle": "solid",
+      "padding": "12px 16px 16px",
+      "boxShadow": "rgba(0, 0, 0, 0.2) 0px 0px 0px 1px",
+      "textColor": "#f7f8f8",
+      "css": "background-color: #0f1011; color: #f7f8f8; border: 1px solid #ffffff14; border-radius: 9px; padding: 12px 16px 16px; box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 0px 1px;"
+     }
+    },
+    "fontLinks": {
+     "Inter Variable": {
+      "type": "custom",
+      "files": {
+       "100": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "200": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "300": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "400": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "500": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "600": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "700": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "800": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2",
+       "900": "https://media.brand.dev/fonts/693b77d4f32ee9b8bfc995589b5fad5e99adf2832738661f5402f9978429a8e3.woff2"
+      },
+      "displayName": "Inter Variable"
+     },
+     "Roboto": {
+      "type": "google",
+      "files": {
+       "100": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbGmTggvWl0Qn.ttf",
+       "200": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEbWmTggvWl0Qn.ttf",
+       "300": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuaabWmTggvWl0Qn.ttf",
+       "400": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWubEbWmTggvWl0Qn.ttf",
+       "500": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWub2bWmTggvWl0Qn.ttf",
+       "600": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYaammTggvWl0Qn.ttf",
+       "700": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuYjammTggvWl0Qn.ttf",
+       "800": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZEammTggvWl0Qn.ttf",
+       "900": "https://fonts.gstatic.com/s/roboto/v51/KFOMCnqEu92Fr1ME7kSn66aGLdTylUAMQXC89YmC2DPNWuZtammTggvWl0Qn.ttf"
+      },
+      "category": "sans-serif"
+     },
+     "Oxygen": {
+      "type": "google",
+      "files": {
+       "300": "https://fonts.gstatic.com/s/oxygen/v16/2sDcZG1Wl4LcnbuCJW8Db2-4C7wFZQ.ttf",
+       "400": "https://fonts.gstatic.com/s/oxygen/v16/2sDfZG1Wl4Lcnbu6iUcnZ0SkAg.ttf",
+       "700": "https://fonts.gstatic.com/s/oxygen/v16/2sDcZG1Wl4LcnbuCNWgDb2-4C7wFZQ.ttf"
+      },
+      "category": "sans-serif"
+     },
+     "Ubuntu": {
+      "type": "google",
+      "files": {
+       "300": "https://fonts.gstatic.com/s/ubuntu/v21/4iCv6KVjbNBYlgoC1CzTt2aMH4V_gg.ttf",
+       "400": "https://fonts.gstatic.com/s/ubuntu/v21/4iCs6KVjbNBYlgo6eAT3v02QFg.ttf",
+       "500": "https://fonts.gstatic.com/s/ubuntu/v21/4iCv6KVjbNBYlgoCjC3Tt2aMH4V_gg.ttf",
+       "700": "https://fonts.gstatic.com/s/ubuntu/v21/4iCv6KVjbNBYlgoCxCvTt2aMH4V_gg.ttf"
+      },
+      "category": "sans-serif"
+     },
+     "Cantarell": {
+      "type": "google",
+      "files": {
+       "400": "https://fonts.gstatic.com/s/cantarell/v18/B50NF7ZDq37KMUvlO01Ji6hqHK-CLA.ttf",
+       "700": "https://fonts.gstatic.com/s/cantarell/v18/B50IF7ZDq37KMUvlO01xN4dOFISeJY8GgQ.ttf"
+      },
+      "category": "sans-serif"
+     },
+     "Open Sans": {
+      "type": "google",
+      "files": {
+       "300": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsiH0C4nY1M2xLER.ttf",
+       "400": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjZ0C4nY1M2xLER.ttf",
+       "500": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsjr0C4nY1M2xLER.ttf",
+       "600": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsgH1y4nY1M2xLER.ttf",
+       "700": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgsg-1y4nY1M2xLER.ttf",
+       "800": "https://fonts.gstatic.com/s/opensans/v44/memSYaGs126MiZpBA-UvWbX2vVnXBbObj2OVZyOOSr4dVJWUgshZ1y4nY1M2xLER.ttf"
+      },
+      "category": "sans-serif"
+     },
+     "Berkeley Mono": {
+      "type": "custom",
+      "files": {
+       "100": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "200": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "300": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "400": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "500": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "600": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "700": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "800": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2",
+       "900": "https://media.brand.dev/fonts/8fdf6ce1312d8a4230f30d90e7758500d6574311bce306ff1433e90f5ba0c094.woff2"
+      },
+      "displayName": "Berkeley Mono"
+     }
+    }
+   },
+   "code": 200,
+   "cache_metadata": {
+    "status": "hit",
+    "age_ms": 35450528
+   },
+   "key_metadata": {
+    "credits_consumed": 10,
+    "credits_remaining": 59660
+   },
+   "request_id": "33b2ecf7-beca-4186-8006-27f04c9449e3"
+  }
+ },
+ "prefetch": {
+  "status": 200,
+  "ms": 420,
+  "credits": 0,
+  "body": {
+   "status": "ok",
+   "message": "Domain prefetch queued successfully",
+   "type": "brand",
+   "domain": "posthog.com",
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59617
+   },
+   "request_id": "1956e734-9b87-4dc4-b196-2aa2444647e3"
+  }
+ },
+ "people_enrich": {
+  "status": 200,
+  "ms": 1740,
+  "credits": "20",
+  "body": {
+   "match": {
+    "status": "candidate",
+    "score": 98,
+    "person": {
+     "name": {
+      "full": "Patrick Collison",
+      "first": "Patrick",
+      "last": "Collison"
+     },
+     "bio": "Dynamically communicate prospective opportunities and proactive technologies. Efficiently aggregate interactive materials before state of the art collaboration and idea-sharing. Credibly supply cross-media metrics via leading-edge solutions. Seamlessly embrace world-class imperatives and technically sound best practices. Black belt parallelization of prospective relationships via tactical leadership skills. Enthusiastically productivate customer directed core competencies via impactful functionalities. Up-skilling internal or \"organic\" sources via innovative experiences. Quickly pursue enterprise-wide niche markets for ubiquitous best practices. Distinctively engineer process-centric markets before timely greenfield sources.",
+     "location": {
+      "display": "San Francisco",
+      "city": "San Francisco",
+      "region": "California",
+      "country": "United States",
+      "country_code": "USA"
+     },
+     "social_urls": [
+      "https://www.linkedin.com/in/patrickcollison"
+     ],
+     "website_urls": [
+      "https://patrickcollison.com/"
+     ],
+     "current_role": {
+      "title": "Cofounder",
+      "organization": {
+       "name": "Arc Institute",
+       "domain": "arcinstitute.org"
+      },
+      "location": "Palo Alto, California, United States",
+      "start_date": {
+       "year": 2021
+      },
+      "is_current": true
+     },
+     "current_role_status": "present",
+     "experience": [
+      {
+       "title": "Cofounder",
+       "organization": {
+        "name": "...",
+        "domain": "..."
+       },
+       "location": "Palo Alto, California, United States",
+       "start_date": {
+        "year": "..."
+       },
+       "is_current": true
+      },
+      {
+       "title": "CEO",
+       "organization": {
+        "name": "...",
+        "domain": "..."
+       },
+       "location": "South San Francisco",
+       "start_date": {
+        "year": "..."
+       },
+       "is_current": true
+      },
+      {
+       "title": "Cofounder",
+       "organization": {
+        "name": "..."
+       },
+       "start_date": {
+        "year": "..."
+       },
+       "end_date": {
+        "year": "..."
+       },
+       "is_current": false
+      }
+     ],
+     "education": [
+      {
+       "institution": {
+        "name": "...",
+        "domain": "..."
+       },
+       "field_of_study": "Mathematics (incomplete)",
+       "start_date": {
+        "year": "..."
+       },
+       "end_date": {
+        "year": "..."
+       }
+      },
+      {
+       "institution": {
+        "name": "...",
+        "domain": "..."
+       },
+       "field_of_study": "Mathematics"
+      },
+      {
+       "institution": {
+        "name": "...",
+        "domain": "..."
+       },
+       "degree": "Mathematics (incomplete)",
+       "start_date": {
+        "year": "..."
+       },
+       "end_date": {
+        "year": "..."
+       }
+      }
+     ],
+     "skills": [
+      "Programming Languages",
+      "Software Engineering",
+      "Artificial Intelligence",
+      "Distributed Systems",
+      "APIs",
+      "Flying"
+     ],
+     "last_updated": "2026-10-09T01:43:10.539Z",
+     "checked_at": "2026-10-12T16:40:43.419Z",
+     "avatar_url": "https://media.brand.dev/pfp/e5cdfdda-424f-5278-b91e-0c793d65cf8d.png"
+    }
+   },
+   "key_metadata": {
+    "credits_consumed": 20,
+    "credits_remaining": 59597
+   },
+   "request_id": "af4b09b6-e2bf-4604-bd5f-69004b239c54"
+  }
+ },
+ "usage_history": {
+  "status": 200,
+  "ms": 384,
+  "credits": 0,
+  "body": {
+   "data": [
+    {
+     "start": "2026-10-01T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-02T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-03T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-04T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-05T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-06T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-07T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-08T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-09T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-10T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-11T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    {
+     "start": "2026-10-12T00:00:00.000Z",
+     "credits_used": 0,
+     "request_count": 0
+    },
+    "... 19 more"
+   ],
+   "total_credits_used": 229,
+   "total_request_count": 75,
+   "interval": "day",
+   "from": "2026-10-01T08:24:04.250Z",
+   "to": "2026-10-31T08:24:04.250Z",
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59660
+   },
+   "request_id": "bb277ed5-e8d7-4e29-95c6-b95cd892cd22"
+  }
+ },
+ "logs": {
+  "status": 200,
+  "ms": 384,
+  "credits": 0,
+  "body": {
+   "data": [
+    {
+     "request_id": "0794efde-f1b6-45a6-8f84-dbd6a3eb79d4",
+     "timestamp": "2026-10-31T08:23:54.000Z",
+     "method": "POST",
+     "path": "/v1/web/search",
+     "status_code": 400,
+     "error_code": "INPUT_VALIDATION_ERROR",
+     "latency_ms": 77.88,
+     "credits_used": 0,
+     "key_id": "ctxt_keyid_5a47a955c99548409b64118a6be722ad",
+     "tags": [],
+     "zdr": false
+    },
+    {
+     "request_id": "88185e93-c421-40dd-9271-eea2c775e673",
+     "timestamp": "2026-10-31T08:23:23.000Z",
+     "method": "POST",
+     "path": "/v1/web/scrape",
+     "status_code": 400,
+     "error_code": "INPUT_VALIDATION_ERROR",
+     "latency_ms": 55.87,
+     "credits_used": 0,
+     "key_id": "ctxt_keyid_5a47a955c99548409b64118a6be722ad",
+     "tags": [],
+     "zdr": false
+    }
+   ],
+   "page": 1,
+   "limit": 5,
+   "has_more": false,
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59660
+   },
+   "request_id": "6767f049-aec2-4f03-9069-2f590b6f16f3"
+  }
+ },
+ "webhook_deliveries": {
+  "status": 200,
+  "ms": 451,
+  "credits": 0,
+  "body": {
+   "data": [],
+   "has_more": false,
+   "next_cursor": null,
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59597
+   },
+   "request_id": "282dcf45-08fb-4d4a-9a7e-e7dda111e5ce"
+  }
+ },
+ "monitor_sitemap": {
+  "create": {
+   "status": 201,
+   "ms": 1013,
+   "credits": 0
+  },
+  "create_body": {
+   "mode": "web",
+   "id": "mon_e50bc0c8979a4b4786ba382a85970ce1",
+   "name": "docs-audit sitemap",
+   "tags": [],
+   "policies": [],
+   "change_detection": {
+    "type": "exact"
+   },
+   "schedule": {
+    "type": "interval",
+    "frequency": 1,
+    "unit": "days"
+   },
+   "webhook": null,
+   "status": "active",
+   "last_run_at": null,
+   "last_change_at": null,
+   "next_run_at": "2026-11-01T04:35:56.740Z",
+   "last_error": null,
+   "webhook_failure": null,
+   "created_at": "2026-10-31T08:24:05.330Z",
+   "updated_at": "2026-10-31T08:24:05.330Z",
+   "target": {
+    "type": "sitemap",
+    "url": "https://docs.context.dev/sitemap.xml",
+    "include": [
+     "/changelog*"
+    ]
+   },
+   "initial_run_id": "run_d9841e2336bb464dae4bb77e81aa8759",
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59660
+   },
+   "request_id": "b822f31e-1480-473c-891c-6ffce29eb421"
+  },
+  "runs": {
+   "data": [
+    {
+     "id": "run_d9841e2336bb464dae4bb77e81aa8759",
+     "monitor_id": "mon_e50bc0c8979a4b4786ba382a85970ce1",
+     "status": "completed",
+     "run_type": "baseline",
+     "target_type": "sitemap",
+     "change_detection_type": "exact",
+     "started_at": "2026-10-31T08:24:08.526Z",
+     "completed_at": "2026-10-31T08:24:08.855Z",
+     "change_detected": false,
+     "change_id": null,
+     "baseline_created": true,
+     "credits_charged": 1,
+     "skip_reason": null,
+     "error": null
+    }
+   ],
+   "has_more": false,
+   "next_cursor": null,
+   "key_metadata": {
+    "credits_consumed": 0,
+    "credits_remaining": 59659
+   },
+   "request_id": "139ee541-7415-4056-973b-8322d278119a"
+  },
+  "delete": 200
+ }
+}
